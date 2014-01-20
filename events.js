@@ -2,6 +2,11 @@ var flown;
 document.addEventListener('DOMContentLoaded',function() {
 	var i;
     var gotos;
+	
+	flyoutOnRight();
+	
+	window.onresize = function() { flyoutOnRight(); flyin(); };
+	
     if (document.getElementById('charSheet')) {
 		document.getElementById('charSheet').onclick = function() { flyin(); };
     }
@@ -32,8 +37,8 @@ document.addEventListener('DOMContentLoaded',function() {
 		for (i=0,max = document.getElementsByClassName("soc").length;i<max;i++) {
 			soci[i].onclick = function() { 
 				centerBlocker.style.display = "none";
-				dotCounter.style.left = 150;
-				dotCounter.style.top = 480;
+				dotCounter.style.left = 480;
+				dotCounter.style.top = 220;
 				dotCounter.style.display = "block";
 				for (i=0,max = document.getElementsByClassName("soc").length;i<max;i++) {
 					soci[i].style.display = "none";
@@ -45,8 +50,8 @@ document.addEventListener('DOMContentLoaded',function() {
 		for (i=0,max = document.getElementsByClassName("men").length;i<max;i++) {
 			ment[i].onclick = function() { 
 				rightBlocker.style.display = "none";
-				dotCounter.style.left = 150;
-				dotCounter.style.top = 800;
+				dotCounter.style.left = 800;
+				dotCounter.style.top = 220;
 				dotCounter.style.display = "block";
 				for (i=0,max = document.getElementsByClassName("men").length;i<max;i++) {
 					ment[i].style.display = "none";
