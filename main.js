@@ -98,7 +98,6 @@ function flyout() {
 	phasesName.style.display = "none";
 	phasesBody.style.display = "block";
 	
-	return;
 }
 
 function flyin() {
@@ -108,8 +107,6 @@ function flyin() {
 	
 	phasesName.style.display = "inline-block";
 	phasesBody.style.display = "none";
-	
-	return;
 }
 
 function nextStep() {
@@ -136,13 +133,12 @@ function nextStep() {
 	
 	
 	};
+	alert("hi");
 	flyout();
-	
-	return;
+	alert("hi");
 }
 
 function step2() {
-	flyout();
 
 	var blocker = document.createElement("div");
 	blocker.style.position = "absolute";
@@ -168,30 +164,23 @@ function step2() {
 	
 	document.getElementById("Step1").className = "previous";
 	document.getElementById("Step2").className = "current";
-	
-	return;
 }
 
 function step3() {	
-	flyout();
 	document.getElementById("dotCounter").innerText = "5";
 	document.getElementById("dotCounter").display = "block";
 	
 	document.getElementById("Step2").className = "previous";
 	document.getElementById("Step3").className = "current";
-	
-	return;
 }
 
 function step4() {	
-	flyout();
 	document.getElementById("dotCounter").innerText = "3";
 	document.getElementById("dotCounter").display = "block";
 	
 	document.getElementById("Step3").className = "previous";
 	document.getElementById("Step4").className = "current";
-	
-	return;
+
 }
 
 function decrementCounter() {
@@ -205,6 +194,5 @@ function decrementCounter() {
 
 function incrementCounter() {
 	document.getElementById("dotCounter").innerText = document.getElementById("dotCounter").innerText.valueOf() + 1;
-	
-	return;
+
 }

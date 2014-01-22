@@ -5,19 +5,26 @@ document.addEventListener('DOMContentLoaded',function() {
 	
 	flyoutOnRight();
 	
-	window.onresize = function() { flyoutOnRight(); flyin(); };
+	window.onresize = function() { 
+		flyoutOnRight();
+		if (flown) {
+			flyin();
+		} else {
+			flyout();
+		};
+	};
 	
     if (document.getElementById('charSheet')) {
 		document.getElementById('charSheet').onclick = function() { flyin(); };
-    }
+    };
 	
 	if (document.getElementById('phases')) {
 		document.getElementById('phases').onclick = function() { flyout(); };
-    }
+    };
 
 	if (document.getElementById('clanSelect')) {
 		document.getElementById('clanSelect').onchange = function() { correctForClan(); };
-	}
+	};
 
 	if (document.getElementById('Step2')) {
 		phys = document.getElementsByClassName("phy");
@@ -30,7 +37,7 @@ document.addEventListener('DOMContentLoaded',function() {
 				for (i=0,max = document.getElementsByClassName("phy").length;i<max;i++) {
 					phys[i].style.display = "none";
 				};
-			}
+			};
 		};
 		
 		soci = document.getElementsByClassName("soc");
@@ -43,7 +50,7 @@ document.addEventListener('DOMContentLoaded',function() {
 				for (i=0,max = document.getElementsByClassName("soc").length;i<max;i++) {
 					soci[i].style.display = "none";
 				};
-			}
+			};
 		};
 		
 		ment = document.getElementsByClassName("men");
@@ -56,16 +63,16 @@ document.addEventListener('DOMContentLoaded',function() {
 				for (i=0,max = document.getElementsByClassName("men").length;i<max;i++) {
 					ment[i].style.display = "none";
 				};
-			}
+			};
 		};
 	
-	}
+	};
 
 	if (document.getElementsByClassName("dot").length >= 255) {
 		allDots = document.getElementsByClassName("dot");
 		for (i=0,max = document.getElementsByClassName("dot").length;i<max;i++) {
 			allDots[i].onclick = function() { decrementCounter(); };
 		};
-	}
+	};
 
 });
