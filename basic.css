@@ -1,3 +1,4 @@
+/* Basic elements */
 div {
 position: relative;
 }
@@ -12,6 +13,11 @@ input[type=checkbox] {
 	visibility: hidden;
 }
 
+input[type=text] {
+	background: beige;
+	border: solid 1px;
+}
+/* Dots */
 .dots {
 	width: 20px;
 	height: 20px;
@@ -73,10 +79,18 @@ input[type=checkbox] {
 	content: '';
 }
 
+/* Character Sheet sections */
 .section {
 position: relative;
-width: 1000px;
+width: 930px;
 display: inline-block;
+text-align: center;
+font-size: large;
+font-weight: bold;
+margin: 5px 0 10px 0;
+padding-top: 5px;
+border: black solid;
+border-width: 2px 0 0 0;
 }
 
 .lefty {
@@ -85,10 +99,13 @@ position: relative;
 left: 10;
 top: 0;
 float: left;
+/*
 border-color: black;
 border-width: 1;
 border-style: solid;
+*/
 text-align: center;
+font-size: initial;
 font-weight: bold;
 }
 
@@ -103,10 +120,13 @@ position: relative;
 left: 20;
 top: 0;
 float: left;
-border-color: blue;
+/*
+border-color: black;
 border-width: 1;
 border-style: solid;
+*/
 text-align: center;
+font-size: initial;
 font-weight: bold;
 }
 
@@ -121,10 +141,13 @@ position: relative;
 left: 30;
 top: 0;
 float: left;
-border-color: green;
+/*
+border-color: black;
 border-width: 1;
 border-style: solid;
+*/
 text-align: center;
+font-size: initial;
 font-weight: bold;
 }
 
