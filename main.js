@@ -1,3 +1,5 @@
+var abort;
+
 function correctForClan() {
 	var clan = document.getElementById('clanSelect');
 	var app = new Array();
@@ -97,45 +99,18 @@ function flyout() {
 	
 	phasesName.style.display = "none";
 	phasesBody.style.display = "block";
-	
 }
 
 function flyin() {
+	if (abort) {
+		abort = false;
+		return;
+	}
 	window.phases.style.left = window.innerWidth - 45;
 	window.flown = false;
 	
-	
 	phasesName.style.display = "inline-block";
 	phasesBody.style.display = "none";
-}
-
-function nextStep() {
-	switch (window.stepName) {
-		case "Step1":
-			stepName = "Step2";
-			step2();
-			break;
-			
-		case "Step2":
-			stepName = "Step3";
-			step3();
-			break;
-		
-		case "Step3":
-			stepName = "Step4";
-			step4();
-			break;
-			
-		case "Step4":
-			stepName = "Step5";
-			step4();
-			break;
-	
-	
-	};
-	alert("hi");
-	flyout();
-	alert("hi");
 }
 
 function step2() {
@@ -184,15 +159,61 @@ function step4() {
 }
 
 function decrementCounter() {
-	document.getElementById("dotCounter").innerText = document.getElementById("dotCounter").innerText.valueOf() - 1;
-	if (document.getElementById("dotCounter").innerText.valueOf() == 0) {
-		document.getElementById("dotCounter").style.display = "none"; 
-		nextStep();
-	}
-	
+	var myValue = document.getElementById("dotCounter").innerText.valueOf();
+	myValue--;
+	document.getElementById("dotCounter").innerText = myValue;
+	updateScreen();
 }
 
 function incrementCounter() {
-	document.getElementById("dotCounter").innerText = document.getElementById("dotCounter").innerText.valueOf() + 1;
+	var myValue = document.getElementById("dotCounter").innerText.valueOf();
+	myValue++;
+	document.getElementById("dotCounter").innerText = myValue;
+	updateScreen();
+}
 
+function updateScreen() {
+	if (document.getElementById("dotCounter").innerText.valueOf() == 0) {
+		document.getElementById("dotCounter").style.display = "none"; 
+		nextStep();
+	} else {
+		document.getElementById("dotCounter").style.display = "block";
+	};
+	if (flown) {
+		flyout();
+	} else {
+		flyin();
+	};
+}
+
+
+
+
+function nextStep() {
+	abort = true;
+	switch (window.stepName) {
+		case "Step1":
+			stepName = "Step2";
+			step2();
+			break;
+			
+		case "Step2":
+			stepName = "Step3";
+			step3();
+			break;
+		
+		case "Step3":
+			stepName = "Step4";
+			step4();
+			break;
+			
+		case "Step4":
+			stepName = "Step5";
+			step4();
+			break;
+	
+	
+	};
+	flown = true;
+	updateScreen();
 }

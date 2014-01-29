@@ -1,4 +1,5 @@
 var flown;
+
 document.addEventListener('DOMContentLoaded',function() {
 	var i;
     var gotos;
@@ -71,7 +72,13 @@ document.addEventListener('DOMContentLoaded',function() {
 	if (document.getElementsByClassName("dot").length >= 255) {
 		allDots = document.getElementsByClassName("dot");
 		for (i=0,max = document.getElementsByClassName("dot").length;i<max;i++) {
-			allDots[i].onclick = function() { decrementCounter(); };
+			allDots[i].onclick = function() { 
+				if (this.checked) {
+					decrementCounter();
+				} else {
+					incrementCounter();
+				};
+			};
 		};
 	};
 
