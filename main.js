@@ -135,7 +135,6 @@ function step2() {
 	rightBlocker.style.left = 642;
 	
 	document.getElementById("dotCounter").innerText = "7";
-	document.getElementById("dotCounter").display = "block";
 	
 	document.getElementById("Step1").className = "previous";
 	document.getElementById("Step2").className = "current";
@@ -143,7 +142,6 @@ function step2() {
 
 function step3() {	
 	document.getElementById("dotCounter").innerText = "5";
-	document.getElementById("dotCounter").display = "block";
 	
 	document.getElementById("Step2").className = "previous";
 	document.getElementById("Step3").className = "current";
@@ -151,7 +149,6 @@ function step3() {
 
 function step4() {	
 	document.getElementById("dotCounter").innerText = "3";
-	document.getElementById("dotCounter").display = "block";
 	
 	document.getElementById("Step3").className = "previous";
 	document.getElementById("Step4").className = "current";
@@ -176,8 +173,6 @@ function updateScreen() {
 	if (document.getElementById("dotCounter").innerText.valueOf() == 0) {
 		document.getElementById("dotCounter").style.display = "none"; 
 		nextStep();
-	} else {
-		document.getElementById("dotCounter").style.display = "block";
 	};
 	if (flown) {
 		flyout();
