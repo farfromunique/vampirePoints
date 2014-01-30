@@ -1,6 +1,42 @@
 var abort;
 
-function correctForClan() {
+
+
+function flyoutOnRight() {
+	window.flown = false;
+	window.stepName = "Step1";
+	window.phases = document.getElementById("phases");
+	window.phasesName = document.getElementById("phasesName");
+	window.phasesBody = document.getElementById("phasesBody");
+	
+	phases.style.width = 325;
+	phases.style.left = (window.innerWidth - 45);
+	phases.style.height = (window.innerHeight * .75);
+}
+
+function flyout() {
+	window.phases.style.left = window.innerWidth - (window.phases.style.width.replace("px","").valueOf());
+	window.flown = true;
+	phasesName = document.getElementById("phasesName");
+	phasesBody = document.getElementById("phasesBody");
+	
+	phasesName.style.display = "none";
+	phasesBody.style.display = "block";
+}
+
+function flyin() {
+	if (abort) {
+		abort = false;
+		return;
+	}
+	window.phases.style.left = window.innerWidth - 45;
+	window.flown = false;
+	
+	phasesName.style.display = "inline-block";
+	phasesBody.style.display = "none";
+}
+
+function Step1() {
 	var clan = document.getElementById('clanSelect');
 	var app = new Array();
 	for (i=1,max=5;i<=max;i++) {
@@ -79,49 +115,15 @@ function correctForClan() {
 	window.nextStep();
 }
 
-function flyoutOnRight() {
-	window.flown = false;
-	window.stepName = "Step1";
-	window.phases = document.getElementById("phases");
-	window.phasesName = document.getElementById("phasesName");
-	window.phasesBody = document.getElementById("phasesBody");
-	
-	phases.style.width = 325;
-	phases.style.left = (window.innerWidth - 45);
-	phases.style.height = (window.innerHeight * .75);
-}
-
-function flyout() {
-	window.phases.style.left = window.innerWidth - (window.phases.style.width.replace("px","").valueOf());
-	window.flown = true;
-	phasesName = document.getElementById("phasesName");
-	phasesBody = document.getElementById("phasesBody");
-	
-	phasesName.style.display = "none";
-	phasesBody.style.display = "block";
-}
-
-function flyin() {
-	if (abort) {
-		abort = false;
-		return;
-	}
-	window.phases.style.left = window.innerWidth - 45;
-	window.flown = false;
-	
-	phasesName.style.display = "inline-block";
-	phasesBody.style.display = "none";
-}
-
 function step2() {
 
 	var blocker = document.createElement("div");
 	blocker.style.position = "absolute";
 	blocker.style.display = "inline";	
-	blocker.style.top = 215;
-	blocker.style.left = 19;
+	blocker.style.top = 220;
+	blocker.style.left = 15;
 	blocker.style.width = 300;
-	blocker.style.height = 78;
+	blocker.style.height = 115;
 	blocker.style.backgroundColor = "#000";
 	blocker.style.opacity = .5;
 	
@@ -131,8 +133,8 @@ function step2() {
 	window.rightBlock = leftBlocker.cloneNode(false);
 	window.rightBlocker = document.body.appendChild(rightBlock);
 	
-	centerBlocker.style.left = 331;
-	rightBlocker.style.left = 642;
+	centerBlocker.style.left = 325;
+	rightBlocker.style.left = 635;
 	
 	document.getElementById("dotCounter").innerText = "7";
 	
@@ -152,7 +154,46 @@ function step4() {
 	
 	document.getElementById("Step3").className = "previous";
 	document.getElementById("Step4").className = "current";
+}
 
+function step5() {
+	var blocker = document.createElement("div");
+	blocker.style.position = "absolute";
+	blocker.style.display = "inline";	
+	blocker.style.top = 365;
+	blocker.style.left = 15;
+	blocker.style.width = 300;
+	blocker.style.height = 285;
+	blocker.style.backgroundColor = "#000";
+	blocker.style.opacity = .5;
+	
+	window.leftBlocker = document.body.appendChild(blocker);
+	window.centerBlock = leftBlocker.cloneNode(false);
+	window.centerBlocker = document.body.appendChild(centerBlock);
+	window.rightBlock = leftBlocker.cloneNode(false);
+	window.rightBlocker = document.body.appendChild(rightBlock);
+	
+	centerBlocker.style.left = 325;
+	rightBlocker.style.left = 635;
+	
+	document.getElementById("dotCounter").innerText = "13";
+	
+	document.getElementById("Step4").className = "previous";
+	document.getElementById("Step5").className = "current";
+}
+
+function step6() {	
+	document.getElementById("dotCounter").innerText = "9";
+	
+	document.getElementById("Step5").className = "previous";
+	document.getElementById("Step6").className = "current";
+}
+
+function step7() {	
+	document.getElementById("dotCounter").innerText = "7";
+	
+	document.getElementById("Step6").className = "previous";
+	document.getElementById("Step7").className = "current";
 }
 
 function decrementCounter() {
@@ -169,7 +210,7 @@ function incrementCounter() {
 	updateScreen();
 }
 
-function updateScreen() {
+function updateScreen() /* makes sure all of the things that should be updated, are */{
 	if (document.getElementById("dotCounter").innerText.valueOf() == 0) {
 		document.getElementById("dotCounter").style.display = "none"; 
 		nextStep();
@@ -181,10 +222,7 @@ function updateScreen() {
 	};
 }
 
-
-
-
-function nextStep() {
+function nextStep() /* Advances to the next step */{
 	abort = true;
 	switch (window.stepName) {
 		case "Step1":
@@ -204,7 +242,27 @@ function nextStep() {
 			
 		case "Step4":
 			stepName = "Step5";
-			step4();
+			step5();
+			break;
+			
+		case "Step5":
+			stepName = "Step6";
+			step6();
+			break;
+			
+		case "Step6":
+			stepName = "Step7";
+			step7();
+			break;
+			
+		case "Step7":
+			stepName = "Step8";
+			step8();
+			break;
+			
+		case "Step8":
+			stepName = "Step8";
+			step9();
 			break;
 	
 	

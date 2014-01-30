@@ -16,7 +16,10 @@ input[type=checkbox] {
 input[type=text] {
 	background: beige;
 	border: solid 1px;
+	position: absolute;
+	right: 5px;
 }
+
 /* Dots */
 .dots {
 	width: 20px;
@@ -80,6 +83,18 @@ input[type=text] {
 }
 
 /* Character Sheet sections */
+#text1 {
+	text-align: left;
+}
+
+#text2 {
+	text-align: left;
+}
+
+#text3 {
+	text-align: left;
+}
+
 .section {
 position: relative;
 width: 930px;
