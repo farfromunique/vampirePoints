@@ -1,7 +1,5 @@
 var abort;
 
-
-
 function flyoutOnRight() {
 	window.flown = false;
 	window.stepName = "Step1";
@@ -190,7 +188,7 @@ function step6() {
 }
 
 function step7() {	
-	document.getElementById("dotCounter").innerText = "7";
+	document.getElementById("dotCounter").innerText = "5";
 	
 	document.getElementById("Step6").className = "previous";
 	document.getElementById("Step7").className = "current";
