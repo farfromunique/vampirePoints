@@ -34,10 +34,6 @@ function flyin() {
 	phasesBody.style.display = "none";
 }
 
-function Step0() /* OnLoad stuff */ {
-	
-}
-
 function Step1() {
 	var clan = document.getElementById('clanSelect');
 	var app = new Array();
@@ -199,8 +195,33 @@ function step7() {
 	document.getElementById("Step7").className = "current";
 }
 
+function disableDotsInGroup(groupName) {
+	var dots = [];
+	dots[0] = document.getElementById(groupName+1)
+	dots[1] = document.getElementById(groupName+2)
+	dots[2] = document.getElementById(groupName+3)
+	dots[3] = document.getElementById(groupName+4)
+	dots[4] = document.getElementById(groupName+5)
+	
+	for (i=0;i<5;i++) {
+		dots[i].disabled = true;
+	}
+}
 
-
+function enableDotsInGroup(groupName, enable1, enable2, enable3, enable4, enable5) {
+	var dots = [];
+	dots[0] = document.getElementById(groupName+1)
+	dots[1] = document.getElementById(groupName+2)
+	dots[2] = document.getElementById(groupName+3)
+	dots[3] = document.getElementById(groupName+4)
+	dots[4] = document.getElementById(groupName+5)
+	
+	if (enable1) { dots[0].disabled = false; }
+	if (enable2) { dots[1].disabled = false; }
+	if (enable3) { dots[2].disabled = false; }
+	if (enable4) { dots[3].disabled = false; }
+	if (enable5) { dots[4].disabled = false; }
+}
 
 function decrementCounter() {
 	var myValue = document.getElementById("dotCounter").innerText.valueOf();

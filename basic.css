@@ -69,7 +69,7 @@ input[type=text] {
 }
 
 .dots label:hover::after {
-	opacity: 0.3;
+	opacity: 0.75;
 }
 
 .dots input[type=checkbox]:checked + label:after {
@@ -79,6 +79,11 @@ input[type=text] {
 
 .dots input[type=checkbox]:checked:disabled + label:after {
 	background: #999;
+	content: '';
+}
+
+.dots input[type=checkbox]:disabled + label:after {
+	background-image: url('noDot.png');
 	content: '';
 }
 
