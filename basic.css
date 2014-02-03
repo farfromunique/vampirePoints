@@ -95,6 +95,11 @@ input[type=text] {
 	text-align: left;
 }
 
+#charSheet {
+	width: 930px;
+	border: 1px black solid;
+}
+
 .section {
 position: relative;
 width: 930px;

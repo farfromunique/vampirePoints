@@ -15,18 +15,10 @@ document.addEventListener('DOMContentLoaded',function() {
 		};
 	};
 	
-    if (document.getElementById('charSheet')) {
-		document.getElementById('charSheet').onclick = function() { flyin(); };
-    };
+    addEventToID("charSheet","Click","flyin()");
+	addEventToID("phases","Click","flyout()");
+	addEventToID("clanSelect","Change","Step1()");
 	
-	if (document.getElementById('phases')) {
-		document.getElementById('phases').onclick = function() { flyout(); };
-    };
-
-	if (document.getElementById('clanSelect')) {
-		document.getElementById('clanSelect').onchange = function() { Step1(); };
-	};
-
 	if (document.getElementById('Step2')) {
 		phys = document.getElementsByClassName("phy");
 		for (i=0,max = document.getElementsByClassName("phy").length;i<max;i++) {

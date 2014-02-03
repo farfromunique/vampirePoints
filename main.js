@@ -34,6 +34,10 @@ function flyin() {
 	phasesBody.style.display = "none";
 }
 
+function Step0() /* OnLoad stuff */ {
+	
+}
+
 function Step1() {
 	var clan = document.getElementById('clanSelect');
 	var app = new Array();
@@ -57,6 +61,7 @@ function Step1() {
 		}
 	}
 
+	/* This will be reworked pursuant to bug #6 */
 	while (document.getElementById('out-clan-disc1').options.length > 0) {
 		document.getElementById('in-clan-disc1').options.remove(0);
 		document.getElementById('in-clan-disc2').options.remove(0);
@@ -193,6 +198,9 @@ function step7() {
 	document.getElementById("Step6").className = "previous";
 	document.getElementById("Step7").className = "current";
 }
+
+
+
 
 function decrementCounter() {
 	var myValue = document.getElementById("dotCounter").innerText.valueOf();

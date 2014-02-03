@@ -39,7 +39,7 @@ This tool is only to be used in conjunction with the above mentioned Source(s).
 While it does contain in its code and function some of the rules detailed in the Source(s), it is not intended as a replacement for them, nor is it intended as a replacement
 for the character sheets created by White Wolf.
 
-In short, I'm not giving you a listing of how the rules work, I'm giving you an tool to build a character within the rules. Please do not abuse it.
+In short, I'm not giving you a listing of how the rules work, I'm giving you a tool to build a character within the rules. Please do not abuse it.
 
 Change Log
 ==========
