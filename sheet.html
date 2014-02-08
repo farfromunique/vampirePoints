@@ -15,7 +15,7 @@
 	<div id="phasesBody">
 		<p>The highlighted phase is the one you are currently on. Follow the instructions within that group.</p>
 		
-		<div id="Step1" class="current">
+		<div id="Step01" class="current">
 			Step 1
 			<div>
 				Fill in the text boxes, then select your Clan<br />
@@ -43,7 +43,7 @@
 				</select>
 			</div>
 		</div>
-		<div id="Step2" class="next">
+		<div id="Step02" class="next">
 			Step 2
 			<div>
 				Choose an attribute group to be PRIMARY (gets 7 dots added):
@@ -53,7 +53,7 @@
 				... then fill in that many dots.
 			</div>
 		</div>
-		<div id="Step3" class="next">
+		<div id="Step03" class="next">
 			Step 3
 			<div>
 				Choose an attribute group to be SECONDARY (gets 5 dots added):
@@ -63,7 +63,7 @@
 				... then fill in that many dots.
 			</div>
 		</div>
-		<div id="Step4" class="next">
+		<div id="Step04" class="next">
 			Step 4
 			<div>
 				Choose an attribute group to be TERTIARY (gets 3 dots added):
@@ -73,7 +73,7 @@
 				... then fill in that many dots.
 			</div>
 		</div>
-		<div id="Step5" class="next">
+		<div id="Step05" class="next">
 			Step 5
 			<div>
 				Choose an ability group to be PRIMARY (gets 7 dots added):
@@ -83,7 +83,7 @@
 				... then fill in that many dots.
 			</div>
 		</div>
-		<div id="Step6" class="next">
+		<div id="Step06" class="next">
 			Step 6
 			<div>
 				Choose an ability group to be PRIMARY (gets 7 dots added):
@@ -93,7 +93,7 @@
 				... then fill in that many dots.
 			</div>
 		</div>
-		<div id="Step7" class="next">
+		<div id="Step07" class="next">
 			Step 7
 			<div>
 				Choose an ability group to be PRIMARY (gets 7 dots added):
@@ -103,7 +103,32 @@
 				... then fill in that many dots.
 			</div>
 		</div>
-		
+		<div id="Step08" class="next">
+			Step 8
+			<div>
+				Place dots in in-clan disciplines (total of 3 dots at this stage).
+			</div>
+		</div>
+		<div id="Step09" class="next">
+			Step 9
+			<div>
+				Place dots in Backgrounds (total of 5 dots at this stage).
+			</div>
+		</div>
+		<div id="Step10" class="next">
+			Step 10
+			<div>
+				Place dots in Virtues (total of 7 dots at this stage).
+			</div>
+		</div>
+		<div id="Step11" class="next">
+			Step 11
+			<div>
+				Spend Freebie Points (15 available).<br />
+				To override the freebies you have, change this value:
+				<input type="text" value="15">
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -1129,8 +1154,7 @@ Please input your character below. The flyout on the side will tell you what ste
 		
 		<div id='disciplines' class='lefty'>Disciplines
 		
-			<div id='in-clan1' class='attr'>
-				<select id='in-clan-disc1'></select>
+			<div id='in-clan1' class='attr'><span id='in-clan-disc1'>In-Clan1</span>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='in-clan-disc1-1'>
@@ -1154,8 +1178,7 @@ Please input your character below. The flyout on the side will tell you what ste
 					</div>
 				</div>
 			</div>
-			<div id='in-clan2' class='attr'>
-				<select id='in-clan-disc2'></select>
+			<div id='in-clan2' class='attr'><span id='in-clan-disc2'>In-Clan2</span>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='in-clan-disc2-1'>
@@ -1179,8 +1202,7 @@ Please input your character below. The flyout on the side will tell you what ste
 					</div>
 				</div>
 			</div>
-			<div id='in-clan3' class='attr'>
-				<select id='in-clan-disc3'></select>
+			<div id='in-clan3' class='attr'><span id='in-clan-disc3'>In-Clan3</span>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='in-clan-disc3-1'>
@@ -1204,8 +1226,7 @@ Please input your character below. The flyout on the side will tell you what ste
 					</div>
 				</div>
 			</div>
-			<div id='out-clan1' class='attr'>
-				<select id='out-clan-disc1'></select>
+			<div id='out-clan1' class='attr'><span id='out-clan-disc1'></span>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='out-clan-disc1-1'>
@@ -1229,8 +1250,7 @@ Please input your character below. The flyout on the side will tell you what ste
 					</div>
 				</div>
 			</div>
-			<div id='out-clan2' class='attr'>
-				<select id='out-clan-disc2'></select>
+			<div id='out-clan2' class='attr'><span id='out-clan-disc2'></span>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='out-clan-disc2-1'>
@@ -1254,8 +1274,7 @@ Please input your character below. The flyout on the side will tell you what ste
 					</div>
 				</div>
 			</div>
-			<div id='out-clan3' class='attr'>
-				<select id='out-clan-disc3'></select>
+			<div id='out-clan3' class='attr'><span id='out-clan-disc3'></span>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='out-clan-disc3-1'>
@@ -1282,10 +1301,26 @@ Please input your character below. The flyout on the side will tell you what ste
 		
 		</div>
 		
-		<div id='backgrounds' class='centery'>Backgrounds
+		<div id='backgrounds' class='centery'>Backgrounds<br /><small>* Indicates Sabbat only
 		
 			<div id='bkgd-1' class='attr'>
-				<select id='bkgd-1-select'></select>
+				<select id='bkgd-1-select'>
+					<option>--Select a Background--</option>
+					<option>Allies</option>
+					<option>Alternate Identity</option>
+					<option>Black Hand Membership*</option>
+					<option>Contacts</option>
+					<option>Domain</option>
+					<option>Fame</option>
+					<option>Generation</option>
+					<option>Herd</option>
+					<option>Influence</option>
+					<option>Mentor</option>
+					<option>Resources</option>
+					<option>Retainers</option>
+					<option>Rituals*</option>
+					<option>Status</option>
+				</select>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='bkgd-1-1'>
@@ -1310,7 +1345,23 @@ Please input your character below. The flyout on the side will tell you what ste
 				</div>
 			</div>
 			<div id='bkgd-2' class='attr'>
-				<select id='bkgd-2-select'></select>
+				<select id='bkgd-2-select'>
+					<option>--Select a Background--</option>
+					<option>Allies</option>
+					<option>Alternate Identity</option>
+					<option>Black Hand Membership*</option>
+					<option>Contacts</option>
+					<option>Domain</option>
+					<option>Fame</option>
+					<option>Generation</option>
+					<option>Herd</option>
+					<option>Influence</option>
+					<option>Mentor</option>
+					<option>Resources</option>
+					<option>Retainers</option>
+					<option>Rituals*</option>
+					<option>Status</option>
+				</select>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='bkgd-2-1'>
@@ -1335,7 +1386,23 @@ Please input your character below. The flyout on the side will tell you what ste
 				</div>
 			</div>
 			<div id='bkgd-3' class='attr'>
-				<select id='bkgd-3-select'></select>
+				<select id='bkgd-3-select'>
+					<option>--Select a Background--</option>
+					<option>Allies</option>
+					<option>Alternate Identity</option>
+					<option>Black Hand Membership*</option>
+					<option>Contacts</option>
+					<option>Domain</option>
+					<option>Fame</option>
+					<option>Generation</option>
+					<option>Herd</option>
+					<option>Influence</option>
+					<option>Mentor</option>
+					<option>Resources</option>
+					<option>Retainers</option>
+					<option>Rituals*</option>
+					<option>Status</option>
+				</select>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='bkgd-3-1'>
@@ -1360,7 +1427,23 @@ Please input your character below. The flyout on the side will tell you what ste
 				</div>
 			</div>
 			<div id='bkgd-4' class='attr'>
-				<select id='bkgd-4-select'></select>
+				<select id='bkgd-4-select'>
+					<option>--Select a Background--</option>
+					<option>Allies</option>
+					<option>Alternate Identity</option>
+					<option>Black Hand Membership*</option>
+					<option>Contacts</option>
+					<option>Domain</option>
+					<option>Fame</option>
+					<option>Generation</option>
+					<option>Herd</option>
+					<option>Influence</option>
+					<option>Mentor</option>
+					<option>Resources</option>
+					<option>Retainers</option>
+					<option>Rituals*</option>
+					<option>Status</option>
+				</select>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='bkgd-4-1'>
@@ -1385,7 +1468,23 @@ Please input your character below. The flyout on the side will tell you what ste
 				</div>
 			</div>
 			<div id='bkgd-5' class='attr'>
-				<select id='bkgd-5-select'></select>
+				<select id='bkgd-5-select'>
+					<option>--Select a Background--</option>
+					<option>Allies</option>
+					<option>Alternate Identity</option>
+					<option>Black Hand Membership*</option>
+					<option>Contacts</option>
+					<option>Domain</option>
+					<option>Fame</option>
+					<option>Generation</option>
+					<option>Herd</option>
+					<option>Influence</option>
+					<option>Mentor</option>
+					<option>Resources</option>
+					<option>Retainers</option>
+					<option>Rituals*</option>
+					<option>Status</option>
+				</select>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='bkgd-5-1'>
@@ -1410,7 +1509,23 @@ Please input your character below. The flyout on the side will tell you what ste
 				</div>
 			</div>
 			<div id='bkgd-6' class='attr'>
-				<select id='bkgd-6-select'></select>
+				<select id='bkgd-6-select'>
+					<option>--Select a Background--</option>
+					<option>Allies</option>
+					<option>Alternate Identity</option>
+					<option>Black Hand Membership*</option>
+					<option>Contacts</option>
+					<option>Domain</option>
+					<option>Fame</option>
+					<option>Generation</option>
+					<option>Herd</option>
+					<option>Influence</option>
+					<option>Mentor</option>
+					<option>Resources</option>
+					<option>Retainers</option>
+					<option>Rituals*</option>
+					<option>Status</option>
+				</select>
 				<div class='container'>
 					<div class='dots'>
 						<input type='checkbox' class='dot' id='bkgd-6-1'>
@@ -1442,7 +1557,7 @@ Please input your character below. The flyout on the side will tell you what ste
 			<div id='conscience' class='attr'>Conscience / Conviction
 				<div class='container'>
 					<div class='dots'>
-						<input type='checkbox' class='dot' id='conscience1'>
+						<input type='checkbox' class='dot' id='conscience1' checked=true>
 						<label for='conscience1'></label>
 					</div>
 					<div class='dots'>
@@ -1466,7 +1581,7 @@ Please input your character below. The flyout on the side will tell you what ste
 			<div id='selfControl' class='attr'>Self Control / Instinct
 				<div class='container'>
 					<div class='dots'>
-						<input type='checkbox' class='dot' id='selfControl1'>
+						<input type='checkbox' class='dot' id='selfControl1' checked=true>
 						<label for='selfControl1'></label>
 					</div>
 					<div class='dots'>
@@ -1490,7 +1605,7 @@ Please input your character below. The flyout on the side will tell you what ste
 			<div id='courage' class='attr'>Courage
 				<div class='container'>
 					<div class='dots'>
-						<input type='checkbox' class='dot' id='courage1'>
+						<input type='checkbox' class='dot' id='courage1' checked=true>
 						<label for='courage1'></label>
 					</div>
 					<div class='dots'>
@@ -1517,7 +1632,7 @@ Please input your character below. The flyout on the side will tell you what ste
 
 	<div id='otherStuff' class='section'>
 
-		<div id='otherTraits' class='lefty'>This is not going to be filled in.
+		<div id='otherTraits' class='lefty'>&nbsp;
 		</div>
 		<div id='hum-will-blood' class='centery'>
 			

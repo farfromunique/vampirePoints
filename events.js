@@ -14,9 +14,9 @@ document.addEventListener('DOMContentLoaded',function() {
 	
     addEventToID("charSheet","Click","flyin()");
 	addEventToID("phases","Click","flyout()");
-	addEventToID("clanSelect","Change","Step1()");
+	addEventToID("clanSelect","Change","Step01()");
 	
-	if (document.getElementById('Step2')) {
+	if (document.getElementById('Step02')) {
 		phys = document.getElementsByClassName("phy");
 		for (i=0,max = document.getElementsByClassName("phy").length;i<max;i++) {
 			phys[i].onclick = function() { 
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded',function() {
 	
 	};
 	
-	if (document.getElementById('Step5')) {
+	if (document.getElementById('Step05')) {
 		tale = document.getElementsByClassName("tal");
 		for (i=0,max = document.getElementsByClassName("tal").length;i<max;i++) {
 			tale[i].onclick = function() { 

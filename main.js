@@ -133,7 +133,13 @@ function disableDotsInMetaGroup(metaGroup) /* physical, mental, etc */ {
 			disableDotsInGroup("science");
 			break;
 		
-		case "Disciplines":
+		case "In-Clan":
+			disableDotsInGroup("in-clan-disc1-");
+			disableDotsInGroup("in-clan-disc2-");
+			disableDotsInGroup("in-clan-disc3-");
+			break;
+			
+		case "Out-Clan":
 		
 		case "Backgrounds":
 		
@@ -205,11 +211,32 @@ function enableDotsInMetaGroup(metaGroup, enable1, enable2, enable3, enable4, en
 			enableDotsInGroup("science", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
-		case "Disciplines":
+		case "In-Clan":
+			enableDotsInGroup("in-clan-disc1-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("in-clan-disc2-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("in-clan-disc3-", enable1, enable2, enable3, enable4, enable5);
+			break;
+		
+		case "Out-Clan":
+			enableDotsInGroup("out-clan-disc1-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("out-clan-disc2-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("out-clan-disc3-", enable1, enable2, enable3, enable4, enable5);
+			break;
 		
 		case "Backgrounds":
+			enableDotsInGroup("bkgd-1-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bkgd-2-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bkgd-3-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bkgd-4-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bkgd-5-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bkgd-6-", enable1, enable2, enable3, enable4, enable5);
+			break;
 		
 		case "Virtues":
+			enableDotsInGroup("conscience", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("selfControl", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("courage", enable1, enable2, enable3, enable4, enable5);
+			break;
 		
 		default:
 			console.log("Error encountered when calling enableDotsInMetaGroup: bad metaGroup");
@@ -228,35 +255,11 @@ function Step00() /* Things to do onLoad */ {
 function Step01() {
 	clan = document.getElementById('clanSelect');
 	clan = clan.value;
-	var app = new Array();
-	for (i=1,max=5;i<=max;i++) {
-		app[i] = document.getElementById('app'+i);
-		}
-
-		
+			
 	if (clan == "Nosferatu") {
-		for (i=1,max=5;i<=max;i++) {
-			app[i].disabled = true;
-			app[i].checked = false;
-		} 
+		document.getElementById('app1').checked = false;
 	} else {
-		for (i=1,max=5;i<=max;i++) {
-			if (i==1) {
-			app[1].checked = true;
-			} else {
-			app[i].disabled = false;
-			}
-		}
-	}
-
-	/* This will be reworked per bug #6 */
-	while (document.getElementById('out-clan-disc1').options.length > 0) {
-		document.getElementById('in-clan-disc1').options.remove(0);
-		document.getElementById('in-clan-disc2').options.remove(0);
-		document.getElementById('in-clan-disc3').options.remove(0);
-		document.getElementById('out-clan-disc1').options.remove(0);
-		document.getElementById('out-clan-disc2').options.remove(0);
-		document.getElementById('out-clan-disc3').options.remove(0);
+		document.getElementById('app1').checked = true;
 	}
 
 	var disciplinesByClan = new Array();
@@ -277,29 +280,15 @@ function Step01() {
 	var allDisciplines = [' ', 'Animalism', 'Auspex', 'Celerity', 'Chimerstry', 'Dementation', 'Dominate', 'Fortitude', 'Obfuscate', 'Obtenebration', 'Potence', 'Presence', 'Protean', 'Quietus', 'Serpentis', 'Vicissitude']
 
 	var thisClan = disciplinesByClan[clan];
+	console.log(thisClan);
 	var indisciplines = new Array();
 	var outdisciplines1 = new Array();
 	var outdisciplines2 = new Array();
 	var outdisciplines3 = new Array();
-	for (i=0;i<3;i++) {
-		indisciplines[i] = new Option(thisClan[i]);
-		}
-		
-		document.getElementById('in-clan-disc1').options.add(indisciplines[0]);
-		document.getElementById('in-clan-disc2').options.add(indisciplines[1]);
-		document.getElementById('in-clan-disc3').options.add(indisciplines[2]);
-
-	for (i=0;i<15;i++) {
-		outdisciplines1[i] = new Option(allDisciplines[i]);
-		outdisciplines2[i] = new Option(allDisciplines[i]);
-		outdisciplines3[i] = new Option(allDisciplines[i]);
-	}
-
-	for (i=0;i<15;i++) {
-			document.getElementById('out-clan-disc1').options.add(outdisciplines1[i]);
-			document.getElementById('out-clan-disc2').options.add(outdisciplines2[i]);
-			document.getElementById('out-clan-disc3').options.add(outdisciplines3[i]);
-		}
+			
+		document.getElementById('in-clan-disc1').innerText = thisClan[0];
+		document.getElementById('in-clan-disc2').innerText = thisClan[1];
+		document.getElementById('in-clan-disc3').innerText = thisClan[2];
 	
 	document.getElementById('clanName').innerHTML = "<h1>" + clan + "</h1>";
 	
@@ -307,7 +296,6 @@ function Step01() {
 }
 
 function Step02() {
-
 	var blocker = document.createElement("div");
 	blocker.style.position = "absolute";
 	blocker.style.display = "inline";	
@@ -412,11 +400,45 @@ function Step07() {
 }
 
 function Step08() {
+	document.getElementById("dotCounter").innerText = "3";
+	dotCounter.style.left = 150;
+	dotCounter.style.top = 690;
+	dotCounter.style.display = "block";
 	
-	disableDotsInMetaGroup("Talents");
-	disableDotsInMetaGroup("Skills");
-	disableDotsInMetaGroup("Knowledges");
+	document.getElementById("Step07").className = "previous";
+	document.getElementById("Step08").className = "current";
+	
+	disableDotsInGroup("All");
+	enableDotsInMetaGroup("In-Clan",true,true,true,false,false);
 }
+
+function Step09() {
+	document.getElementById("dotCounter").innerText = "5";
+	dotCounter.style.left = 460;
+	dotCounter.style.top = 690;
+	dotCounter.style.display = "block";
+	
+	document.getElementById("Step08").className = "previous";
+	document.getElementById("Step09").className = "current";
+	
+	disableDotsInGroup("All");
+	enableDotsInMetaGroup("Backgrounds",true,true,true,false,false);
+}
+
+function Step10() {
+	document.getElementById("dotCounter").innerText = "7";
+	dotCounter.style.left = 775;
+	dotCounter.style.top = 690;
+	dotCounter.style.display = "block";
+	
+	document.getElementById("Step09").className = "previous";
+	document.getElementById("Step10").className = "current";
+	
+	disableDotsInGroup("All");
+	enableDotsInMetaGroup("Virtues",true,true,true,true,true);
+}
+
+
 
 function decrementCounter() {
 	var myValue = document.getElementById("dotCounter").innerText.valueOf();
@@ -484,12 +506,22 @@ function nextStep() /* Advances to the next step */{
 			
 		case "Step07":
 			stepName = "Step8";
-			Step8();
+			Step08();
 			break;
 			
-		case "Step8":
+		case "Step08":
 			stepName = "Step8";
-			step9();
+			Step09();
+			break;
+		
+		case "Step09":
+			stepName = "Step9";
+			Step10();
+			break;
+			
+		case "Step10":
+			stepName = "Step10";
+			Step11();
 			break;
 	
 	
