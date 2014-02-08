@@ -2,9 +2,6 @@ var flown;
 
 document.addEventListener('DOMContentLoaded',function() {
 	var i;
-    var gotos;
-	
-	flyoutOnRight();
 	
 	window.onresize = function() { 
 		flyoutOnRight();
@@ -30,6 +27,7 @@ document.addEventListener('DOMContentLoaded',function() {
 				for (i=0,max = document.getElementsByClassName("phy").length;i<max;i++) {
 					phys[i].style.display = "none";
 				};
+				enableDotsInMetaGroup("Physical",false,true,true,true,false);
 			};
 		};
 		
@@ -43,6 +41,8 @@ document.addEventListener('DOMContentLoaded',function() {
 				for (i=0,max = document.getElementsByClassName("soc").length;i<max;i++) {
 					soci[i].style.display = "none";
 				};
+				enableDotsInMetaGroup("Social",false,true,true,true,false);
+				if (window.clan == "Nosferatu") { disableDotsInGroup("app"); };
 			};
 		};
 		
@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded',function() {
 				for (i=0,max = document.getElementsByClassName("men").length;i<max;i++) {
 					ment[i].style.display = "none";
 				};
+				enableDotsInMetaGroup("Mental",false,true,true,true,false);
 			};
 		};
 	
@@ -72,6 +73,7 @@ document.addEventListener('DOMContentLoaded',function() {
 				for (i=0,max = document.getElementsByClassName("tal").length;i<max;i++) {
 					tale[i].style.display = "none";
 				};
+				enableDotsInMetaGroup("Talents",true,true,true,false,false);
 			};
 		};
 		
@@ -85,6 +87,7 @@ document.addEventListener('DOMContentLoaded',function() {
 				for (i=0,max = document.getElementsByClassName("ski").length;i<max;i++) {
 					skil[i].style.display = "none";
 				};
+				enableDotsInMetaGroup("Skills",true,true,true,false,false);
 			};
 		};
 		
@@ -98,22 +101,22 @@ document.addEventListener('DOMContentLoaded',function() {
 				for (i=0,max = document.getElementsByClassName("kno").length;i<max;i++) {
 					know[i].style.display = "none";
 				};
+				enableDotsInMetaGroup("Knowledges",true,true,true,false,false);
 			};
 		};
 	
 	};
 
-	if (document.getElementsByClassName("dot").length >= 255) {
-		allDots = document.getElementsByClassName("dot");
-		for (i=0,max = document.getElementsByClassName("dot").length;i<max;i++) {
-			allDots[i].onclick = function() { 
-				if (this.checked) {
-					decrementCounter();
-				} else {
-					incrementCounter();
-				};
+	allDots = document.getElementsByClassName("dot");
+	for (i=0,max = document.getElementsByClassName("dot").length;i<max;i++) {
+		allDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter();
+			} else {
+				incrementCounter();
 			};
 		};
 	};
-
-});
+	
+}
+);

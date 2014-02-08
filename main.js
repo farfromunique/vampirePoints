@@ -1,8 +1,11 @@
 var abort;
+var stepName = "Step00";
+var clan;
 
+/* Functional stuff */
 function flyoutOnRight() {
 	window.flown = false;
-	window.stepName = "Step1";
+	window.stepName = "Step01";
 	window.phases = document.getElementById("phases");
 	window.phasesName = document.getElementById("phasesName");
 	window.phasesBody = document.getElementById("phasesBody");
@@ -34,15 +37,204 @@ function flyin() {
 	phasesBody.style.display = "none";
 }
 
-function Step1() {
-	var clan = document.getElementById('clanSelect');
+function disableDotsInGroup(groupName) /* str, dex, etc */ {
+	if (groupName == 'All') /* global disable button */ {
+		var allDots = document.getElementsByClassName('dot');
+		for (var i=0;i<allDots.length;i++) {
+			allDots[i].disabled = true;
+		};
+		
+	} else {
+		
+		var dots = [];
+		dots[0] = document.getElementById(groupName+1)
+		dots[1] = document.getElementById(groupName+2)
+		dots[2] = document.getElementById(groupName+3)
+		dots[3] = document.getElementById(groupName+4)
+		dots[4] = document.getElementById(groupName+5)
+		
+		for (i=0;i<5;i++) {
+			dots[i].disabled = true;
+		};
+	};
+}
+
+function enableDotsInGroup(groupName, enable1, enable2, enable3, enable4, enable5) /* enableN are boolean */ {
+	var dots = [];
+	dots[0] = document.getElementById(groupName+1)
+	dots[1] = document.getElementById(groupName+2)
+	dots[2] = document.getElementById(groupName+3)
+	dots[3] = document.getElementById(groupName+4)
+	dots[4] = document.getElementById(groupName+5)
+	
+	if (enable1) { dots[0].disabled = false; }
+	if (enable2) { dots[1].disabled = false; }
+	if (enable3) { dots[2].disabled = false; }
+	if (enable4) { dots[3].disabled = false; }
+	if (enable5) { dots[4].disabled = false; }
+}
+
+function disableDotsInMetaGroup(metaGroup) /* physical, mental, etc */ {
+	switch (metaGroup) {
+		case "Physical":
+			disableDotsInGroup("str");
+			disableDotsInGroup("dex");
+			disableDotsInGroup("sta");
+			break;
+		
+		case "Social":
+			disableDotsInGroup("cha");
+			disableDotsInGroup("man");
+			disableDotsInGroup("app");
+			break;
+		
+		case "Mental":
+			disableDotsInGroup("per");
+			disableDotsInGroup("int");
+			disableDotsInGroup("wit");
+			break;
+		
+		case "Talents":
+			disableDotsInGroup("alertness");
+			disableDotsInGroup("athletics");
+			disableDotsInGroup("brawl");
+			disableDotsInGroup("dodge");
+			disableDotsInGroup("empathy");
+			disableDotsInGroup("expression");
+			disableDotsInGroup("intimidation");
+			disableDotsInGroup("leadership");
+			disableDotsInGroup("streetwise");
+			disableDotsInGroup("subterfuge");
+			break;
+		
+		case "Skills":
+			disableDotsInGroup("animalKen");
+			disableDotsInGroup("crafts");
+			disableDotsInGroup("drive");
+			disableDotsInGroup("etiquette");
+			disableDotsInGroup("firearms");
+			disableDotsInGroup("melee");
+			disableDotsInGroup("performance");
+			disableDotsInGroup("security");
+			disableDotsInGroup("stealth");
+			disableDotsInGroup("survival");
+			break;
+		
+		case "Knowledges":
+			disableDotsInGroup("academics");
+			disableDotsInGroup("computer");
+			disableDotsInGroup("finance");
+			disableDotsInGroup("investigation");
+			disableDotsInGroup("law");
+			disableDotsInGroup("linguistics");
+			disableDotsInGroup("medicine");
+			disableDotsInGroup("occult");
+			disableDotsInGroup("politics");
+			disableDotsInGroup("science");
+			break;
+		
+		case "Disciplines":
+		
+		case "Backgrounds":
+		
+		case "Virtues":
+		
+		default:
+			console.log("Error encountered when calling disableDotsInMetaGroup: bad metaGroup");
+			return false;
+			break;
+		}
+}
+
+function enableDotsInMetaGroup(metaGroup, enable1, enable2, enable3, enable4, enable5) /* physical, mental, etc */ {
+	switch (metaGroup) {
+		case "Physical":
+			enableDotsInGroup("str", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("dex", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("sta", enable1, enable2, enable3, enable4, enable5);
+			break;
+		
+		case "Social":
+			enableDotsInGroup("cha", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("man", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("app", enable1, enable2, enable3, enable4, enable5);
+			break;
+		
+		case "Mental":
+			enableDotsInGroup("per", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("int", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("wit", enable1, enable2, enable3, enable4, enable5);
+			break;
+		
+		case "Talents":
+			enableDotsInGroup("alertness", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("athletics", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("brawl", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("dodge", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("empathy", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("expression", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("intimidation", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("leadership", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("streetwise", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("subterfuge", enable1, enable2, enable3, enable4, enable5);
+			break;
+		
+		case "Skills":
+			enableDotsInGroup("animalKen", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("crafts", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("drive", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("etiquette", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("firearms", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("melee", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("performance", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("security", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("stealth", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("survival", enable1, enable2, enable3, enable4, enable5);
+			break;
+		
+		case "Knowledges":
+			enableDotsInGroup("academics", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("computer", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("finance", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("investigation", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("law", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("linguistics", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("medicine", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("occult", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("politics", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("science", enable1, enable2, enable3, enable4, enable5);
+			break;
+		
+		case "Disciplines":
+		
+		case "Backgrounds":
+		
+		case "Virtues":
+		
+		default:
+			console.log("Error encountered when calling enableDotsInMetaGroup: bad metaGroup");
+			return false;
+			break;
+	}
+}
+
+/* procedural stuff */
+function Step00() /* Things to do onLoad */ {
+	disableDotsInGroup('All');
+	flyoutOnRight();
+	flyout();
+}
+
+function Step01() {
+	clan = document.getElementById('clanSelect');
+	clan = clan.value;
 	var app = new Array();
 	for (i=1,max=5;i<=max;i++) {
 		app[i] = document.getElementById('app'+i);
 		}
 
 		
-	if (clan.value == "Nosferatu") {
+	if (clan == "Nosferatu") {
 		for (i=1,max=5;i<=max;i++) {
 			app[i].disabled = true;
 			app[i].checked = false;
@@ -57,7 +249,7 @@ function Step1() {
 		}
 	}
 
-	/* This will be reworked pursuant to bug #6 */
+	/* This will be reworked per bug #6 */
 	while (document.getElementById('out-clan-disc1').options.length > 0) {
 		document.getElementById('in-clan-disc1').options.remove(0);
 		document.getElementById('in-clan-disc2').options.remove(0);
@@ -84,7 +276,7 @@ function Step1() {
 
 	var allDisciplines = [' ', 'Animalism', 'Auspex', 'Celerity', 'Chimerstry', 'Dementation', 'Dominate', 'Fortitude', 'Obfuscate', 'Obtenebration', 'Potence', 'Presence', 'Protean', 'Quietus', 'Serpentis', 'Vicissitude']
 
-	var thisClan = disciplinesByClan[clan.value];
+	var thisClan = disciplinesByClan[clan];
 	var indisciplines = new Array();
 	var outdisciplines1 = new Array();
 	var outdisciplines2 = new Array();
@@ -109,12 +301,12 @@ function Step1() {
 			document.getElementById('out-clan-disc3').options.add(outdisciplines3[i]);
 		}
 	
-	document.getElementById('clanName').innerHTML = "<h1>" + clan.value + "</h1>";
+	document.getElementById('clanName').innerHTML = "<h1>" + clan + "</h1>";
 	
 	window.nextStep();
 }
 
-function step2() {
+function Step02() {
 
 	var blocker = document.createElement("div");
 	blocker.style.position = "absolute";
@@ -137,25 +329,37 @@ function step2() {
 	
 	document.getElementById("dotCounter").innerText = "7";
 	
-	document.getElementById("Step1").className = "previous";
-	document.getElementById("Step2").className = "current";
+	document.getElementById("Step01").className = "previous";
+	document.getElementById("Step02").className = "current";
+	
+	disableDotsInMetaGroup("Physical");
+	disableDotsInMetaGroup("Social");
+	disableDotsInMetaGroup("Mental");
 }
 
-function step3() {	
+function Step03() {	
 	document.getElementById("dotCounter").innerText = "5";
 	
-	document.getElementById("Step2").className = "previous";
-	document.getElementById("Step3").className = "current";
+	document.getElementById("Step02").className = "previous";
+	document.getElementById("Step03").className = "current";
+	
+	disableDotsInMetaGroup("Physical");
+	disableDotsInMetaGroup("Social");
+	disableDotsInMetaGroup("Mental");
 }
 
-function step4() {	
+function Step04() {	
 	document.getElementById("dotCounter").innerText = "3";
 	
-	document.getElementById("Step3").className = "previous";
-	document.getElementById("Step4").className = "current";
+	document.getElementById("Step03").className = "previous";
+	document.getElementById("Step04").className = "current";
+	
+	disableDotsInMetaGroup("Physical");
+	disableDotsInMetaGroup("Social");
+	disableDotsInMetaGroup("Mental");
 }
 
-function step5() {
+function Step05() {
 	var blocker = document.createElement("div");
 	blocker.style.position = "absolute";
 	blocker.style.display = "inline";	
@@ -177,50 +381,41 @@ function step5() {
 	
 	document.getElementById("dotCounter").innerText = "13";
 	
-	document.getElementById("Step4").className = "previous";
-	document.getElementById("Step5").className = "current";
+	document.getElementById("Step04").className = "previous";
+	document.getElementById("Step05").className = "current";
+	
+	disableDotsInMetaGroup("Talents");
+	disableDotsInMetaGroup("Skills");
+	disableDotsInMetaGroup("Knowledges");
 }
 
-function step6() {	
+function Step06() {	
 	document.getElementById("dotCounter").innerText = "9";
 	
-	document.getElementById("Step5").className = "previous";
-	document.getElementById("Step6").className = "current";
+	document.getElementById("Step05").className = "previous";
+	document.getElementById("Step06").className = "current";
+	
+	disableDotsInMetaGroup("Talents");
+	disableDotsInMetaGroup("Skills");
+	disableDotsInMetaGroup("Knowledges");
 }
 
-function step7() {	
+function Step07() {	
 	document.getElementById("dotCounter").innerText = "5";
 	
-	document.getElementById("Step6").className = "previous";
-	document.getElementById("Step7").className = "current";
+	document.getElementById("Step06").className = "previous";
+	document.getElementById("Step07").className = "current";
+	
+	disableDotsInMetaGroup("Talents");
+	disableDotsInMetaGroup("Skills");
+	disableDotsInMetaGroup("Knowledges");
 }
 
-function disableDotsInGroup(groupName) {
-	var dots = [];
-	dots[0] = document.getElementById(groupName+1)
-	dots[1] = document.getElementById(groupName+2)
-	dots[2] = document.getElementById(groupName+3)
-	dots[3] = document.getElementById(groupName+4)
-	dots[4] = document.getElementById(groupName+5)
+function Step08() {
 	
-	for (i=0;i<5;i++) {
-		dots[i].disabled = true;
-	}
-}
-
-function enableDotsInGroup(groupName, enable1, enable2, enable3, enable4, enable5) {
-	var dots = [];
-	dots[0] = document.getElementById(groupName+1)
-	dots[1] = document.getElementById(groupName+2)
-	dots[2] = document.getElementById(groupName+3)
-	dots[3] = document.getElementById(groupName+4)
-	dots[4] = document.getElementById(groupName+5)
-	
-	if (enable1) { dots[0].disabled = false; }
-	if (enable2) { dots[1].disabled = false; }
-	if (enable3) { dots[2].disabled = false; }
-	if (enable4) { dots[3].disabled = false; }
-	if (enable5) { dots[4].disabled = false; }
+	disableDotsInMetaGroup("Talents");
+	disableDotsInMetaGroup("Skills");
+	disableDotsInMetaGroup("Knowledges");
 }
 
 function decrementCounter() {
@@ -252,39 +447,44 @@ function updateScreen() /* makes sure all of the things that should be updated, 
 function nextStep() /* Advances to the next step */{
 	abort = true;
 	switch (window.stepName) {
-		case "Step1":
-			stepName = "Step2";
-			step2();
-			break;
-			
-		case "Step2":
-			stepName = "Step3";
-			step3();
+		case "Step00":
+			stepName = "Step01";
+			Step01();
 			break;
 		
-		case "Step3":
-			stepName = "Step4";
-			step4();
+		case "Step01":
+			stepName = "Step02";
+			Step02();
 			break;
 			
-		case "Step4":
-			stepName = "Step5";
-			step5();
+		case "Step02":
+			stepName = "Step03";
+			Step03();
+			break;
+		
+		case "Step03":
+			stepName = "Step04";
+			Step04();
 			break;
 			
-		case "Step5":
-			stepName = "Step6";
-			step6();
+		case "Step04":
+			stepName = "Step05";
+			Step05();
 			break;
 			
-		case "Step6":
-			stepName = "Step7";
-			step7();
+		case "Step05":
+			stepName = "Step06";
+			Step06();
 			break;
 			
-		case "Step7":
+		case "Step06":
+			stepName = "Step07";
+			Step07();
+			break;
+			
+		case "Step07":
 			stepName = "Step8";
-			step8();
+			Step8();
 			break;
 			
 		case "Step8":
@@ -297,3 +497,5 @@ function nextStep() /* Advances to the next step */{
 	flown = true;
 	updateScreen();
 }
+
+window.onload = function() { Step00(); };
