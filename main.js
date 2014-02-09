@@ -1,6 +1,7 @@
 var abort;
 var stepName = "Step00";
 var clan;
+var flown;
 
 /* Functional stuff */
 function flyoutOnRight() {
@@ -61,6 +62,7 @@ function disableDotsInGroup(groupName) /* str, dex, etc */ {
 
 function enableDotsInGroup(groupName, enable1, enable2, enable3, enable4, enable5) /* enableN are boolean */ {
 	var dots = [];
+		
 	dots[0] = document.getElementById(groupName+1)
 	dots[1] = document.getElementById(groupName+2)
 	dots[2] = document.getElementById(groupName+3)
@@ -245,211 +247,26 @@ function enableDotsInMetaGroup(metaGroup, enable1, enable2, enable3, enable4, en
 	}
 }
 
-/* procedural stuff */
-function Step00() /* Things to do onLoad */ {
-	disableDotsInGroup('All');
-	flyoutOnRight();
-	flyout();
-}
-
-function Step01() {
-	clan = document.getElementById('clanSelect');
-	clan = clan.value;
-			
-	if (clan == "Nosferatu") {
-		document.getElementById('app1').checked = false;
-	} else {
-		document.getElementById('app1').checked = true;
+function enableOnlyUnchecked() {
+	for (var i=0;i<document.getElementsByClassName('dot').length;i++) {
+		document.getElementsByClassName('dot')[i].disabled = document.getElementsByClassName('dot')[i].checked /* disabled if checked */
 	}
-
-	var disciplinesByClan = new Array();
-	disciplinesByClan['Assimite'] = ['Celerity', 'Obfuscate', 'Quietus'];
-	disciplinesByClan['Brujah'] = ['Celerity', 'Potence', 'Presence'];
-	disciplinesByClan['Gangrel'] = ['Animalism', 'Fortitude', 'Protean'];
-	disciplinesByClan['Giovanni'] = ['Dominate', 'Necromancy', 'Potence'];
-	disciplinesByClan['Lasombra'] = ['Dominate', 'Obtenebration', 'Potence'];
-	disciplinesByClan['Malkavian'] = ['Auspex', 'Dementation', 'Obfuscate'];
-	disciplinesByClan['Nosferatu'] = ['Animalism', 'Obfuscate', 'Potence'];
-	disciplinesByClan['Ravnos'] = ['Animalism', 'Chimerstry', 'Fortitude'];
-	disciplinesByClan['Toreador'] = ['Auspex', 'Celerity', 'Presence'];
-	disciplinesByClan['Tremere'] = ['Auspex', 'Dominate', 'Thaumaturgy'];
-	disciplinesByClan['Ventrue'] = ['Dominate', 'Fortitude', 'Presence'];
-	disciplinesByClan['Tzimisce'] = ['Animalism', 'Auspex', 'Vicissitude'];
-	disciplinesByClan['Setite'] = ['Obfuscate', 'Presence', 'Serpentis'];
-
-	var allDisciplines = [' ', 'Animalism', 'Auspex', 'Celerity', 'Chimerstry', 'Dementation', 'Dominate', 'Fortitude', 'Obfuscate', 'Obtenebration', 'Potence', 'Presence', 'Protean', 'Quietus', 'Serpentis', 'Vicissitude']
-
-	var thisClan = disciplinesByClan[clan];
-	console.log(thisClan);
-	var indisciplines = new Array();
-	var outdisciplines1 = new Array();
-	var outdisciplines2 = new Array();
-	var outdisciplines3 = new Array();
-			
-		document.getElementById('in-clan-disc1').innerText = thisClan[0];
-		document.getElementById('in-clan-disc2').innerText = thisClan[1];
-		document.getElementById('in-clan-disc3').innerText = thisClan[2];
-	
-	document.getElementById('clanName').innerHTML = "<h1>" + clan + "</h1>";
-	
-	window.nextStep();
 }
 
-function Step02() {
-	var blocker = document.createElement("div");
-	blocker.style.position = "absolute";
-	blocker.style.display = "inline";	
-	blocker.style.top = 220;
-	blocker.style.left = 15;
-	blocker.style.width = 300;
-	blocker.style.height = 115;
-	blocker.style.backgroundColor = "#000";
-	blocker.style.opacity = .5;
-	
-	window.leftBlocker = document.body.appendChild(blocker);
-	window.centerBlock = leftBlocker.cloneNode(false);
-	window.centerBlocker = document.body.appendChild(centerBlock);
-	window.rightBlock = leftBlocker.cloneNode(false);
-	window.rightBlocker = document.body.appendChild(rightBlock);
-	
-	centerBlocker.style.left = 325;
-	rightBlocker.style.left = 635;
-	
-	document.getElementById("dotCounter").innerText = "7";
-	
-	document.getElementById("Step01").className = "previous";
-	document.getElementById("Step02").className = "current";
-	
-	disableDotsInMetaGroup("Physical");
-	disableDotsInMetaGroup("Social");
-	disableDotsInMetaGroup("Mental");
-}
-
-function Step03() {	
-	document.getElementById("dotCounter").innerText = "5";
-	
-	document.getElementById("Step02").className = "previous";
-	document.getElementById("Step03").className = "current";
-	
-	disableDotsInMetaGroup("Physical");
-	disableDotsInMetaGroup("Social");
-	disableDotsInMetaGroup("Mental");
-}
-
-function Step04() {	
-	document.getElementById("dotCounter").innerText = "3";
-	
-	document.getElementById("Step03").className = "previous";
-	document.getElementById("Step04").className = "current";
-	
-	disableDotsInMetaGroup("Physical");
-	disableDotsInMetaGroup("Social");
-	disableDotsInMetaGroup("Mental");
-}
-
-function Step05() {
-	var blocker = document.createElement("div");
-	blocker.style.position = "absolute";
-	blocker.style.display = "inline";	
-	blocker.style.top = 365;
-	blocker.style.left = 15;
-	blocker.style.width = 300;
-	blocker.style.height = 285;
-	blocker.style.backgroundColor = "#000";
-	blocker.style.opacity = .5;
-	
-	window.leftBlocker = document.body.appendChild(blocker);
-	window.centerBlock = leftBlocker.cloneNode(false);
-	window.centerBlocker = document.body.appendChild(centerBlock);
-	window.rightBlock = leftBlocker.cloneNode(false);
-	window.rightBlocker = document.body.appendChild(rightBlock);
-	
-	centerBlocker.style.left = 325;
-	rightBlocker.style.left = 635;
-	
-	document.getElementById("dotCounter").innerText = "13";
-	
-	document.getElementById("Step04").className = "previous";
-	document.getElementById("Step05").className = "current";
-	
-	disableDotsInMetaGroup("Talents");
-	disableDotsInMetaGroup("Skills");
-	disableDotsInMetaGroup("Knowledges");
-}
-
-function Step06() {	
-	document.getElementById("dotCounter").innerText = "9";
-	
-	document.getElementById("Step05").className = "previous";
-	document.getElementById("Step06").className = "current";
-	
-	disableDotsInMetaGroup("Talents");
-	disableDotsInMetaGroup("Skills");
-	disableDotsInMetaGroup("Knowledges");
-}
-
-function Step07() {	
-	document.getElementById("dotCounter").innerText = "5";
-	
-	document.getElementById("Step06").className = "previous";
-	document.getElementById("Step07").className = "current";
-	
-	disableDotsInMetaGroup("Talents");
-	disableDotsInMetaGroup("Skills");
-	disableDotsInMetaGroup("Knowledges");
-}
-
-function Step08() {
-	document.getElementById("dotCounter").innerText = "3";
-	dotCounter.style.left = 150;
-	dotCounter.style.top = 690;
-	dotCounter.style.display = "block";
-	
-	document.getElementById("Step07").className = "previous";
-	document.getElementById("Step08").className = "current";
-	
-	disableDotsInGroup("All");
-	enableDotsInMetaGroup("In-Clan",true,true,true,false,false);
-}
-
-function Step09() {
-	document.getElementById("dotCounter").innerText = "5";
-	dotCounter.style.left = 460;
-	dotCounter.style.top = 690;
-	dotCounter.style.display = "block";
-	
-	document.getElementById("Step08").className = "previous";
-	document.getElementById("Step09").className = "current";
-	
-	disableDotsInGroup("All");
-	enableDotsInMetaGroup("Backgrounds",true,true,true,false,false);
-}
-
-function Step10() {
-	document.getElementById("dotCounter").innerText = "7";
-	dotCounter.style.left = 775;
-	dotCounter.style.top = 690;
-	dotCounter.style.display = "block";
-	
-	document.getElementById("Step09").className = "previous";
-	document.getElementById("Step10").className = "current";
-	
-	disableDotsInGroup("All");
-	enableDotsInMetaGroup("Virtues",true,true,true,true,true);
-}
-
-
-
-function decrementCounter() {
+function decrementCounter(step) {
 	var myValue = document.getElementById("dotCounter").innerText.valueOf();
-	myValue--;
+	for (var i=0;i<step;i++) {
+		myValue--;
+	}
 	document.getElementById("dotCounter").innerText = myValue;
 	updateScreen();
 }
 
-function incrementCounter() {
+function incrementCounter(step) {
 	var myValue = document.getElementById("dotCounter").innerText.valueOf();
-	myValue++;
+	for (var i=0;i<step;i++) {
+		myValue++;
+	}
 	document.getElementById("dotCounter").innerText = myValue;
 	updateScreen();
 }
@@ -505,22 +322,22 @@ function nextStep() /* Advances to the next step */{
 			break;
 			
 		case "Step07":
-			stepName = "Step8";
+			stepName = "Step08";
 			Step08();
 			break;
 			
 		case "Step08":
-			stepName = "Step8";
+			stepName = "Step09";
 			Step09();
 			break;
 		
 		case "Step09":
-			stepName = "Step9";
+			stepName = "Step10";
 			Step10();
 			break;
 			
 		case "Step10":
-			stepName = "Step10";
+			stepName = "Step11";
 			Step11();
 			break;
 	
@@ -530,4 +347,384 @@ function nextStep() /* Advances to the next step */{
 	updateScreen();
 }
 
-window.onload = function() { Step00(); };
+/* Event assignment stuff */
+function attributeSelectionBuilder() /* build the steps menu feature that allows the selection of attribute groups */ {
+	phys = document.getElementsByClassName("phy");
+	for (i=0,max = document.getElementsByClassName("phy").length;i<max;i++) {
+		phys[i].onclick = function() { 
+			leftBlocker.remove();
+			dotCounter.style.left = 170;
+			dotCounter.style.top = 260;
+			dotCounter.style.display = "block";
+			for (i=0,max = document.getElementsByClassName("phy").length;i<max;i++) {
+				phys[i].style.display = "none";
+			};
+			enableDotsInMetaGroup("Physical",false,true,true,true,false);
+		};
+	};
+	
+	soci = document.getElementsByClassName("soc");
+	for (i=0,max = document.getElementsByClassName("soc").length;i<max;i++) {
+		soci[i].onclick = function() { 
+			centerBlocker.remove();
+			dotCounter.style.left = 475;
+			dotCounter.style.top = 260;
+			dotCounter.style.display = "block";
+			for (i=0,max = document.getElementsByClassName("soc").length;i<max;i++) {
+				soci[i].style.display = "none";
+			};
+			enableDotsInMetaGroup("Social",false,true,true,true,false);
+			if (window.clan == "Nosferatu") { disableDotsInGroup("app"); };
+		};
+	};
+	
+	ment = document.getElementsByClassName("men");
+	for (i=0,max = document.getElementsByClassName("men").length;i<max;i++) {
+		ment[i].onclick = function() { 
+			rightBlocker.remove();
+			dotCounter.style.left = 785;
+			dotCounter.style.top = 260;
+			dotCounter.style.display = "block";
+			for (i=0,max = document.getElementsByClassName("men").length;i<max;i++) {
+				ment[i].style.display = "none";
+			};
+			enableDotsInMetaGroup("Mental",false,true,true,true,false);
+		};
+	};
+}
+
+function abilitySelectionBuilder() /* build the steps menu feature that allows the selection of ability groups */ {
+	tale = document.getElementsByClassName("tal");
+	for (i=0,max = document.getElementsByClassName("tal").length;i<max;i++) {
+		tale[i].onclick = function() { 
+			leftBlocker.remove();
+			dotCounter.style.left = 150;
+			dotCounter.style.top = 390;
+			dotCounter.style.display = "block";
+			for (i=0,max = document.getElementsByClassName("tal").length;i<max;i++) {
+				tale[i].style.display = "none";
+			};
+			enableDotsInMetaGroup("Talents",true,true,true,false,false);
+		};
+	};
+	
+	skil = document.getElementsByClassName("ski");
+	for (i=0,max = document.getElementsByClassName("ski").length;i<max;i++) {
+		skil[i].onclick = function() { 
+			centerBlocker.remove();
+			dotCounter.style.left = 460;
+			dotCounter.style.top = 390;
+			dotCounter.style.display = "block";
+			for (i=0,max = document.getElementsByClassName("ski").length;i<max;i++) {
+				skil[i].style.display = "none";
+			};
+			enableDotsInMetaGroup("Skills",true,true,true,false,false);
+		};
+	};
+	
+	know = document.getElementsByClassName("kno");
+	for (i=0,max = document.getElementsByClassName("kno").length;i<max;i++) {
+		know[i].onclick = function() { 
+			rightBlocker.remove();
+			dotCounter.style.left = 775;
+			dotCounter.style.top = 390;
+			dotCounter.style.display = "block";
+			for (i=0,max = document.getElementsByClassName("kno").length;i<max;i++) {
+				know[i].style.display = "none";
+			};
+			enableDotsInMetaGroup("Knowledges",true,true,true,false,false);
+		};
+	};
+}
+
+function initialDotSetup() {
+	allDots = document.getElementsByClassName("dot");
+	for (i=0,max = document.getElementsByClassName("dot").length;i<max;i++) {
+		allDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(1);
+			} else {
+				incrementCounter(1);
+			};
+		};
+	};
+}
+
+function freebieDotSetup() {
+	var allDots = document.getElementsByClassName("dot");
+	var attributeDots = new Array(45);
+	var abilityDots = new Array(150);
+	var disciplineDots = new Array(30);
+	var backgroundDots = new Array(30);
+	var virtueDots = new Array(15);
+	var humanityDots = new Array(10);
+	var willpowerDots = new Array(10);
+	
+	var i;
+	
+	for (i=0,max = allDots.length;i<max;i++) {
+		if (allDots[i].checked) {
+			allDots[i].disabled = true;
+		} else {
+			allDots[i].disabled = false;
+		}
+	}
+	
+	for (i=0;i<attributeDots.length;i++) {
+		attributeDots[i] = allDots[i];
+	}
+	
+	for (i=0;i<attributeDots.length;i++) {
+		attributeDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(5);
+			} else {
+				incrementCounter(5);
+			};
+		}
+	}
+	
+	for (i=0;i<abilityDots.length;i++) {
+		abilityDots[i] = allDots[i+attributeDots.length];
+	}
+	
+	for (i=0;i<abilityDots.length;i++) {
+		abilityDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(2);
+			} else {
+				incrementCounter(2);
+			};
+		}
+	}
+	
+	for (i=0;i<disciplineDots.length;i++) {
+		disciplineDots[i] = allDots[i+abilityDots.length];
+	}
+	
+	for (i=0;i<disciplineDots.length;i++) {
+		disciplineDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(7);
+			} else {
+				incrementCounter(7);
+			};
+		}
+	}
+	
+	for (i=0;i<backgroundDots.length;i++) {
+		backgroundDots[i] = allDots[i+disciplineDots.length];
+	}
+	
+	for (i=0;i<backgroundDots.length;i++) {
+		backgroundDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(1);
+			} else {
+				incrementCounter(1);
+			};
+		}
+	}
+	
+	for (i=0;i<virtueDots.length;i++) {
+		virtueDots[i] = allDots[i+backgroundDots.length];
+	}
+	
+	for (i=0;i<virtueDots.length;i++) {
+		virtueDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(2);
+			} else {
+				incrementCounter(2);
+			};
+		}
+	}
+	
+	for (i=0;i<humanityDots.length;i++) {
+		humanityDots[i] = allDots[i+virtueDots.length];
+	}
+	
+	for (i=0;i<humanityDots.length;i++) {
+		humanityDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(2);
+			} else {
+				incrementCounter(2);
+			};
+		}
+	}
+	
+	for (i=0;i<willpowerDots.length;i++) {
+		willpowerDots[i] = allDots[i+humanityDots.length];
+	}
+	
+	for (i=0;i<willpowerDots.length;i++) {
+		willpowerDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(1);
+			} else {
+				incrementCounter(1);
+			};
+		}
+	}
+}
+
+function xpDotSetup() {
+	var allDots = document.getElementsByClassName("dot");
+	var attributeDots = new Array(45);
+	var abilityDots = new Array(150);
+	var inDisciplineDots = new Array(15);
+	var outDisciplineDots = new Array(15);
+	var backgroundDots = new Array(30);
+	var virtueDots = new Array(15);
+	var humanityDots = new Array(10);
+	var willpowerDots = new Array(10);
+	
+	var i;	
+	
+	for (i=0,max = allDots.length;i<max;i++) {
+		if (allDots[i].checked) {
+			allDots[i].disabled = true;
+		} else {
+			allDots[i].disabled = false;
+		}
+	}
+	
+	for (i=0;i<attributeDots.length;i++) /* set variable */ {
+		attributeDots[i] = allDots[i];
+	}
+	
+	for (i=0;i<attributeDots.length;i++) /* add function */ {
+		attributeDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(4 * (i % 5));
+			} else {
+				incrementCounter(4 * (i % 5));
+			};
+			break;
+		}
+	}
+	
+	for (i=0;i<abilityDots.length;i++) /* set variable */ {
+		abilityDots[i] = allDots[i+attributeDots.length];
+	}
+	
+	for (i=0;i<abilityDots.length;i++) /* add function */ {
+		abilityDots[i].onclick = function() { 
+			if ((i % 5) === 0) {
+				if (this.checked) {
+					decrementCounter(3);
+				} else {
+					incrementCounter(3);
+				};
+			} else {
+				if (this.checked) {
+					decrementCounter(2 * (i % 5));
+				} else {
+					incrementCounter(2 * (i % 5));
+				};
+			}
+		}
+	}
+	
+	for (i=0;i<inDisciplineDots.length;i++) /* set variable */ {
+		inDisciplineDots[i] = allDots[i+abilityDots.length];
+	}
+	
+	for (i=0;i<inDisciplineDots.length;i++) /* add function */ {
+		inDisciplineDots[i].onclick = function() { 
+			if ((i % 5) === 0) {
+				if (this.checked) {
+					decrementCounter(10);
+				} else {
+					incrementCounter(10);
+				};
+			} else {
+				if (this.checked) {
+					decrementCounter(5 * (i % 5));
+				} else {
+					incrementCounter(5 * (i % 5));
+				};
+			}
+		}
+	}
+	
+	for (i=0;i<outDisciplineDots.length;i++) /* set variable */ {
+		outDisciplineDots[i] = allDots[i+inDisciplineDots.length];
+	}
+	
+	for (i=0;i<outDisciplineDots.length;i++) /* add function */ {
+		outDisciplineDots[i].onclick = function() { 
+			if ((i % 5) === 0) {
+				if (this.checked) {
+					decrementCounter(10);
+				} else {
+					incrementCounter(10);
+				};
+			} else {
+				if (this.checked) {
+					decrementCounter(7 * (i % 5));
+				} else {
+					incrementCounter(7 * (i % 5));
+				};
+			}
+		}
+	}
+	
+	for (i=0;i<backgroundDots.length;i++) /* set variable */ {
+		backgroundDots[i] = allDots[i+disciplineDots.length];
+	}
+	
+	for (i=0;i<backgroundDots.length;i++) /* set variable */ {
+		backgroundDots[i].disabled = true;
+	}
+	
+	for (i=0;i<backgroundDots.length;i++) /* add function */ {
+		backgroundDots[i].onclick = function() { 
+			/* no effect; cannot add dots to backgrounds with xp */
+		}
+	}
+	
+	for (i=0;i<virtueDots.length;i++) /* set variable */ {
+		virtueDots[i] = allDots[i+backgroundDots.length];
+	}
+	
+	for (i=0;i<virtueDots.length;i++) /* add function */ {
+		virtueDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(2 * (i % 5));
+			} else {
+				incrementCounter(2 * (i % 5));
+			};
+		}
+	}
+	
+	for (i=0;i<humanityDots.length;i++) /* set variable */ {
+		humanityDots[i] = allDots[i+virtueDots.length];
+	}
+	
+	for (i=0;i<humanityDots.length;i++) /* add function */ {
+		humanityDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(2 * (i % 5));
+			} else {
+				incrementCounter(2 * (i % 5));
+			};
+		}
+	}
+	
+	for (i=0;i<willpowerDots.length;i++) /* set variable */ {
+		willpowerDots[i] = allDots[i+humanityDots.length];
+	}
+	
+	for (i=0;i<willpowerDots.length;i++) /* add function */ {
+		willpowerDots[i].onclick = function() { 
+			if (this.checked) {
+				decrementCounter(i % 5);
+			} else {
+				incrementCounter(i % 5);
+			};
+		}
+	}
+}
+

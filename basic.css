@@ -106,123 +106,108 @@ input[type=text] {
 }
 
 .section {
-position: relative;
-width: 930px;
-display: inline-block;
-text-align: center;
-font-size: large;
-font-weight: bold;
-margin: 5px 0 10px 0;
-padding-top: 5px;
-border: black solid;
-border-width: 2px 0 0 0;
+	position: relative;
+	width: 930px;
+	display: inline-block;
+	text-align: center;
+	font-size: large;
+	font-weight: bold;
+	margin: 5px 0 10px 0;
+	padding-top: 5px;
+	border: black solid;
+	border-width: 2px 0 0 0;
 }
 
 .lefty {
-width: 300;
-position: relative;
-left: 10;
-top: 0;
-float: left;
-/*
-border-color: black;
-border-width: 1;
-border-style: solid;
-*/
-text-align: center;
-font-size: initial;
-font-weight: bold;
+	width: 300;
+	position: relative;
+	left: 10;
+	top: 0;
+	float: left;
+	text-align: center;
+	font-size: initial;
+	font-weight: bold;
 }
 
 .lefty div {
-text-align: left;
-font-weight: normal;
+	text-align: left;
+	font-weight: normal;
 }
 
 .centery {
-width: 300;
-position: relative;
-left: 20;
-top: 0;
-float: left;
-/*
-border-color: black;
-border-width: 1;
-border-style: solid;
-*/
-text-align: center;
-font-size: initial;
-font-weight: bold;
+	width: 300;
+	position: relative;
+	left: 20;
+	top: 0;
+	float: left;
+	text-align: center;
+	font-size: initial;
+	font-weight: bold;
 }
 
 .centery div {
-text-align: left;
-font-weight: normal;
+	text-align: left;
+	font-weight: normal;
 }
 
 .righty {
-width: 300;
-position: relative;
-left: 30;
-top: 0;
-float: left;
-/*
-border-color: black;
-border-width: 1;
-border-style: solid;
-*/
-text-align: center;
-font-size: initial;
-font-weight: bold;
+	width: 300;
+	position: relative;
+	left: 30;
+	top: 0;
+	float: left;
+	text-align: center;
+	font-size: initial;
+	font-weight: bold;
 }
 
 .righty div {
-text-align: left;
-font-weight: normal;
+	text-align: left;
+	font-weight: normal;
 }
 
 #humanity {
-text-align: center;
-font-weight: bold;
-height: 40px;
+	text-align: center;
+	font-weight: bold;
+	height: 40px;
 }
 
 #willpower {
-text-align: center;
-font-weight: bold;
-height: 40px;
+	text-align: center;
+	font-weight: bold;
+	height: 40px;
 }
 
 #bloodPool {
-text-align: center;
-font-weight: bold;
-height: 130px;
+	text-align: center;
+	font-weight: bold;
+	height: 130px;
 }
 
 #bloodPool input {
-visibility: visible;
+	visibility: visible;
 }
 
 .checks {
-position: absolute;
-left: 30;
+	position: absolute;
+	left: 30;
 }
 
 .checky {
-margin-bottom: 30px;
+	margin-bottom: 30px;
 }
 
 .container {
-border-style: solid;
-border-width: 1;
-display: inline-flex;
-right: 5;
-position: absolute;
+	border-style: solid;
+	border-width: 1;
+	display: inline-flex;
+	right: 5;
+	position: absolute;
 }
 
 .attr {
-height: 20;
-margin: 5;
+	height: 20;
+	margin: 5;
 }
 
 #phases {
@@ -238,34 +223,34 @@ margin: 5;
 }
 
 #phasesName {
-position: relative;
-left: -93;
-font-weight: bold;
-top: 100;
-display: inline-block;
-cursor: default;
-/* Safari */
--webkit-transform: rotate(-90deg);
+	position: relative;
+	left: -93;
+	font-weight: bold;
+	top: 100;
+	display: inline-block;
+	cursor: default;
+	/* Safari */
+	-webkit-transform: rotate(-90deg);
 
-/* Firefox */
--moz-transform: rotate(-90deg);
+	/* Firefox */
+	-moz-transform: rotate(-90deg);
 
-/* IE */
--ms-transform: rotate(-90deg);
+	/* IE */
+	-ms-transform: rotate(-90deg);
 
-/* Opera */
--o-transform: rotate(-90deg);
+	/* Opera */
+	-o-transform: rotate(-90deg);
 
-/* Internet Explorer */
-filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+	/* Internet Explorer */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
 }
 
 #phasesBody {
-left: -15px;
-top: -50px;
-width: 275px;
-display: none;
+	left: -15px;
+	top: -50px;
+	width: 275px;
+	display: none;
 }
 
 .current {
@@ -302,4 +287,22 @@ display: none;
 	position: absolute;
 	background-color: fff;
 	z-index: 25;
+}
+
+li {
+	cursor: pointer;
+}
+
+#freebiePoints {
+	right: 75px;
+	width: 50px;
+}
+
+#freebieUpdate {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	right: 10px;
+	position: absolute;
 }
