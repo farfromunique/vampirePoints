@@ -26,7 +26,7 @@ Definitions
 "White Wolf" means White Wolf Publishing Inc., online at www.white-wolf.com.
 
 The general layout of This Sheet, as well as the specifics of character generation (how many points are available at each step, the names of each item that points can go into, etc)
-are all Copyright White Wolf.
+are all Copyright White Wolf (© 2014 CCP hf. All rights reserved.)
 
 The specific implementation of This Sheet, including but not limited to the HTML, JavaScript, CSS and PHP code, are Copyright 2014 Aaron Coquet
 
