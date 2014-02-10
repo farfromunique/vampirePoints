@@ -461,6 +461,7 @@ function freebieDotSetup() {
 	var willpowerDots = new Array(10);
 	
 	var i;
+	var startPos=0;
 	
 	for (i=0,max = allDots.length;i<max;i++) {
 		if (allDots[i].checked) {
@@ -471,7 +472,7 @@ function freebieDotSetup() {
 	}
 	
 	for (i=0;i<attributeDots.length;i++) {
-		attributeDots[i] = allDots[i];
+		attributeDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<attributeDots.length;i++) {
@@ -484,8 +485,10 @@ function freebieDotSetup() {
 		}
 	}
 	
+	startPos = startPos + attributeDots.length;
+	
 	for (i=0;i<abilityDots.length;i++) {
-		abilityDots[i] = allDots[i+attributeDots.length];
+		abilityDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<abilityDots.length;i++) {
@@ -498,8 +501,10 @@ function freebieDotSetup() {
 		}
 	}
 	
+	startPos = startPos + abilityDots.length;
+	
 	for (i=0;i<disciplineDots.length;i++) {
-		disciplineDots[i] = allDots[i+abilityDots.length];
+		disciplineDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<disciplineDots.length;i++) {
@@ -512,8 +517,10 @@ function freebieDotSetup() {
 		}
 	}
 	
+	startPos = startPos + disciplineDots.length;
+	
 	for (i=0;i<backgroundDots.length;i++) {
-		backgroundDots[i] = allDots[i+disciplineDots.length];
+		backgroundDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<backgroundDots.length;i++) {
@@ -526,8 +533,10 @@ function freebieDotSetup() {
 		}
 	}
 	
+	startPos = startPos + backgroundDots.length;
+	
 	for (i=0;i<virtueDots.length;i++) {
-		virtueDots[i] = allDots[i+backgroundDots.length];
+		virtueDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<virtueDots.length;i++) {
@@ -540,8 +549,10 @@ function freebieDotSetup() {
 		}
 	}
 	
+	startPos = startPos + virtueDots.length;
+	
 	for (i=0;i<humanityDots.length;i++) {
-		humanityDots[i] = allDots[i+virtueDots.length];
+		humanityDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<humanityDots.length;i++) {
@@ -554,8 +565,10 @@ function freebieDotSetup() {
 		}
 	}
 	
+	startPos = startPos + humanityDots.length;
+	
 	for (i=0;i<willpowerDots.length;i++) {
-		willpowerDots[i] = allDots[i+humanityDots.length];
+		willpowerDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<willpowerDots.length;i++) {
@@ -580,7 +593,8 @@ function xpDotSetup() {
 	var humanityDots = new Array(10);
 	var willpowerDots = new Array(10);
 	
-	var i;	
+	var i;
+	var startPos=0;
 	
 	for (i=0,max = allDots.length;i<max;i++) {
 		if (allDots[i].checked) {
@@ -591,7 +605,7 @@ function xpDotSetup() {
 	}
 	
 	for (i=0;i<attributeDots.length;i++) /* set variable */ {
-		attributeDots[i] = allDots[i];
+		attributeDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<attributeDots.length;i++) /* add function */ {
@@ -605,8 +619,10 @@ function xpDotSetup() {
 		}
 	}
 	
+	startPos = startPos + attributeDots.length;
+	
 	for (i=0;i<abilityDots.length;i++) /* set variable */ {
-		abilityDots[i] = allDots[i+attributeDots.length];
+		abilityDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<abilityDots.length;i++) /* add function */ {
@@ -627,8 +643,10 @@ function xpDotSetup() {
 		}
 	}
 	
+	startPos = startPos + abilityDots.length;
+	
 	for (i=0;i<inDisciplineDots.length;i++) /* set variable */ {
-		inDisciplineDots[i] = allDots[i+abilityDots.length];
+		inDisciplineDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<inDisciplineDots.length;i++) /* add function */ {
@@ -649,8 +667,10 @@ function xpDotSetup() {
 		}
 	}
 	
+	startPos = startPos + inDisciplineDots.length;
+	
 	for (i=0;i<outDisciplineDots.length;i++) /* set variable */ {
-		outDisciplineDots[i] = allDots[i+inDisciplineDots.length];
+		outDisciplineDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<outDisciplineDots.length;i++) /* add function */ {
@@ -671,8 +691,10 @@ function xpDotSetup() {
 		}
 	}
 	
+	startPos = startPos + outDisciplineDots.length;
+	
 	for (i=0;i<backgroundDots.length;i++) /* set variable */ {
-		backgroundDots[i] = allDots[i+disciplineDots.length];
+		backgroundDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<backgroundDots.length;i++) /* set variable */ {
@@ -685,8 +707,10 @@ function xpDotSetup() {
 		}
 	}
 	
+	startPos = startPos + backgroundDots.length;
+	
 	for (i=0;i<virtueDots.length;i++) /* set variable */ {
-		virtueDots[i] = allDots[i+backgroundDots.length];
+		virtueDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<virtueDots.length;i++) /* add function */ {
@@ -699,8 +723,10 @@ function xpDotSetup() {
 		}
 	}
 	
+	startPos = startPos + virtueDots.length;
+	
 	for (i=0;i<humanityDots.length;i++) /* set variable */ {
-		humanityDots[i] = allDots[i+virtueDots.length];
+		humanityDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<humanityDots.length;i++) /* add function */ {
@@ -713,8 +739,10 @@ function xpDotSetup() {
 		}
 	}
 	
+	startPos = startPos + humanityDots.length;
+	
 	for (i=0;i<willpowerDots.length;i++) /* set variable */ {
-		willpowerDots[i] = allDots[i+humanityDots.length];
+		willpowerDots[i] = allDots[i+startPos];
 	}
 	
 	for (i=0;i<willpowerDots.length;i++) /* add function */ {
