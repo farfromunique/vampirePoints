@@ -247,6 +247,38 @@ function enableDotsInMetaGroup(metaGroup, enable1, enable2, enable3, enable4, en
 	}
 }
 
+function checkGeneration() {
+	var dropdowns = document.getElementsByTagName('select');
+	var pool;
+	for (var i=1;i<dropdowns.length;i++) /* Skipping the first one, because it's not in the group */ {
+		if (dropdowns[i].value == "Generation") {
+			if (document.getElementById(dropdowns[i].id.slice(0,6)+'-5').checked) {
+				document.getElementById('generation').value = '8';
+				pool = 15;
+			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-4').checked) {
+				document.getElementById('generation').value = '9';
+				pool = 14;
+			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-3').checked) {	
+				document.getElementById('generation').value = '10';
+				pool = 13;
+			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-2').checked) {	
+				document.getElementById('generation').value = '11';
+				pool = 12;
+			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-1').checked) {	
+				document.getElementById('generation').value = '12';
+				pool = 11;
+			} else {
+				document.getElementById('generation').value = '13';
+			}
+		}
+	}
+	var blood = document.getElementsByClassName('blood');
+	for (i=blood.length-1;i>pool;i--) {
+		blood[i].checked = true;
+		blood[i].disabled = true;
+	}
+}
+
 function enableOnlyUnchecked() {
 	for (var i=0;i<document.getElementsByClassName('dot').length;i++) {
 		document.getElementsByClassName('dot')[i].disabled = document.getElementsByClassName('dot')[i].checked /* disabled if checked */
@@ -340,6 +372,11 @@ function nextStep() /* Advances to the next step */{
 			stepName = "Step11";
 			Step11();
 			break;
+			
+		case "Step11":
+			stepName = "Step12";
+			Step12();
+			break;
 	
 	
 	};
@@ -359,6 +396,7 @@ function attributeSelectionBuilder() /* build the steps menu feature that allows
 			for (i=0,max = document.getElementsByClassName("phy").length;i<max;i++) {
 				phys[i].style.display = "none";
 			};
+			this.parentNode.style.display = 'none';
 			enableDotsInMetaGroup("Physical",false,true,true,true,false);
 		};
 	};
@@ -373,6 +411,7 @@ function attributeSelectionBuilder() /* build the steps menu feature that allows
 			for (i=0,max = document.getElementsByClassName("soc").length;i<max;i++) {
 				soci[i].style.display = "none";
 			};
+			this.parentNode.style.display = 'none';
 			enableDotsInMetaGroup("Social",false,true,true,true,false);
 			if (window.clan == "Nosferatu") { disableDotsInGroup("app"); };
 		};
@@ -388,6 +427,7 @@ function attributeSelectionBuilder() /* build the steps menu feature that allows
 			for (i=0,max = document.getElementsByClassName("men").length;i<max;i++) {
 				ment[i].style.display = "none";
 			};
+			this.parentNode.style.display = 'none';
 			enableDotsInMetaGroup("Mental",false,true,true,true,false);
 		};
 	};
@@ -404,6 +444,7 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 			for (i=0,max = document.getElementsByClassName("tal").length;i<max;i++) {
 				tale[i].style.display = "none";
 			};
+			this.parentNode.style.display = 'none';
 			enableDotsInMetaGroup("Talents",true,true,true,false,false);
 		};
 	};
@@ -418,6 +459,7 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 			for (i=0,max = document.getElementsByClassName("ski").length;i<max;i++) {
 				skil[i].style.display = "none";
 			};
+			this.parentNode.style.display = 'none';
 			enableDotsInMetaGroup("Skills",true,true,true,false,false);
 		};
 	};
@@ -432,6 +474,7 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 			for (i=0,max = document.getElementsByClassName("kno").length;i<max;i++) {
 				know[i].style.display = "none";
 			};
+			this.parentNode.style.display = 'none';
 			enableDotsInMetaGroup("Knowledges",true,true,true,false,false);
 		};
 	};

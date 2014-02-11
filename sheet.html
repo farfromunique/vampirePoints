@@ -47,9 +47,11 @@
 			Step 2
 			<div>
 				Choose an attribute group to be PRIMARY (gets 7 dots added):
-				<div class="phy"><ul><li>Physical</li></ul></div>
-				<div class="soc"><ul><li>Social</li></ul></div>
-				<div class="men"><ul><li>Mental</li></ul></div>
+				<div>
+					<div class="phy"><ul><li>Physical</li></ul></div>
+					<div class="soc"><ul><li>Social</li></ul></div>
+					<div class="men"><ul><li>Mental</li></ul></div>
+				</div><br />
 				... then fill in that many dots.
 			</div>
 		</div>
@@ -57,9 +59,11 @@
 			Step 3
 			<div>
 				Choose an attribute group to be SECONDARY (gets 5 dots added):
-				<div class="phy"><ul><li>Physical</li></ul></div>
-				<div class="soc"><ul><li>Social</li></ul></div>
-				<div class="men"><ul><li>Mental</li></ul></div>
+				<div>
+					<div class="phy"><ul><li>Physical</li></ul></div>
+					<div class="soc"><ul><li>Social</li></ul></div>
+					<div class="men"><ul><li>Mental</li></ul></div>
+				</div><br />
 				... then fill in that many dots.
 			</div>
 		</div>
@@ -67,9 +71,11 @@
 			Step 4
 			<div>
 				Choose an attribute group to be TERTIARY (gets 3 dots added):
-				<div class="phy"><ul><li>Physical</li></ul></div>
-				<div class="soc"><ul><li>Social</li></ul></div>
-				<div class="men"><ul><li>Mental</li></ul></div>
+				<div>
+					<div class="phy"><ul><li>Physical</li></ul></div>
+					<div class="soc"><ul><li>Social</li></ul></div>
+					<div class="men"><ul><li>Mental</li></ul></div>
+				</div><br />
 				... then fill in that many dots.
 			</div>
 		</div>
@@ -77,9 +83,11 @@
 			Step 5
 			<div>
 				Choose an ability group to be PRIMARY (gets 7 dots added):
-				<div class="tal"><ul><li>Talents</li></ul></div>
-				<div class="ski"><ul><li>Skills</li></ul></div>
-				<div class="kno"><ul><li>Knowledges</li></ul></div>
+				<div>
+					<div class="tal"><ul><li>Talents</li></ul></div>
+					<div class="ski"><ul><li>Skills</li></ul></div>
+					<div class="kno"><ul><li>Knowledges</li></ul></div>
+				</div><br />
 				... then fill in that many dots.
 			</div>
 		</div>
@@ -87,9 +95,11 @@
 			Step 6
 			<div>
 				Choose an ability group to be PRIMARY (gets 7 dots added):
-				<div class="tal"><ul><li>Talents</li></ul></div>
-				<div class="ski"><ul><li>Skills</li></ul></div>
-				<div class="kno"><ul><li>Knowledges</li></ul></div>
+				<div>
+					<div class="tal"><ul><li>Talents</li></ul></div>
+					<div class="ski"><ul><li>Skills</li></ul></div>
+					<div class="kno"><ul><li>Knowledges</li></ul></div>
+				</div><br />
 				... then fill in that many dots.
 			</div>
 		</div>
@@ -97,9 +107,11 @@
 			Step 7
 			<div>
 				Choose an ability group to be PRIMARY (gets 7 dots added):
-				<div class="tal"><ul><li>Talents</li></ul></div>
-				<div class="ski"><ul><li>Skills</li></ul></div>
-				<div class="kno"><ul><li>Knowledges</li></ul></div>
+				<div>
+					<div class="tal"><ul><li>Talents</li></ul></div>
+					<div class="ski"><ul><li>Skills</li></ul></div>
+					<div class="kno"><ul><li>Knowledges</li></ul></div>
+				</div><br />
 				... then fill in that many dots.
 			</div>
 		</div>
@@ -129,6 +141,14 @@
 				<input type="text" id="freebiePoints" value="15"><input type="submit" id="freebieUpdate" value="update">
 			</div>
 		</div>
+		<div id="Step12" class="next">
+			Step 12
+			<div>
+				Spend XP (0 available).<br />
+				To override the XP you have, change this value:
+				<input type="text" id="xp" value="15"><input type="submit" id="xpUpdate" value="update">
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -148,7 +168,7 @@ Please input your character below. The flyout on the side will tell you what ste
 			</label>
 			<br />
 			<label>Generation
-				<input type='text' id='generation'>
+				<input type='text' id='generation' value='13'>
 			</label>
 		</div>
 		
@@ -1721,49 +1741,28 @@ Please input your character below. The flyout on the side will tell you what ste
 				</div>
 			</div>
 			<div id='bloodPool' class='attr'>Blood Pool<br />
-					<input type='checkbox' id='bloodPool-01'>
-					<input type='checkbox' id='bloodPool-02'>
-					<input type='checkbox' id='bloodPool-03'>
-					<input type='checkbox' id='bloodPool-04'>
-					<input type='checkbox' id='bloodPool-05'>
-					<input type='checkbox' id='bloodPool-06'>
-					<input type='checkbox' id='bloodPool-07'>
-					<input type='checkbox' id='bloodPool-08'>
-					<input type='checkbox' id='bloodPool-09'>
-					<input type='checkbox' id='bloodPool-10'>
+					<input type='checkbox' id='bloodPool-01' class='blood'>
+					<input type='checkbox' id='bloodPool-02' class='blood'>
+					<input type='checkbox' id='bloodPool-03' class='blood'>
+					<input type='checkbox' id='bloodPool-04' class='blood'>
+					<input type='checkbox' id='bloodPool-05' class='blood'>
+					<input type='checkbox' id='bloodPool-06' class='blood'>
+					<input type='checkbox' id='bloodPool-07' class='blood'>
+					<input type='checkbox' id='bloodPool-08' class='blood'>
+					<input type='checkbox' id='bloodPool-09' class='blood'>
+					<input type='checkbox' id='bloodPool-10' class='blood'>
 				<br />
-					<input type='checkbox' id='bloodPool-11'>
-					<input type='checkbox' id='bloodPool-12'>
-					<input type='checkbox' id='bloodPool-13'>
-					<input type='checkbox' id='bloodPool-14'>
-					<input type='checkbox' id='bloodPool-15'>
-					<input type='checkbox' id='bloodPool-16'>
-					<input type='checkbox' id='bloodPool-17'>
-					<input type='checkbox' id='bloodPool-18'>
-					<input type='checkbox' id='bloodPool-19'>
-					<input type='checkbox' id='bloodPool-20'>
-				<br />
-					<input type='checkbox' id='bloodPool-21'>
-					<input type='checkbox' id='bloodPool-22'>
-					<input type='checkbox' id='bloodPool-23'>
-					<input type='checkbox' id='bloodPool-24'>
-					<input type='checkbox' id='bloodPool-25'>
-					<input type='checkbox' id='bloodPool-26'>
-					<input type='checkbox' id='bloodPool-27'>
-					<input type='checkbox' id='bloodPool-28'>
-					<input type='checkbox' id='bloodPool-29'>
-					<input type='checkbox' id='bloodPool-30'>
-				<br />
-					<input type='checkbox' id='bloodPool-31'>
-					<input type='checkbox' id='bloodPool-32'>
-					<input type='checkbox' id='bloodPool-33'>
-					<input type='checkbox' id='bloodPool-34'>
-					<input type='checkbox' id='bloodPool-35'>
-					<input type='checkbox' id='bloodPool-36'>
-					<input type='checkbox' id='bloodPool-37'>
-					<input type='checkbox' id='bloodPool-38'>
-					<input type='checkbox' id='bloodPool-39'>
-					<input type='checkbox' id='bloodPool-40'>
+					<input type='checkbox' id='bloodPool-11' class='blood'>
+					<input type='checkbox' id='bloodPool-12' class='blood'>
+					<input type='checkbox' id='bloodPool-13' class='blood'>
+					<input type='checkbox' id='bloodPool-14' class='blood'>
+					<input type='checkbox' id='bloodPool-15' class='blood'>
+					<input type='checkbox' id='bloodPool-16' class='blood'>
+					<input type='checkbox' id='bloodPool-17' class='blood'>
+					<input type='checkbox' id='bloodPool-18' class='blood'>
+					<input type='checkbox' id='bloodPool-19' class='blood'>
+					<input type='checkbox' id='bloodPool-20' class='blood'>
+					<br />
 				</div>
 			</div>
 		</div>

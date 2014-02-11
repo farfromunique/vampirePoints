@@ -4,7 +4,7 @@ function Step00() /* Things to do onLoad */ {
 	flyout();
 }
 
-function Step01() {
+function Step01() /* Clan Selection */ {
 	stepName = 'Step01';
 	clan = document.getElementById('clanSelect');
 	clan = clan.value;
@@ -33,7 +33,6 @@ function Step01() {
 	var allDisciplines = [' ', 'Animalism', 'Auspex', 'Celerity', 'Chimerstry', 'Dementation', 'Dominate', 'Fortitude', 'Obfuscate', 'Obtenebration', 'Potence', 'Presence', 'Protean', 'Quietus', 'Serpentis', 'Vicissitude']
 
 	var thisClan = disciplinesByClan[clan];
-	console.log(thisClan);
 	var indisciplines = new Array();
 	var outdisciplines1 = new Array();
 	var outdisciplines2 = new Array();
@@ -48,7 +47,7 @@ function Step01() {
 	window.nextStep();
 }
 
-function Step02() {
+function Step02() /* Attributes (1 of 3) */ {
 	stepName = 'Step02';
 	var blocker = document.createElement("div");
 	blocker.style.position = "absolute";
@@ -79,7 +78,7 @@ function Step02() {
 	disableDotsInMetaGroup("Mental");
 }
 
-function Step03() {
+function Step03() /* Attributes (2 of 3) */ {
 	stepName = 'Step03';
 	document.getElementById("dotCounter").innerText = "5";
 	
@@ -91,7 +90,7 @@ function Step03() {
 	disableDotsInMetaGroup("Mental");
 }
 
-function Step04() {
+function Step04() /* Attributes (3 of 3) */  {
 	stepName = 'Step04';
 	document.getElementById("dotCounter").innerText = "3";
 	
@@ -103,7 +102,7 @@ function Step04() {
 	disableDotsInMetaGroup("Mental");
 }
 
-function Step05() {
+function Step05() /* Abilities (1 of 3) */ {
 	stepName = 'Step05';
 	var blocker = document.createElement("div");
 	blocker.style.position = "absolute";
@@ -134,7 +133,7 @@ function Step05() {
 	disableDotsInMetaGroup("Knowledges");
 }
 
-function Step06() {
+function Step06() /* Abilities (2 of 3) */ {
 	stepName = 'Step06';
 	document.getElementById("dotCounter").innerText = "9";
 	
@@ -146,7 +145,7 @@ function Step06() {
 	disableDotsInMetaGroup("Knowledges");
 }
 
-function Step07() {
+function Step07() /* Abilities (3 of 3) */ {
 	stepName = 'Step07';
 	document.getElementById("dotCounter").innerText = "5";
 	
@@ -158,7 +157,7 @@ function Step07() {
 	disableDotsInMetaGroup("Knowledges");
 }
 
-function Step08() {
+function Step08() /* Disciplines */ {
 	stepName = 'Step08';
 	document.getElementById("dotCounter").innerText = "3";
 	dotCounter.style.left = 150;
@@ -172,7 +171,7 @@ function Step08() {
 	enableDotsInMetaGroup("In-Clan",true,true,true,false,false);
 }
 
-function Step09() {
+function Step09() /* Backgrounds */ {
 	stepName = 'Step09';
 	document.getElementById("dotCounter").innerText = "5";
 	dotCounter.style.left = 460;
@@ -183,11 +182,14 @@ function Step09() {
 	document.getElementById("Step09").className = "current";
 	
 	disableDotsInGroup("All");
-	enableDotsInMetaGroup("Backgrounds",true,true,true,false,false);
+	enableDotsInMetaGroup("Backgrounds",true,true,true,true,true);
 }
 
-function Step10() {
+function Step10() /* Virtues */ {
 	stepName = 'Step10';
+	
+	checkGeneration()
+	
 	document.getElementById("dotCounter").innerText = "7";
 	dotCounter.style.left = 775;
 	dotCounter.style.top = 690;
@@ -200,7 +202,7 @@ function Step10() {
 	enableDotsInMetaGroup("Virtues",true,true,true,true,true);
 }
 
-function Step11() {
+function Step11() /* Freebie Points */ {
 	var humanity = 0;
 	
 	stepName = 'Step11';
@@ -232,8 +234,27 @@ function Step11() {
 	freebieDotSetup();
 }
 
+function Step12() /* Experience Points */ {
+	stepName = 'Step12';
+	
+	document.getElementById("dotCounter").innerText = document.getElementById("xp").value;
+	dotCounter.style.left = 945;
+	dotCounter.style.top = 125;
+	dotCounter.style.display = "block";
+	
+	document.getElementById("Step11").className = "previous";
+	document.getElementById("Step12").className = "current";
+	
+	enableOnlyUnchecked();
+	xpDotSetup();
+}
+
 function updateFreebies() {
 	document.getElementById('dotCounter').innerText = document.getElementById('freebiePoints').value;
+}
+
+function updateXP() {
+	document.getElementById('dotCounter').innerText = document.getElementById('xp').value;
 }
 
 document.addEventListener('DOMContentLoaded',function() {
@@ -248,10 +269,11 @@ document.addEventListener('DOMContentLoaded',function() {
 		};
 	};
 	
-    addEventToID("charSheet","Click","flyin()");
+	addEventToID("charSheet","Click","flyin()");
 	addEventToID("phases","Click","flyout()");
 	addEventToID("clanSelect","Change","Step01()");
-	addEventToID("","Click","");
+	addEventToID("freebieUpdate","Click","updateFreebies()");
+	addEventToID("xpUpdate","Click","updateXP()");
 	
 	if (document.getElementById('Step02')) {
 		attributeSelectionBuilder();
@@ -265,6 +287,5 @@ document.addEventListener('DOMContentLoaded',function() {
 	
 	Step00();
 	
-}
-);
+});
 
