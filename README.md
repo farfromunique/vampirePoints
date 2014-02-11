@@ -3,9 +3,14 @@ vampirePoints
 
 A character creation guide (with minimal rules-checking) for Vampire: the Masquerade.
 
+Compatibility
+==============
+Browser compatibility rtacker: Issue #19
+Tested and developed in Chrome 32.0.1700.107 m using no addons. (2/11/2014)
+
 Instructions
 ============
-Launch sheet.html in a browser and have at it!
+Extract all files to an accessible directory, and load index.html in your favorite browser!
 
 Sources
 =======
