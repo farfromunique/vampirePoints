@@ -1,3 +1,37 @@
+function flyoutOnRight() {
+	window.flown = false;
+	window.stepName = "Step01";
+	window.phases = document.getElementById("phases");
+	window.phasesName = document.getElementById("phasesName");
+	window.phasesBody = document.getElementById("phasesBody");
+	
+	phases.style.width = 325;
+	phases.style.left = (window.innerWidth - 45);
+	phases.style.height = (window.innerHeight * .75);
+}
+
+function flyout() {
+	window.phases.style.left = window.innerWidth - (window.phases.style.width.replace("px","").valueOf());
+	window.flown = true;
+	phasesName = document.getElementById("phasesName");
+	phasesBody = document.getElementById("phasesBody");
+	
+	phasesName.style.display = "none";
+	phasesBody.style.display = "block";
+}
+
+function flyin() {
+	if (abort) {
+		abort = false;
+		return;
+	}
+	window.phases.style.left = window.innerWidth - 45;
+	window.flown = false;
+	
+	phasesName.style.display = "inline-block";
+	phasesBody.style.display = "none";
+}
+
 function Step00() /* Things to do onLoad */ {
 	disableDotsInGroup('All');
 	flyoutOnRight();
@@ -38,9 +72,9 @@ function Step01() /* Clan Selection */ {
 	var outdisciplines2 = new Array();
 	var outdisciplines3 = new Array();
 			
-		document.getElementById('in-clan-disc1').innerText = thisClan[0];
-		document.getElementById('in-clan-disc2').innerText = thisClan[1];
-		document.getElementById('in-clan-disc3').innerText = thisClan[2];
+		document.getElementById('in-clan-disc1').innerHTML = thisClan[0];
+		document.getElementById('in-clan-disc2').innerHTML = thisClan[1];
+		document.getElementById('in-clan-disc3').innerHTML = thisClan[2];
 	
 	document.getElementById('clanName').innerHTML = "<h1>" + clan + "</h1>";
 	
@@ -68,7 +102,7 @@ function Step02() /* Attributes (1 of 3) */ {
 	centerBlocker.style.left = 325;
 	rightBlocker.style.left = 635;
 	
-	document.getElementById("dotCounter").innerText = "7";
+	document.getElementById("dotCounter").innerHTML = "7";
 	
 	document.getElementById("Step01").className = "previous";
 	document.getElementById("Step02").className = "current";
@@ -80,7 +114,7 @@ function Step02() /* Attributes (1 of 3) */ {
 
 function Step03() /* Attributes (2 of 3) */ {
 	stepName = 'Step03';
-	document.getElementById("dotCounter").innerText = "5";
+	document.getElementById("dotCounter").innerHTML = "5";
 	
 	document.getElementById("Step02").className = "previous";
 	document.getElementById("Step03").className = "current";
@@ -92,7 +126,7 @@ function Step03() /* Attributes (2 of 3) */ {
 
 function Step04() /* Attributes (3 of 3) */  {
 	stepName = 'Step04';
-	document.getElementById("dotCounter").innerText = "3";
+	document.getElementById("dotCounter").innerHTML = "3";
 	
 	document.getElementById("Step03").className = "previous";
 	document.getElementById("Step04").className = "current";
@@ -123,7 +157,7 @@ function Step05() /* Abilities (1 of 3) */ {
 	centerBlocker.style.left = 325;
 	rightBlocker.style.left = 635;
 	
-	document.getElementById("dotCounter").innerText = "13";
+	document.getElementById("dotCounter").innerHTML = "13";
 	
 	document.getElementById("Step04").className = "previous";
 	document.getElementById("Step05").className = "current";
@@ -135,7 +169,7 @@ function Step05() /* Abilities (1 of 3) */ {
 
 function Step06() /* Abilities (2 of 3) */ {
 	stepName = 'Step06';
-	document.getElementById("dotCounter").innerText = "9";
+	document.getElementById("dotCounter").innerHTML = "9";
 	
 	document.getElementById("Step05").className = "previous";
 	document.getElementById("Step06").className = "current";
@@ -147,7 +181,7 @@ function Step06() /* Abilities (2 of 3) */ {
 
 function Step07() /* Abilities (3 of 3) */ {
 	stepName = 'Step07';
-	document.getElementById("dotCounter").innerText = "5";
+	document.getElementById("dotCounter").innerHTML = "5";
 	
 	document.getElementById("Step06").className = "previous";
 	document.getElementById("Step07").className = "current";
@@ -159,7 +193,7 @@ function Step07() /* Abilities (3 of 3) */ {
 
 function Step08() /* Disciplines */ {
 	stepName = 'Step08';
-	document.getElementById("dotCounter").innerText = "3";
+	document.getElementById("dotCounter").innerHTML = "3";
 	dotCounter.style.left = 150;
 	dotCounter.style.top = 690;
 	dotCounter.style.display = "block";
@@ -173,7 +207,7 @@ function Step08() /* Disciplines */ {
 
 function Step09() /* Backgrounds */ {
 	stepName = 'Step09';
-	document.getElementById("dotCounter").innerText = "5";
+	document.getElementById("dotCounter").innerHTML = "5";
 	dotCounter.style.left = 460;
 	dotCounter.style.top = 690;
 	dotCounter.style.display = "block";
@@ -190,7 +224,7 @@ function Step10() /* Virtues */ {
 	
 	checkGeneration()
 	
-	document.getElementById("dotCounter").innerText = "7";
+	document.getElementById("dotCounter").innerHTML = "7";
 	dotCounter.style.left = 775;
 	dotCounter.style.top = 690;
 	dotCounter.style.display = "block";
@@ -207,7 +241,7 @@ function Step11() /* Freebie Points */ {
 	
 	stepName = 'Step11';
 	
-	document.getElementById("dotCounter").innerText = document.getElementById("freebiePoints").value;
+	document.getElementById("dotCounter").innerHTML = document.getElementById("freebiePoints").value;
 	dotCounter.style.left = 945;
 	dotCounter.style.top = 125;
 	dotCounter.style.display = "block";
@@ -237,7 +271,7 @@ function Step11() /* Freebie Points */ {
 function Step12() /* Experience Points */ {
 	stepName = 'Step12';
 	
-	document.getElementById("dotCounter").innerText = document.getElementById("xp").value;
+	document.getElementById("dotCounter").innerHTML = document.getElementById("xp").value;
 	dotCounter.style.left = 945;
 	dotCounter.style.top = 125;
 	dotCounter.style.display = "block";
@@ -250,11 +284,11 @@ function Step12() /* Experience Points */ {
 }
 
 function updateFreebies() {
-	document.getElementById('dotCounter').innerText = document.getElementById('freebiePoints').value;
+	document.getElementById('dotCounter').innerHTML = document.getElementById('freebiePoints').value;
 }
 
 function updateXP() {
-	document.getElementById('dotCounter').innerText = document.getElementById('xp').value;
+	document.getElementById('dotCounter').innerHTML = document.getElementById('xp').value;
 }
 
 document.addEventListener('DOMContentLoaded',function() {

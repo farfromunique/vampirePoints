@@ -4,40 +4,6 @@ var clan;
 var flown;
 
 /* Functional stuff */
-function flyoutOnRight() {
-	window.flown = false;
-	window.stepName = "Step01";
-	window.phases = document.getElementById("phases");
-	window.phasesName = document.getElementById("phasesName");
-	window.phasesBody = document.getElementById("phasesBody");
-	
-	phases.style.width = 325;
-	phases.style.left = (window.innerWidth - 45);
-	phases.style.height = (window.innerHeight * .75);
-}
-
-function flyout() {
-	window.phases.style.left = window.innerWidth - (window.phases.style.width.replace("px","").valueOf());
-	window.flown = true;
-	phasesName = document.getElementById("phasesName");
-	phasesBody = document.getElementById("phasesBody");
-	
-	phasesName.style.display = "none";
-	phasesBody.style.display = "block";
-}
-
-function flyin() {
-	if (abort) {
-		abort = false;
-		return;
-	}
-	window.phases.style.left = window.innerWidth - 45;
-	window.flown = false;
-	
-	phasesName.style.display = "inline-block";
-	phasesBody.style.display = "none";
-}
-
 function disableDotsInGroup(groupName) /* str, dex, etc */ {
 	if (groupName == 'All') /* global disable button */ {
 		var allDots = document.getElementsByClassName('dot');
@@ -286,25 +252,25 @@ function enableOnlyUnchecked() {
 }
 
 function decrementCounter(step) {
-	var myValue = document.getElementById("dotCounter").innerText.valueOf();
+	var myValue = document.getElementById("dotCounter").innerHTML.valueOf();
 	for (var i=0;i<step;i++) {
 		myValue--;
 	}
-	document.getElementById("dotCounter").innerText = myValue;
+	document.getElementById("dotCounter").innerHTML = myValue;
 	updateScreen();
 }
 
 function incrementCounter(step) {
-	var myValue = document.getElementById("dotCounter").innerText.valueOf();
+	var myValue = document.getElementById("dotCounter").innerHTML.valueOf();
 	for (var i=0;i<step;i++) {
 		myValue++;
 	}
-	document.getElementById("dotCounter").innerText = myValue;
+	document.getElementById("dotCounter").innerHTML = myValue;
 	updateScreen();
 }
 
 function updateScreen() /* makes sure all of the things that should be updated, are */{
-	if (document.getElementById("dotCounter").innerText.valueOf() == 0) {
+	if (document.getElementById("dotCounter").innerHTML.valueOf() == 0) {
 		document.getElementById("dotCounter").style.display = "none"; 
 		nextStep();
 	};
@@ -319,62 +285,50 @@ function nextStep() /* Advances to the next step */{
 	abort = true;
 	switch (window.stepName) {
 		case "Step00":
-			stepName = "Step01";
 			Step01();
 			break;
 		
 		case "Step01":
-			stepName = "Step02";
 			Step02();
 			break;
 			
 		case "Step02":
-			stepName = "Step03";
 			Step03();
 			break;
 		
 		case "Step03":
-			stepName = "Step04";
 			Step04();
 			break;
 			
 		case "Step04":
-			stepName = "Step05";
 			Step05();
 			break;
 			
 		case "Step05":
-			stepName = "Step06";
 			Step06();
 			break;
 			
 		case "Step06":
-			stepName = "Step07";
 			Step07();
 			break;
 			
 		case "Step07":
-			stepName = "Step08";
 			Step08();
 			break;
 			
 		case "Step08":
-			stepName = "Step09";
 			Step09();
 			break;
 		
 		case "Step09":
-			stepName = "Step10";
 			Step10();
 			break;
 			
 		case "Step10":
-			stepName = "Step11";
 			Step11();
 			break;
 			
 		case "Step11":
-			stepName = "Step12";
 			Step12();
 			break;
 	
@@ -658,7 +612,6 @@ function xpDotSetup() {
 			} else {
 				incrementCounter(4 * (i % 5));
 			};
-			break;
 		}
 	}
 	

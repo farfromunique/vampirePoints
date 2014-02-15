@@ -5,8 +5,9 @@ A character creation guide (with minimal rules-checking) for Vampire: the Masque
 
 Compatibility
 ==============
-Browser compatibility rtacker: Issue #19
+Browser compatibility tracker: Issue #19
 Tested and developed in Chrome 32.0.1700.107 m using no addons. (2/11/2014)
+Tested and passed in Firefox 27 using no addons. (2/14/2014)
 
 Instructions
 ============
