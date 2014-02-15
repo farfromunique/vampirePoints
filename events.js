@@ -34,6 +34,7 @@ function flyin() {
 
 function Step00() /* Things to do onLoad */ {
 	disableDotsInGroup('All');
+	disableDotsInGroup('bloodPool');
 	flyoutOnRight();
 	flyout();
 }
@@ -233,11 +234,12 @@ function Step10() /* Virtues */ {
 	document.getElementById("Step10").className = "current";
 	
 	disableDotsInGroup("All");
-	enableDotsInMetaGroup("Virtues",true,true,true,true,true);
+	enableDotsInMetaGroup("Virtues",false,true,true,true,true);
 }
 
 function Step11() /* Freebie Points */ {
 	var humanity = 0;
+	var courage = 0;
 	
 	stepName = 'Step11';
 	
@@ -259,8 +261,12 @@ function Step11() /* Freebie Points */ {
 		document.getElementById('humanity' + (i+1)).disabled = true;
 	}
 	
-	for (i=0;i<5;i++) {
-		document.getElementById('willpower' + (i+1)).checked = document.getElementById('courage' + (i+1)).checked = true;
+	for (var i=0;i<5;i++) {
+		if (document.getElementById('courage' + (i+1)).checked) { courage++; };
+	}
+	
+	for (i=0;i<courage;i++) {
+		document.getElementById('willpower' + (i+1)).checked = true;
 		document.getElementById('willpower' + (i+1)).disabled = true;
 	}
 	

@@ -11,8 +11,16 @@ function disableDotsInGroup(groupName) /* str, dex, etc */ {
 			allDots[i].disabled = true;
 		};
 		
-	} else {
+	} else if (groupName == 'bloodPool') {
 		
+		var blood = document.getElementsByClassName('blood');
+		
+		for (var i=0;i<blood.length;i++) {
+			blood[i].disabled = true;
+		}
+		
+	} else {
+	
 		var dots = [];
 		dots[0] = document.getElementById(groupName+1)
 		dots[1] = document.getElementById(groupName+2)
