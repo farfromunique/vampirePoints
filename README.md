@@ -11,7 +11,17 @@ Tested and passed in Firefox 27 using no addons. (2/14/2014)
 
 Instructions
 ============
+To Use:
+-------
+Visit http://vampire.acwpd.com
+
+To Host:
+--------
+HTML edition (Local or hosted):
 Extract all files to an accessible directory, and load index.html in your favorite browser!
+
+PHP edition (hosted only):
+Extract all files to a server that supports PHP 5.4 or higher, and then view that page.
 
 Sources
 =======
@@ -23,7 +33,7 @@ Caveats, Warnings, Legal Stuff
 ==============================
 Definitions
 -----------
-"This Sheet" means the CSS, Javascript, HTML and PHP that are included in the project hosted at https://github.com/farfromunique/vampirrePoints
+"This Sheet" means the CSS, Javascript, HTML and PHP that are included in the project hosted at https://github.com/farfromunique/vampirePoints
 
 "Characters" means the concepts, distribution of dots, and specific combination of choices made when using This Sheet to generate a character.
 
@@ -52,3 +62,4 @@ Change Log
 1/1/2014: project start date.
 1/19/2014: uploaded to GitHub from local. All development so far has been written in Notepad++ and tested in Chrome 32.0.1700.76 m
 2/1/2014: Updated this document to reflect intent, as well as to add copyright notices.
+3/9/2014: Uploaded the PHP edition to GitHub; updated this document to reflect several changes.
