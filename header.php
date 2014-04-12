@@ -12,10 +12,3 @@ spl_autoload_register(function ($class) {
 		<script type="text/javascript" src="main.js"></script>
 		<script type="text/javascript" src="sheet.js"></script>
 	</head>
-	<body>
-		<div id="dotCounter">0</div>
-<?php
-	require_once("navbar.php");
-?>
-	
-	Please input your character below. The flyout on the side will tell you what step you're on.

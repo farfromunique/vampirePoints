@@ -45,9 +45,9 @@ function Step01() /* Clan Selection */ {
 	clan = clan.value;
 			
 	if (clan == "Nosferatu") {
-		document.getElementById('app1').checked = false;
+		document.getElementById('appea1').checked = false;
 	} else {
-		document.getElementById('app1').checked = true;
+		document.getElementById('appea1').checked = true;
 	}
 
 	var disciplinesByClan = new Array();
@@ -73,11 +73,13 @@ function Step01() /* Clan Selection */ {
 	var outdisciplines2 = new Array();
 	var outdisciplines3 = new Array();
 			
-		document.getElementById('in1').innerHTML = thisClan[0];
-		document.getElementById('in2').innerHTML = thisClan[1];
-		document.getElementById('in3').innerHTML = thisClan[2];
+		document.getElementById('in1').innerHTML = thisClan[0] + document.getElementById('in1').innerHTML.substr(3, document.getElementById('in1').innerHTML.length - 3);
+		document.getElementById('in2').innerHTML = thisClan[1] + document.getElementById('in2').innerHTML.substr(3, document.getElementById('in2').innerHTML.length - 3);
+		document.getElementById('in3').innerHTML = thisClan[2] + document.getElementById('in3').innerHTML.substr(3, document.getElementById('in3').innerHTML.length - 3);
 	
 	document.getElementById('clanName').innerHTML = "<h1>" + clan + "</h1>";
+	
+	window.initialDotSetup()
 	
 	window.nextStep();
 }
@@ -208,7 +210,7 @@ function Step09() /* Backgrounds */ {
 	stepName = 'Step09';
 	document.getElementById("dotCounter").innerHTML = "5";
 	dotCounter.style.left = 460;
-	dotCounter.style.top = 690;
+	dotCounter.style.top = 710;
 	dotCounter.style.display = "block";
 	
 	document.getElementById("Step08").className = "previous";
@@ -225,7 +227,7 @@ function Step10() /* Virtues */ {
 	
 	document.getElementById("dotCounter").innerHTML = "7";
 	dotCounter.style.left = 775;
-	dotCounter.style.top = 690;
+	dotCounter.style.top = 710;
 	dotCounter.style.display = "block";
 	
 	document.getElementById("Step09").className = "previous";

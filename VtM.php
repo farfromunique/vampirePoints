@@ -1,6 +1,7 @@
 <?php
 	$basic = [
 		'fluff' => [
+			'clan' => '',
 			'character' => '',
 			'player' => '',
 			'chronicle' => '',

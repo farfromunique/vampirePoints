@@ -1,3 +1,5 @@
+<div id="dotCounter">0</div>
+
 <?php
 	$nav = new navbar($basic['fluff']['game']);
 ?>
@@ -121,3 +123,5 @@
 		</div>
 	</div>
 </div>
+
+Please input your character below. The flyout on the side will tell you what step you're on.

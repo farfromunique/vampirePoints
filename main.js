@@ -53,71 +53,82 @@ function enableDotsInGroup(groupName, enable1, enable2, enable3, enable4, enable
 function disableDotsInMetaGroup(metaGroup) /* physical, mental, etc */ {
 	switch (metaGroup) {
 		case "Physical":
-			disableDotsInGroup("str");
-			disableDotsInGroup("dex");
-			disableDotsInGroup("sta");
+			disableDotsInGroup("stren");
+			disableDotsInGroup("dexte");
+			disableDotsInGroup("stami");
 			break;
 		
 		case "Social":
-			disableDotsInGroup("cha");
-			disableDotsInGroup("man");
-			disableDotsInGroup("app");
+			disableDotsInGroup("chari");
+			disableDotsInGroup("manip");
+			disableDotsInGroup("appea");
 			break;
 		
 		case "Mental":
-			disableDotsInGroup("per");
-			disableDotsInGroup("int");
-			disableDotsInGroup("wit");
+			disableDotsInGroup("perce");
+			disableDotsInGroup("intel");
+			disableDotsInGroup("wits");
 			break;
 		
 		case "Talents":
-			disableDotsInGroup("alertness");
-			disableDotsInGroup("athletics");
+			disableDotsInGroup("alert");
+			disableDotsInGroup("athle");
 			disableDotsInGroup("brawl");
 			disableDotsInGroup("dodge");
-			disableDotsInGroup("empathy");
-			disableDotsInGroup("expression");
-			disableDotsInGroup("intimidation");
-			disableDotsInGroup("leadership");
-			disableDotsInGroup("streetwise");
-			disableDotsInGroup("subterfuge");
+			disableDotsInGroup("empat");
+			disableDotsInGroup("expre");
+			disableDotsInGroup("intim");
+			disableDotsInGroup("leade");
+			disableDotsInGroup("stree");
+			disableDotsInGroup("subte");
 			break;
 		
 		case "Skills":
-			disableDotsInGroup("animalKen");
-			disableDotsInGroup("crafts");
+			disableDotsInGroup("anima");
+			disableDotsInGroup("craft");
 			disableDotsInGroup("drive");
-			disableDotsInGroup("etiquette");
-			disableDotsInGroup("firearms");
+			disableDotsInGroup("etiqu");
+			disableDotsInGroup("firea");
 			disableDotsInGroup("melee");
-			disableDotsInGroup("performance");
-			disableDotsInGroup("security");
-			disableDotsInGroup("stealth");
-			disableDotsInGroup("survival");
+			disableDotsInGroup("perfo");
+			disableDotsInGroup("secur");
+			disableDotsInGroup("steal");
+			disableDotsInGroup("survi");
 			break;
 		
 		case "Knowledges":
-			disableDotsInGroup("academics");
-			disableDotsInGroup("computer");
-			disableDotsInGroup("finance");
-			disableDotsInGroup("investigation");
+			disableDotsInGroup("acade");
+			disableDotsInGroup("compu");
+			disableDotsInGroup("finan");
+			disableDotsInGroup("inves");
 			disableDotsInGroup("law");
-			disableDotsInGroup("linguistics");
-			disableDotsInGroup("medicine");
-			disableDotsInGroup("occult");
-			disableDotsInGroup("politics");
-			disableDotsInGroup("science");
+			disableDotsInGroup("lingu");
+			disableDotsInGroup("medic");
+			disableDotsInGroup("occul");
+			disableDotsInGroup("polit");
+			disableDotsInGroup("scien");
 			break;
 		
 		case "In-Clan":
-			disableDotsInGroup("in-clan-disc1-");
-			disableDotsInGroup("in-clan-disc2-");
-			disableDotsInGroup("in-clan-disc3-");
+			disableDotsInGroup("in1");
+			disableDotsInGroup("in2");
+			disableDotsInGroup("in3");
 			break;
 			
 		case "Out-Clan":
+			disableDotsInGroup("ou1");
+			disableDotsInGroup("ou2");
+			disableDotsInGroup("ou3");
+			break;
 		
 		case "Backgrounds":
+			disableDotsInGroup("bk1");
+			disableDotsInGroup("bk2");
+			disableDotsInGroup("bk3");
+			disableDotsInGroup("bk4");
+			disableDotsInGroup("bk5");
+			disableDotsInGroup("bk6");
+			break;
 		
 		case "Virtues":
 		
@@ -131,81 +142,81 @@ function disableDotsInMetaGroup(metaGroup) /* physical, mental, etc */ {
 function enableDotsInMetaGroup(metaGroup, enable1, enable2, enable3, enable4, enable5) /* physical, mental, etc */ {
 	switch (metaGroup) {
 		case "Physical":
-			enableDotsInGroup("str", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("dex", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("sta", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("stren", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("dexte", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("stami", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Social":
-			enableDotsInGroup("cha", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("man", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("app", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("chari", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("manip", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("appea", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Mental":
-			enableDotsInGroup("per", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("int", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("wit", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("perce", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("intel", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("wits", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Talents":
-			enableDotsInGroup("alertness", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("athletics", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("alert", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("athle", enable1, enable2, enable3, enable4, enable5);
 			enableDotsInGroup("brawl", enable1, enable2, enable3, enable4, enable5);
 			enableDotsInGroup("dodge", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("empathy", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("expression", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("intimidation", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("leadership", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("streetwise", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("subterfuge", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("empat", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("expre", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("intim", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("leade", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("stree", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("subte", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Skills":
-			enableDotsInGroup("animalKen", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("crafts", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("anima", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("craft", enable1, enable2, enable3, enable4, enable5);
 			enableDotsInGroup("drive", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("etiquette", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("firearms", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("etiqu", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("firea", enable1, enable2, enable3, enable4, enable5);
 			enableDotsInGroup("melee", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("performance", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("security", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("stealth", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("survival", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("perfo", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("secur", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("steal", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("survi", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Knowledges":
-			enableDotsInGroup("academics", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("computer", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("finance", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("investigation", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("acade", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("compu", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("finan", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("inves", enable1, enable2, enable3, enable4, enable5);
 			enableDotsInGroup("law", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("linguistics", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("medicine", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("occult", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("politics", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("science", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("lingu", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("medic", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("occul", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("polit", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("scien", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "In-Clan":
-			enableDotsInGroup("in-clan-disc1-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("in-clan-disc2-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("in-clan-disc3-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("in1", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("in2", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("in3", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Out-Clan":
-			enableDotsInGroup("out-clan-disc1-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("out-clan-disc2-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("out-clan-disc3-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("ou1", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("ou2", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("ou3", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Backgrounds":
-			enableDotsInGroup("bkgd-1-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("bkgd-2-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("bkgd-3-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("bkgd-4-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("bkgd-5-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("bkgd-6-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk1", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk2", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk3", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk4", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk5", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk6", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Virtues":

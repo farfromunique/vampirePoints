@@ -1,9 +1,18 @@
 <?php
-	require_once('VtM.php');
 	
-	require_once('header.php');	
+	spl_autoload_register(function ($class) {
+		include 'classes/' . $class . '.class.php';
+	});
+
+	require_once('printme.php');
 	
-	$sheet = new sheet('',$basic);
+	$header = new header('web');
+	
+	$sheet = new sheet($basic, 'web');
+	
+	require_once('navbar.php');
+	
+	echo $header->showCode();
 	
 	echo $sheet->showCode();
 	
