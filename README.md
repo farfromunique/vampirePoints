@@ -6,7 +6,9 @@ A character creation guide (with minimal rules-checking) for Vampire: the Masque
 Compatibility
 ==============
 Browser compatibility tracker: Issue #19
+
 Tested and developed in Chrome 32.0.1700.107 m using no addons. (2/11/2014)
+
 Tested and passed in Firefox 27 using no addons. (2/14/2014)
 
 Instructions
@@ -16,6 +18,7 @@ Extract all files to an accessible directory, and load index.html in your favori
 Sources
 =======
 Frequent reference was made to White Wolf's book, "Vampire: the Masquerade - 20th Anniversary Edition".
+
 Clan names, Disciplines, Merits, Flaws, and various Other Things gathered from White Wolf's "Vampire: the Masquerade - 20th Anniversary Edition" as well as 
 the White Wolf Wiki (http://whitewolf.wikia.com).
 
@@ -49,6 +52,10 @@ In short, I'm not giving you a listing of how the rules work, I'm giving you a t
 
 Change Log
 ==========
-1/1/2014: project start date.
-1/19/2014: uploaded to GitHub from local. All development so far has been written in Notepad++ and tested in Chrome 32.0.1700.76 m
+1/1/2014: Project start date.
+
+1/19/2014: Uploaded to GitHub from local. All development so far has been written in Notepad++ and tested in Chrome 32.0.1700.76 m
+
 2/1/2014: Updated this document to reflect intent, as well as to add copyright notices.
+
+4/12/2014: Rewrote the backend to support dynamic sheet building in PHP, as well as adding hooks to allow printing,
