@@ -73,9 +73,9 @@ function Step01() /* Clan Selection */ {
 	var outdisciplines2 = new Array();
 	var outdisciplines3 = new Array();
 			
-		document.getElementById('in1').innerHTML = thisClan[0] + document.getElementById('in1').innerHTML.substr(3, document.getElementById('in1').innerHTML.length - 3);
-		document.getElementById('in2').innerHTML = thisClan[1] + document.getElementById('in2').innerHTML.substr(3, document.getElementById('in2').innerHTML.length - 3);
-		document.getElementById('in3').innerHTML = thisClan[2] + document.getElementById('in3').innerHTML.substr(3, document.getElementById('in3').innerHTML.length - 3);
+		changeFirstCharacters('in1', thisClan[0], 3);
+		changeFirstCharacters('in2', thisClan[1], 3);
+		changeFirstCharacters('in3', thisClan[2], 3);
 	
 	document.getElementById('clanName').innerHTML = "<h1>" + clan + "</h1>";
 	
@@ -216,6 +216,8 @@ function Step09() /* Backgrounds */ {
 	document.getElementById("Step08").className = "previous";
 	document.getElementById("Step09").className = "current";
 	
+	backgroundBuilder();
+	
 	disableDotsInGroup("All");
 	enableDotsInMetaGroup("Backgrounds",true,true,true,true,true);
 }
@@ -252,22 +254,22 @@ function Step11() /* Freebie Points */ {
 	document.getElementById("Step11").className = "current";
 	
 	for (var i=0;i<5;i++) {
-		if (document.getElementById('conscience' + (i+1)).checked) { humanity++; };
-		if (document.getElementById('selfControl' + (i+1)).checked) { humanity++; };
+		if (document.getElementById('consc' + (i+1)).checked) { humanity++; };
+		if (document.getElementById('self ' + (i+1)).checked) { humanity++; };
 	}
 	
 	for (i=0;i<humanity;i++) {
-		document.getElementById('humanity' + (i+1)).checked = true;
-		document.getElementById('humanity' + (i+1)).disabled = true;
+		document.getElementById('human' + (i+1)).checked = true;
+		document.getElementById('human' + (i+1)).disabled = true;
 	}
 	
 	for (var i=0;i<5;i++) {
-		if (document.getElementById('courage' + (i+1)).checked) { courage++; };
+		if (document.getElementById('coura' + (i+1)).checked) { courage++; };
 	}
 	
 	for (i=0;i<courage;i++) {
-		document.getElementById('willpower' + (i+1)).checked = true;
-		document.getElementById('willpower' + (i+1)).disabled = true;
+		document.getElementById('willp' + (i+1)).checked = true;
+		document.getElementById('willp' + (i+1)).disabled = true;
 	}
 	
 	enableOnlyUnchecked();

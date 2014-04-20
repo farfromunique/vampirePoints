@@ -220,9 +220,9 @@ function enableDotsInMetaGroup(metaGroup, enable1, enable2, enable3, enable4, en
 			break;
 		
 		case "Virtues":
-			enableDotsInGroup("conscience", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("selfControl", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("courage", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("consc", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("self ", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("coura", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		default:
@@ -235,30 +235,35 @@ function enableDotsInMetaGroup(metaGroup, enable1, enable2, enable3, enable4, en
 function checkGeneration() {
 	var dropdowns = document.getElementsByTagName('select');
 	var pool;
+	var background;
+	
 	for (var i=1;i<dropdowns.length;i++) /* Skipping the first one, because it's not in the group */ {
 		if (dropdowns[i].value == "Generation") {
-			if (document.getElementById(dropdowns[i].id.slice(0,6)+'-5').checked) {
+			background = "bk" + i;
+			console.log(background);
+			if (document.getElementById(background+'5').checked) {
 				document.getElementById('generation').value = '8';
 				pool = 15;
-			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-4').checked) {
+			} else if (document.getElementById(background+'4').checked) {
 				document.getElementById('generation').value = '9';
 				pool = 14;
-			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-3').checked) {	
+			} else if (document.getElementById(background+'3').checked) {	
 				document.getElementById('generation').value = '10';
 				pool = 13;
-			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-2').checked) {	
+			} else if (document.getElementById(background+'2').checked) {	
 				document.getElementById('generation').value = '11';
 				pool = 12;
-			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-1').checked) {	
+			} else if (document.getElementById(background+'1').checked) {	
 				document.getElementById('generation').value = '12';
 				pool = 11;
 			} else {
 				document.getElementById('generation').value = '13';
+				pool = 10;
 			}
 		}
 	}
 	var blood = document.getElementsByClassName('blood');
-	for (i=blood.length-1;i>pool;i--) {
+	for (i=blood.length-1;i>=pool;i--) {
 		blood[i].checked = true;
 		blood[i].disabled = true;
 	}
@@ -453,9 +458,39 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 	};
 }
 
+function backgroundBuilder() {
+	
+	document.getElementById('background1').onchange = function () {
+		document.getElementById("bk1").innerHTML = document.getElementById('background1').value + document.getElementById("bk1").innerHTML.substr(3, document.getElementById("bk1").innerHTML.length -3);
+		initialDotSetup();
+	}
+	document.getElementById('background2').onchange = function () {
+		document.getElementById("bk2").innerHTML = document.getElementById('background2').value + document.getElementById("bk2").innerHTML.substr(3, document.getElementById("bk2").innerHTML.length -3);
+		initialDotSetup();
+	}
+	document.getElementById('background3').onchange = function () {
+		document.getElementById("bk3").innerHTML = document.getElementById('background3').value + document.getElementById("bk3").innerHTML.substr(3, document.getElementById("bk3").innerHTML.length -3);
+		initialDotSetup();
+	}
+	document.getElementById('background4').onchange = function () {
+		document.getElementById("bk4").innerHTML = document.getElementById('background4').value + document.getElementById("bk4").innerHTML.substr(3, document.getElementById("bk4").innerHTML.length -3);
+		initialDotSetup();
+	}
+	document.getElementById('background5').onchange = function () {
+		document.getElementById("bk5").innerHTML = document.getElementById('background5').value + document.getElementById("bk5").innerHTML.substr(3, document.getElementById("bk5").innerHTML.length -3);
+		initialDotSetup();
+	}
+	document.getElementById('background6').onchange = function () {
+		document.getElementById("bk6").innerHTML = document.getElementById('background6').value + document.getElementById("bk6").innerHTML.substr(3, document.getElementById("bk6").innerHTML.length -3);
+		initialDotSetup();
+	}
+	
+}
+
 function initialDotSetup() {
 	allDots = document.getElementsByClassName("dot");
 	for (i=0,max = document.getElementsByClassName("dot").length;i<max;i++) {
+		removeAllMyEventListeners(allDots[i]);
 		allDots[i].onclick = function() { 
 			if (this.checked) {
 				decrementCounter(1);

@@ -276,7 +276,7 @@
 			'checked' => 1,
 			'disabled' => 10
 		],
-		'blood' =>  15
+		'blood' =>  10
 	];
 		
 	$simple = [
