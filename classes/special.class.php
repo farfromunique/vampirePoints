@@ -38,7 +38,7 @@ class special extends section {
 	
 	private function buildPrint() {
 		$this->printCode = '<div id="other" class="section">' . "\n" . '<br />';
-		$this->printCode .= '<div id="hum-will-blood" class="centery">' . "\n";
+		$this->printCode .= '<div class="lefty">&nbsp;</div>' . "\n" . '<div id="hum-will-blood" class="centery">' . "\n";
 		
 		for ($i = 0; $i < count($this->groups); $i++) {
 			$this->printCode .= $this->groups[$i]->showPrint();
