@@ -29,7 +29,7 @@ class special extends section {
 		for ($i = 0; $i < count($this->groups); $i++) {
 			$this->code .= $this->groups[$i]->showCode();
 		}
-		$this->code .= '<div class="righty">&nbsp;</div>' . "\n" . '</div>' . "\n" . '</div>' . "\n";
+		$this->code .= '<div class="righty">&nbsp;</div>' . "\n" . '</div>' . "\n";
 	}
 	
 	public function showCode() {

@@ -224,6 +224,15 @@ function enableDotsInMetaGroup(metaGroup, enable1, enable2, enable3, enable4, en
 			enableDotsInGroup("self ", enable1, enable2, enable3, enable4, enable5);
 			enableDotsInGroup("coura", enable1, enable2, enable3, enable4, enable5);
 			break;
+			
+		case "All":
+			var dots = [];
+			dots = document.getElementsByTagName("input")
+			for (var i=0;i<document.getElementsByTagName("input").length;i++) {
+				dots[i].disabled = false;
+			}
+			break;
+			
 		
 		default:
 			console.log("Error encountered when calling enableDotsInMetaGroup: bad metaGroup");

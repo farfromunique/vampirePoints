@@ -81,7 +81,7 @@ input[type=checkbox] {
 }
 
 .dots input[type=checkbox]:disabled + label:after {
-	background-image: url('noDot.png');
+	background-image: url('images/noDot.png');
 	content: '';
 }
 

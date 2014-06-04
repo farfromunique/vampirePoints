@@ -24,14 +24,11 @@ class attribute {
 		for ($i = 1; $i <= $this->numberOfDots; $i++) {
 			$disabled = true;
 			$checked = false;
-			if ($dotsArray['disabled'] >= $i) {
-				$disabled = true;
-			}
 			if ($dotsArray['checked'] >= $i) {
 				$checked = true;
 			}
 			$dotID = "$this->shortName$i";
-			$this->dots[$i] = new dot($dotID,$checked,$disabled,$target);
+			$this->dots[$i] = new dot($dotID,$checked,$target);
 		}
 		switch ($target) {
 			case 'web':

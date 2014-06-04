@@ -63,43 +63,43 @@
 						'<div id="plainText" class="section">' . "\n" . 
 							'<div id="text1" class="lefty">' . "\n" . 
 								'<label>Character\'s Name' . "\n" . 
-									'<input type="text" id="characterName"' . $character . '>' . "\n" . 
+									'<input type="text" id="characterName" name="characterName"' . $character . '>' . "\n" . 
 								'</label>' . "\n" . 
 								'<br />' . "\n" . 
 								'<label>Player' . "\n" . 
-									'<input type="text" id="player"' . $player . '>' . "\n" . 
+									'<input type="text" id="player" name="player"' . $player . '>' . "\n" . 
 								'</label>' . "\n" . 
 								'<br />' . "\n" . 
 								'<label>Chronicle' . "\n" . 
-									'<input type="text" id="chronicle"' . $chronicle . '>' . "\n" . 
+									'<input type="text" id="chronicle" name="chronicle"' . $chronicle . '>' . "\n" . 
 								'</label>' . "\n" . 
 								'<br />' . "\n" . 
 							'</div>' . "\n" . 
 							'<div id="text2" class="centery">' . "\n" . 
 								'<label>Nature' . "\n" . 
-									'<input type="text" id="nature"' . $nature . '>' . "\n" . 
+									'<input type="text" id="nature" name="nature"' . $nature . '>' . "\n" . 
 								'</label>' . "\n" . 
 								'<br />' . "\n" . 
 								'<label>Demeanor' . "\n" . 
-									'<input type="text" id="demeanor"' . $demeanor . '>' . "\n" . 
+									'<input type="text" id="demeanor" name="demeanor"' . $demeanor . '>' . "\n" . 
 								'</label>' . "\n" . 
 								'<br />' . "\n" . 
 								'<label>Concept' . "\n" . 
-									'<input type="text" id="concept"' . $concept . '>' . "\n" . 
+									'<input type="text" id="concept" name="concept"' . $concept . '>' . "\n" . 
 								'</label>' . "\n" . 
 								'<br />' . "\n" . 
 							'</div>' . "\n" . 
 							'<div id="text3" class="righty">' . "\n" . 
 								'<label>Generation' . "\n" . 
-									'<input type="text" id="generation"' . $generation . '>' . "\n" . 
+									'<input type="text" id="generation" name="generation"' . $generation . '>' . "\n" . 
 								'</label>' . "\n" . 
 								'<br />' . "\n" . 
 								'<label>Sire' . "\n" . 
-									'<input type="text" id="sire"' . $sire . '>' . "\n" . 
+									'<input type="text" id="sire" name="sire"' . $sire . '>' . "\n" . 
 								'</label>' . "\n" . 
 								'<br />' . "\n" . 
 								'<label>Title' . "\n" . 
-									'<input type="text" id="title"' . $title . '>' . "\n" . 
+									'<input type="text" id="title" name="title"' . $title . '>' . "\n" . 
 								'</label>' . "\n" . 
 							'</div>' . "\n" . 
 						'</div>' . "\n";

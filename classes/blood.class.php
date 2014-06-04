@@ -20,7 +20,7 @@ class blood {
 	
 	private function buildCode() {
 		$this->code = '<div class="bloodPool">' . "\n";
-		$this->code .= '<input type="checkbox" class="blood" id="' . $this->name . '"';
+		$this->code .= '<input type="checkbox" class="blood" id="' . $this->name . '" name="' . $this->name . '"';
 		if ($this->checked == 'yes') { $this->code .= ' checked="true"';}
 		$this->code .= ' disabled="disabled">' . "\n" . '<label for="' . $this->name . '"></label>' . "\n" . '</div>' . "\n";
 	}

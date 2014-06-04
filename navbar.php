@@ -20,9 +20,9 @@
 			<div>
 				Choose an attribute group to be PRIMARY (gets 7 dots added):
 				<div>
-					<div class="phy"><ul><li>Physical</li></ul></div>
-					<div class="soc"><ul><li>Social</li></ul></div>
-					<div class="men"><ul><li>Mental</li></ul></div>
+					<div class="phy" id="phy1"><ul><li>Physical</li></ul></div>
+					<div class="soc" id="soc1"><ul><li>Social</li></ul></div>
+					<div class="men" id="men1"><ul><li>Mental</li></ul></div>
 				</div><br />
 				... then fill in that many dots.
 			</div>
@@ -32,9 +32,9 @@
 			<div>
 				Choose an attribute group to be SECONDARY (gets 5 dots added):
 				<div>
-					<div class="phy"><ul><li>Physical</li></ul></div>
-					<div class="soc"><ul><li>Social</li></ul></div>
-					<div class="men"><ul><li>Mental</li></ul></div>
+					<div class="phy" id="phy2"><ul><li>Physical</li></ul></div>
+					<div class="soc" id="soc2"><ul><li>Social</li></ul></div>
+					<div class="men" id="men2"><ul><li>Mental</li></ul></div>
 				</div><br />
 				... then fill in that many dots.
 			</div>
@@ -44,9 +44,9 @@
 			<div>
 				Choose an attribute group to be TERTIARY (gets 3 dots added):
 				<div>
-					<div class="phy"><ul><li>Physical</li></ul></div>
-					<div class="soc"><ul><li>Social</li></ul></div>
-					<div class="men"><ul><li>Mental</li></ul></div>
+					<div class="phy" id="phy3"><ul><li>Physical</li></ul></div>
+					<div class="soc" id="soc3"><ul><li>Social</li></ul></div>
+					<div class="men" id="men3"><ul><li>Mental</li></ul></div>
 				</div><br />
 				... then fill in that many dots.
 			</div>
@@ -56,9 +56,9 @@
 			<div>
 				Choose an ability group to be PRIMARY (gets 7 dots added):
 				<div>
-					<div class="tal"><ul><li>Talents</li></ul></div>
-					<div class="ski"><ul><li>Skills</li></ul></div>
-					<div class="kno"><ul><li>Knowledges</li></ul></div>
+					<div class="tal" id="tal1"><ul><li>Talents</li></ul></div>
+					<div class="ski" id="ski1"><ul><li>Skills</li></ul></div>
+					<div class="kno" id="kno1"><ul><li>Knowledges</li></ul></div>
 				</div><br />
 				... then fill in that many dots.
 			</div>
@@ -68,9 +68,9 @@
 			<div>
 				Choose an ability group to be PRIMARY (gets 7 dots added):
 				<div>
-					<div class="tal"><ul><li>Talents</li></ul></div>
-					<div class="ski"><ul><li>Skills</li></ul></div>
-					<div class="kno"><ul><li>Knowledges</li></ul></div>
+					<div class="tal" id="tal2"><ul><li>Talents</li></ul></div>
+					<div class="ski" id="ski2"><ul><li>Skills</li></ul></div>
+					<div class="kno" id="kno2"><ul><li>Knowledges</li></ul></div>
 				</div><br />
 				... then fill in that many dots.
 			</div>
@@ -80,9 +80,9 @@
 			<div>
 				Choose an ability group to be PRIMARY (gets 7 dots added):
 				<div>
-					<div class="tal"><ul><li>Talents</li></ul></div>
-					<div class="ski"><ul><li>Skills</li></ul></div>
-					<div class="kno"><ul><li>Knowledges</li></ul></div>
+					<div class="tal" id="tal3"><ul><li>Talents</li></ul></div>
+					<div class="ski" id="ski3"><ul><li>Skills</li></ul></div>
+					<div class="kno" id="kno3"><ul><li>Knowledges</li></ul></div>
 				</div><br />
 				... then fill in that many dots.
 			</div>

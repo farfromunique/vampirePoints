@@ -13,6 +13,7 @@
 								if ($target == 'web') {
 				$this->code .= 	'<script type="text/javascript" src="ACWPD.js"></script>' . "\n" . 
 								'<script type="text/javascript" src="main.js"></script>' . "\n" . 
+								'<script type="text/javascript" src="testing.js"></script>' . "\n" . 
 								'<script type="text/javascript" src="sheet.js"></script>' . "\n";
 								}
 			$this->code .=	'</head>' . "\n";

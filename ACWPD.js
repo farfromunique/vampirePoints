@@ -62,3 +62,4 @@ function changeFirstCharacters(id, newText, charactersToChange) {
 	
 	return 'document.getElementById(\"' + id + '\").innerHTML = ' + newText + ' \+ document.getElementById(\"' + id + '\").innerHTML.substr(' + charactersToChange + ', document.getElementById(\"' + id + '\").innerHTML.length \-' + charactersToChange + ')';
 }
+

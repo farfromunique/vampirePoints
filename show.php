@@ -5,13 +5,23 @@
 		$target = 'web';
 	}
 	
+	if (array_key_exists('character',$_GET)) {
+		
+		$charNum = $_GET["character"];
+	} else {
+		$charNum = 1000;
+	}
+	
+	
+	require_once('connect.php');
+	
 	spl_autoload_register(function ($class) {
 		include 'classes/' . $class . '.class.php';
 	});
 	
 	$parser = new parser();
 	
-	require_once('printme.php');
+	//require_once('printme.php');
 	
 	$header = new header($target);
 	
