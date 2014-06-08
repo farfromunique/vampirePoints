@@ -46,31 +46,44 @@ function getMaxCheckedElements() {
 	}
 	output = "";
 	for (i = 0;i<groups.length;i++) {
-		output += groups[i].id + ": " + groups[i].highestDot + "; \n";
+		output += groups[i].id + "=>" + groups[i].highestDot + ";\n";
 	}
 	document.getElementById("allDots").value = output;
 }
 
 function getCustomNames() {
-	document.getElementById("customNames").value = "in1" + " => " + document.getElementById("in1").innerText + "; ";
-	document.getElementById("customNames").value += "in2" + " => " + document.getElementById("in2").innerText + "; ";
-	document.getElementById("customNames").value += "in3" + " => " + document.getElementById("in3").innerText + "; ";
-	document.getElementById("customNames").value += "ou1" + " => " + document.getElementById("ou1").innerText + "; ";
-	document.getElementById("customNames").value += "ou2" + " => " + document.getElementById("ou2").innerText + "; ";
-	document.getElementById("customNames").value += "ou3" + " => " + document.getElementById("ou3").innerText + "; ";
+	document.getElementById("customNames").value = "in1" + "=>" + document.getElementById("in1").innerText + ";";
+	document.getElementById("customNames").value += "in2" + "=>" + document.getElementById("in2").innerText + ";";
+	document.getElementById("customNames").value += "in3" + "=>" + document.getElementById("in3").innerText + ";";
+	document.getElementById("customNames").value += "ou1" + "=>" + document.getElementById("ou1").innerText + ";";
+	document.getElementById("customNames").value += "ou2" + "=>" + document.getElementById("ou2").innerText + ";";
+	document.getElementById("customNames").value += "ou3" + "=>" + document.getElementById("ou3").innerText + ";";
 	
-	document.getElementById("customNames").value += "bk1" + " => " + document.getElementById("bk1").innerText + "; ";
-	document.getElementById("customNames").value += "bk2" + " => " + document.getElementById("bk2").innerText + "; ";
-	document.getElementById("customNames").value += "bk3" + " => " + document.getElementById("bk3").innerText + "; ";
-	document.getElementById("customNames").value += "bk4" + " => " + document.getElementById("bk4").innerText + "; ";
-	document.getElementById("customNames").value += "bk5" + " => " + document.getElementById("bk5").innerText + "; ";
-	document.getElementById("customNames").value += "bk6" + " => " + document.getElementById("bk6").innerText + "; ";
+	document.getElementById("customNames").value += "bk1" + "=>" + document.getElementById("bk1").innerText + ";";
+	document.getElementById("customNames").value += "bk2" + "=>" + document.getElementById("bk2").innerText + ";";
+	document.getElementById("customNames").value += "bk3" + "=>" + document.getElementById("bk3").innerText + ";";
+	document.getElementById("customNames").value += "bk4" + "=>" + document.getElementById("bk4").innerText + ";";
+	document.getElementById("customNames").value += "bk5" + "=>" + document.getElementById("bk5").innerText + ";";
+	document.getElementById("customNames").value += "bk6" + "=>" + document.getElementById("bk6").innerText + ";";
+}
+
+function getFluff() {
+	document.getElementById("fluff").value = "character=>" + document.getElementById("characterName").value + ";";
+	document.getElementById("fluff").value += "player=>" + document.getElementById("player").value + ";";
+	document.getElementById("fluff").value += "chronicle=>" + document.getElementById("chronicle").value + ";";
+	document.getElementById("fluff").value += "nature=>" + document.getElementById("nature").value + ";";
+	document.getElementById("fluff").value += "demeanor=>" + document.getElementById("demeanor").value + ";";
+	document.getElementById("fluff").value += "concept=>" + document.getElementById("concept").value + ";";
+	document.getElementById("fluff").value += "generation=>" + document.getElementById("generation").value + ";";
+	document.getElementById("fluff").value += "sire=>" + document.getElementById("sire").value + ";";
+	document.getElementById("fluff").value += "title=>" + document.getElementById("title").value + ";";
 }
 
 function finalBeforeSend() {
 	getMaxCheckedElements()
 	document.getElementById("outClanName").value = document.getElementById("clanName").innerText;
 	getCustomNames()
+	getFluff()
 }
 
 function Step00() /* Things to do onLoad */ {

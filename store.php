@@ -4,251 +4,243 @@
 		include 'classes/' . $class . '.class.php';
 	});
 	
+	$parser = new Parser;
+	
 	$inDots = $_REQUEST['AllDots'];
 	
-	$AllDots = explode(";",$inDots);
-	for ($i = 0; $i<count($AllDots); $i++) {
-		$AllDots[$i] = explode(":",$AllDots[$i]);
-	}
+	$AllDots = $parser->stringToArray($inDots);
 	
-	$customNames = explode("; ",$_REQUEST['CustomNames']);
-	for ($i = 0; $i<count($customNames); $i++) {
-		$customNames[$i] = explode(" => ",$customNames[$i]);
-		if (array_key_exists(1,$customNames[$i])) {
-			$customNames[$i][1] = rtrim($customNames[$i][1]);
-		};
-	}
+	$customNames = $parser->stringToArray($_REQUEST['CustomNames']);
 	
-	$parser = new Parser;
+	$fluff = $parser->stringToArray($_REQUEST['fluff']);
 	
 	$store = [
 		'fluff' => [
-			'clan' => rtrim($_REQUEST['clan']),
-			'character' => '',
-			'player' => '',
-			'chronicle' => '',
-			'nature' => '',
-			'demeanor' => '',
-			'concept' => '',
-			'generation' => 13,
-			'sire' => '',
-			'title' => '',
+			'clan' => trim($_REQUEST['clan']),
+			'character' => $fluff['character'],
+			'player' => $fluff['player'],
+			'chronicle' => $fluff['chronicle'],
+			'nature' => $fluff['nature'],
+			'demeanor' => $fluff['demeanor'],
+			'concept' => $fluff['concept'],
+			'generation' => $fluff['generation'],
+			'sire' => $fluff['sire'],
+			'title' => $fluff['title'],
 			'game' => 'Vampire: the Masquerade'
 		], //End of Fluff(T1)
 		'attributes' => [
 			'Physical', 
 			'Physical' => [
-				'Strength','Strength' => [ // 0
-					'checked' => rtrim($AllDots[0][1])
+				'Strength','Strength' => [
+					'checked' => rtrim($AllDots['stren'])
 				],
-				'Dexterity','Dexterity' => [ // 1
-					'checked' => rtrim($AllDots[1][1])
+				'Dexterity','Dexterity' => [
+					'checked' => rtrim($AllDots['dexte'])
 				],
-				'Stamina','Stamina' => [ // 2
-					'checked' => rtrim($AllDots[2][1])
+				'Stamina','Stamina' => [
+					'checked' => rtrim($AllDots['stami'])
 				]
 			], //End of Physical(T2)
 			'Social', 
 			'Social' => [
-				'Charisma','Charisma' => [ // 3
-					'checked' => rtrim($AllDots[3][1])
+				'Charisma','Charisma' => [
+					'checked' => rtrim($AllDots['chari'])
 				],
-				'Manipulation','Manipulation' => [ // 4
-					'checked' => rtrim($AllDots[4][1])
+				'Manipulation','Manipulation' => [
+					'checked' => rtrim($AllDots['manip'])
 				],
-				'Appearance','Appearance' => [ // 5
-					'checked' => rtrim($AllDots[5][1])
+				'Appearance','Appearance' => [
+					'checked' => rtrim($AllDots['appea'])
 				]
 			],  //End of Social(T2)
 			'Mental',
 			'Mental' => [
-				'Perception','Perception' => [ // 6
-					'checked' => rtrim($AllDots[6][1])
+				'Perception','Perception' => [
+					'checked' => rtrim($AllDots['perce'])
 				],
-				'Intelligence','Intelligence' => [ // 7
-					'checked' => rtrim($AllDots[7][1])
+				'Intelligence','Intelligence' => [
+					'checked' => rtrim($AllDots['intel'])
 				],
-				'Wits','Wits' => [ // 8
-					'checked' => rtrim($AllDots[8][1])
+				'Wits','Wits' => [
+					'checked' => rtrim($AllDots['wits'])
 				]
 			] //End of Mental(T2)
 		], //End of Attributes(T1)
 		'abilities' => [
 			'Talents', 'Talents' => [
 				'Alertness','Alertness' => [
-					'checked' => rtrim($AllDots[9][1])
+					'checked' => rtrim($AllDots['alert'])
 				],
 				'Athletics','Athletics' => [
-					'checked' => rtrim($AllDots[10][1])
+					'checked' => rtrim($AllDots['athle'])
 				],
 				'Brawl','Brawl' => [
-					'checked' => rtrim($AllDots[11][1])
+					'checked' => rtrim($AllDots['brawl'])
 				],
 				'Dodge','Dodge' => [
-					'checked' => rtrim($AllDots[12][1])
+					'checked' => rtrim($AllDots['dodge'])
 				],
 				'Empathy','Empathy' => [
-					'checked' => rtrim($AllDots[13][1])
+					'checked' => rtrim($AllDots['empat'])
 				],
 				'Expression','Expression' => [
-					'checked' => rtrim($AllDots[14][1])
+					'checked' => rtrim($AllDots['expre'])
 				],
 				'Intimidation','Intimidation' => [
-					'checked' => rtrim($AllDots[15][1])
+					'checked' => rtrim($AllDots['intim'])
 				],
 				'Leadership','Leadership' => [
-					'checked' => rtrim($AllDots[16][1])
+					'checked' => rtrim($AllDots['leade'])
 				],
 				'Streetwise','Streetwise' => [
-					'checked' => rtrim($AllDots[17][1])
+					'checked' => rtrim($AllDots['stree'])
 				],
 				'Subterfuge','Subterfuge' => [
-					'checked' => rtrim($AllDots[18][1])
+					'checked' => rtrim($AllDots['subte'])
 				]
 			], //End of Talents(T2)
 			'Skills', 'Skills' => [
 				'Animal Ken','Animal Ken' => [
-					'checked' => rtrim($AllDots[19][1])
+					'checked' => rtrim($AllDots['anima'])
 				],
 				'Crafts','Crafts' => [
-					'checked' => rtrim($AllDots[20][1])
+					'checked' => rtrim($AllDots['craft'])
 				],
 				'Drive','Drive' => [
-					'checked' => rtrim($AllDots[21][1])
+					'checked' => rtrim($AllDots['drive'])
 				],
 				'Etiquette','Etiquette' => [
-					'checked' => rtrim($AllDots[22][1])
+					'checked' => rtrim($AllDots['etiqu'])
 				],
 				'Firearms','Firearms' => [
-					'checked' => rtrim($AllDots[23][1])
+					'checked' => rtrim($AllDots['firea'])
 				],
 				'Melee','Melee' => [
-					'checked' => rtrim($AllDots[24][1])
+					'checked' => rtrim($AllDots['melee'])
 				],
 				'Performance','Performance' => [
-					'checked' => rtrim($AllDots[25][1])
+					'checked' => rtrim($AllDots['perfo'])
 				],
 				'Security','Security' => [
-					'checked' => rtrim($AllDots[26][1])
+					'checked' => rtrim($AllDots['secur'])
 				],
 				'Stealth','Stealth' => [
-					'checked' => rtrim($AllDots[27][1])
+					'checked' => rtrim($AllDots['steal'])
 				],
 				'Survival','Survival' => [
-					'checked' => rtrim($AllDots[28][1])
+					'checked' => rtrim($AllDots['survi'])
 				]
 			], //End of Skills(T2)
 			'Knowledges', 'Knowledges' => [
 				'Academics','Academics' => [
-					'checked' => rtrim($AllDots[29][1])
+					'checked' => rtrim($AllDots['acade'])
 				],
 				'Computer','Computer' => [
-					'checked' => rtrim($AllDots[30][1])
+					'checked' => rtrim($AllDots['compu'])
 				],
 				'Finance','Finance' => [
-					'checked' => rtrim($AllDots[31][1])
+					'checked' => rtrim($AllDots['finan'])
 				],
 				'Investigation','Investigation' => [
-					'checked' => rtrim($AllDots[32][1])
+					'checked' => rtrim($AllDots['inves'])
 				],
 				'Law','Law' => [
-					'checked' => rtrim($AllDots[33][1])
+					'checked' => rtrim($AllDots['law'])
 				],
 				'Linguistics','Linguistics' => [
-					'checked' => rtrim($AllDots[34][1])
+					'checked' => rtrim($AllDots['lingu'])
 				],
 				'Medicine','Medicine' => [
-					'checked' => rtrim($AllDots[35][1])
+					'checked' => rtrim($AllDots['medic'])
 				],
 				'Occult','Occult' => [
-					'checked' => rtrim($AllDots[36][1])
+					'checked' => rtrim($AllDots['occul'])
 				],
 				'Politics','Politics' => [
-					'checked' => rtrim($AllDots[37][1])
+					'checked' => rtrim($AllDots['polit'])
 				],
 				'Science','Science' => [
-					'checked' => rtrim($AllDots[38][1])
+					'checked' => rtrim($AllDots['scien'])
 				]
 			] //End of Knowledges(T2)
 		], //End of Abilities(T1)
 		'advantages' => [
 			'Disciplines','Disciplines' => [
 				'in1','in1' => [
-					'checked' => rtrim($AllDots[39][1]),
-					'name' => rtrim($customNames[0][1])
+					'checked' => rtrim($AllDots['in1']),
+					'name' => rtrim($customNames['in1'])
 				],
 				'in2','in2' => [
-					'checked' => rtrim($AllDots[40][1]),
-					'name' => rtrim($customNames[1][1])
+					'checked' => rtrim($AllDots['in2']),
+					'name' => rtrim($customNames['in2'])
 				],
 				'in3','in3' => [
-					'checked' => rtrim($AllDots[41][1]),
-					'name' => rtrim($customNames[2][1])
+					'checked' => rtrim($AllDots['in3']),
+					'name' => rtrim($customNames['in3'])
 				],
 				'ou1','ou1' => [
-					'checked' => rtrim($AllDots[42][1]),
-					'name' => rtrim($customNames[3][1])
+					'checked' => rtrim($AllDots['ou1']),
+					'name' => rtrim($customNames['ou1'])
 				],
 				'ou2','ou2' => [
-					'checked' => rtrim($AllDots[43][1]),
-					'name' => rtrim($customNames[4][1])
+					'checked' => rtrim($AllDots['ou2']),
+					'name' => rtrim($customNames['ou2'])
 				],
 				'ou3','ou3' => [
-					'checked' => rtrim($AllDots[44][1]),
-					'name' => rtrim($customNames[5][1])
+					'checked' => rtrim($AllDots['ou3']),
+					'name' => rtrim($customNames['ou3'])
 				]
 			], //End of Disciplines(T2)
 			'Backgrounds','Backgrounds' => [
 				'bk1','bk1' => [
-					'checked' => rtrim($AllDots[45][1]),
-					'name' => rtrim($customNames[6][1])
+					'checked' => rtrim($AllDots['bk1']),
+					'name' => rtrim($customNames['bk1'])
 				],
 				'bk2','bk2' => [
-					'checked' => rtrim($AllDots[46][1]),
-					'name' => rtrim($customNames[7][1])
+					'checked' => rtrim($AllDots['bk2']),
+					'name' => rtrim($customNames['bk2'])
 				],
 				'bk3','bk3' => [
-					'checked' => rtrim($AllDots[47][1]),
-					'name' => rtrim($customNames[8][1])
+					'checked' => rtrim($AllDots['bk3']),
+					'name' => rtrim($customNames['bk3'])
 				],
 				'bk4','bk4' => [
-					'checked' => rtrim($AllDots[48][1]),
-					'name' => rtrim($customNames[9][1])
+					'checked' => rtrim($AllDots['bk4']),
+					'name' => rtrim($customNames['bk4'])
 				],
 				'bk5','bk5' => [
-					'checked' => rtrim($AllDots[49][1]),
-					'name' => rtrim($customNames[10][1])
+					'checked' => rtrim($AllDots['bk5']),
+					'name' => rtrim($customNames['bk5'])
 				],
 				'bk6','bk6' => [
-					'checked' => rtrim($AllDots[50][1]),
-					'name' => rtrim($customNames[11][1])
+					'checked' => rtrim($AllDots['bk6']),
+					'name' => rtrim($customNames['bk6'])
 				]
 			], //End of Backgrounds(T2)
 			'Virtues','Virtues' => [
 				'Conscience','Conscience' => [
-					'checked' => rtrim($AllDots[51][1])
+					'checked' => rtrim($AllDots['virtu'])
 				],
 				'Self Control','Self Control' => [
-					'checked' => rtrim($AllDots[52][1])
+					'checked' => rtrim($AllDots['self '])
 				],
 				'Courage','Courage' => [
-					'checked' => rtrim($AllDots[53][1])
+					'checked' => rtrim($AllDots['coura'])
 				]
 			] //End of Virtues (T2)
 		], //End of Advantages(T1)
 		'humanity' => [
-			'checked' => rtrim($AllDots[54][1])
+			'checked' => rtrim($AllDots['human'])
 		],
 		'willpower' => [
-			'checked' => rtrim($AllDots[55][1])
+			'checked' => rtrim($AllDots['willp'])
 		],
-		'blood' =>  20 - $AllDots[56][1]
+		'blood' =>  20 - $AllDots['blood']
 	];
 	
 	$a = serialize($store);
 
 	$ud = new PDO('mysql:host=localhost;dbname=vampires','prince','letmebeyourruler');
-	//$sql = 'INSERT INTO  `vampires`.`vampireList` (`Name`,'Data') VALUES ($basic['fluff']['character'],serialize($basic));;
 	
 	$basicVamp = $ud->prepare('INSERT INTO  `vampires`.`vampireList` (`Name`,`Data`) VALUES (:name,:data)');
 	if (!$basicVamp->bindparam(":name",$store['fluff']['character'])) {echo 'bind :name as `' . $store['fluff']['character'] . '` failed!'; };

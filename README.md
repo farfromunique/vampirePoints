@@ -58,4 +58,6 @@ Change Log
 
 2/1/2014: Updated this document to reflect intent, as well as to add copyright notices.
 
-4/12/2014: Rewrote the backend to support dynamic sheet building in PHP, as well as adding hooks to allow printing,
+4/12/2014: Rewrote the backend to support dynamic sheet building in PHP, as well as adding hooks to allow printing.
+
+6/7/2014: Finished implementing Save process. Load process is about 90%.

@@ -70,6 +70,7 @@
 							$specialSection . "\n" . 
 							'<form action="store.php" method="post">' . "\n" . 
 							'<input type="hidden" id="outClanName" name="clan">' . "\n" . 
+							'<input type="hidden" id="fluff" name="fluff">' . "\n" . 
 							'<input type="hidden" id="allDots" name="AllDots">' . "\n" . 
 							'<input type="hidden" id="customNames" name="CustomNames">' . "\n" . 
 							'<input type="Submit" value="Save" id="Save"></form></div></div>';
