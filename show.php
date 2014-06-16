@@ -6,7 +6,6 @@
 	}
 	
 	if (array_key_exists('character',$_GET)) {
-		
 		$charNum = $_GET["character"];
 	} else {
 		$charNum = 1000;

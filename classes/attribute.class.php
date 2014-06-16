@@ -2,6 +2,7 @@
 class attribute {
 	private $numberOfDots = 5;
 	public $name;
+	public $visibleName;
 	public $shortName;
 	
 	public $dots = array();
@@ -21,6 +22,10 @@ class attribute {
 		$this->standalone = $standalone;
 		$this->numberOfDots = $numberOfDots;
 		$this->shortName = strtolower(substr($name,0,5));
+		$this->visibleName = $this->name;
+		if (array_key_exists('name',$dotsArray)) {
+			$this->visibleName = $dotsArray['name'];
+		}
 		for ($i = 1; $i <= $this->numberOfDots; $i++) {
 			$disabled = true;
 			$checked = false;
@@ -42,9 +47,9 @@ class attribute {
 	
 	private function buildCode() {
 		if ($this->standalone == 'no') {
-			$this->code = '<div id="' . $this->shortName . '" class="attr">' . $this->name . "\n" . '<div class="container">' . "\n";
+			$this->code = '<div id="' . $this->shortName . '" class="attr">' . $this->visibleName . "\n" . '<div class="container">' . "\n";
 		} else {
-			$this->code = '<div id="' . $this->shortName . '" class="attr">' . $this->name . '<br />' . "\n";
+			$this->code = '<div id="' . $this->shortName . '" class="attr">' . $this->visibleName . '<br />' . "\n";
 		}
 		for ($i = 1; $i <= count($this->dots); $i++) {
 			$this->code .= $this->dots[$i]->showCode();
@@ -61,9 +66,9 @@ class attribute {
 	
 	private function buildPrint() {
 		if ($this->standalone == 'no') {
-			$this->printCode = '<div id="' . $this->shortName . '" class="attr">' . $this->name . "\n" . '<div class="container">' . "\n";
+			$this->printCode = '<div id="' . $this->shortName . '" class="attr">' . $this->visibleName . "\n" . '<div class="container">' . "\n";
 		} else {
-			$this->printCode = '<div id="' . $this->shortName . '" class="attr">' . $this->name . '<br />' . "\n";
+			$this->printCode = '<div id="' . $this->shortName . '" class="attr">' . $this->visibleName . '<br />' . "\n";
 		}
 		for ($i = 1; $i <= count($this->dots); $i++) {
 			$this->printCode .= $this->dots[$i]->showPrint();

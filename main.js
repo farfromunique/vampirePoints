@@ -470,27 +470,27 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 function backgroundBuilder() {
 	
 	document.getElementById('background1').onchange = function () {
-		document.getElementById("bk1").innerHTML = document.getElementById('background1').value + document.getElementById("bk1").innerHTML.substr(3, document.getElementById("bk1").innerHTML.length -3);
+		changeFirstCharacters('bk1', document.getElementById('background1').value);
 		initialDotSetup();
 	}
 	document.getElementById('background2').onchange = function () {
-		document.getElementById("bk2").innerHTML = document.getElementById('background2').value + document.getElementById("bk2").innerHTML.substr(3, document.getElementById("bk2").innerHTML.length -3);
+		changeFirstCharacters('bk2', document.getElementById('background2').value);
 		initialDotSetup();
 	}
 	document.getElementById('background3').onchange = function () {
-		document.getElementById("bk3").innerHTML = document.getElementById('background3').value + document.getElementById("bk3").innerHTML.substr(3, document.getElementById("bk3").innerHTML.length -3);
+		changeFirstCharacters('bk3', document.getElementById('background3').value);
 		initialDotSetup();
 	}
 	document.getElementById('background4').onchange = function () {
-		document.getElementById("bk4").innerHTML = document.getElementById('background4').value + document.getElementById("bk4").innerHTML.substr(3, document.getElementById("bk4").innerHTML.length -3);
+		changeFirstCharacters('bk4', document.getElementById('background4').value);
 		initialDotSetup();
 	}
 	document.getElementById('background5').onchange = function () {
-		document.getElementById("bk5").innerHTML = document.getElementById('background5').value + document.getElementById("bk5").innerHTML.substr(3, document.getElementById("bk5").innerHTML.length -3);
+		changeFirstCharacters('bk5', document.getElementById('background5').value);
 		initialDotSetup();
 	}
 	document.getElementById('background6').onchange = function () {
-		document.getElementById("bk6").innerHTML = document.getElementById('background6').value + document.getElementById("bk6").innerHTML.substr(3, document.getElementById("bk6").innerHTML.length -3);
+		changeFirstCharacters('bk6', document.getElementById('background6').value);
 		initialDotSetup();
 	}
 	

@@ -58,8 +58,9 @@ function removeAllMyEventListeners(id) {
 	id.ondblclick = "";
 }
 
-function changeFirstCharacters(id, newText, charactersToChange) {
-	
-	return 'document.getElementById(\"' + id + '\").innerHTML = ' + newText + ' \+ document.getElementById(\"' + id + '\").innerHTML.substr(' + charactersToChange + ', document.getElementById(\"' + id + '\").innerHTML.length \-' + charactersToChange + ')';
+function changeFirstCharacters(id, newText) {
+	var el = document.getElementById(id);
+
+	el.innerHTML = newText + el.innerHTML.substr(el.innerText.length, el.innerHTML.length - el.innerText.length) + "\n";
 }
 

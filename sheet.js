@@ -128,9 +128,9 @@ function Step01() /* Clan Selection */ {
 	var outdisciplines2 = new Array();
 	var outdisciplines3 = new Array();
 			
-		eval(changeFirstCharacters('in1', "'" + thisClan[0] + "'", 3));
-		eval(changeFirstCharacters('in2', "'" + thisClan[1] + "'", 3));
-		eval(changeFirstCharacters('in3', "'" + thisClan[2] + "'", 3));
+		changeFirstCharacters('in1', thisClan[0]);
+		changeFirstCharacters('in2', thisClan[1]);
+		changeFirstCharacters('in3', thisClan[2]);
 	
 	document.getElementById('clanName').innerHTML = "<h1>" + clan + "</h1>";
 	
