@@ -376,7 +376,7 @@ function attributeSelectionBuilder() /* build the steps menu feature that allows
 	phys = document.getElementsByClassName("phy");
 	for (i=0,max = document.getElementsByClassName("phy").length;i<max;i++) {
 		phys[i].onclick = function() { 
-			leftBlocker.remove();
+			remove(leftBlocker);
 			dotCounter.style.left = 170;
 			dotCounter.style.top = 260;
 			dotCounter.style.display = "block";
@@ -391,7 +391,7 @@ function attributeSelectionBuilder() /* build the steps menu feature that allows
 	soci = document.getElementsByClassName("soc");
 	for (i=0,max = document.getElementsByClassName("soc").length;i<max;i++) {
 		soci[i].onclick = function() { 
-			centerBlocker.remove();
+			remove(centerBlocker);
 			dotCounter.style.left = 475;
 			dotCounter.style.top = 260;
 			dotCounter.style.display = "block";
@@ -407,7 +407,7 @@ function attributeSelectionBuilder() /* build the steps menu feature that allows
 	ment = document.getElementsByClassName("men");
 	for (i=0,max = document.getElementsByClassName("men").length;i<max;i++) {
 		ment[i].onclick = function() { 
-			rightBlocker.remove();
+			remove(rightBlocker);
 			dotCounter.style.left = 785;
 			dotCounter.style.top = 260;
 			dotCounter.style.display = "block";
@@ -424,7 +424,7 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 	tale = document.getElementsByClassName("tal");
 	for (i=0,max = document.getElementsByClassName("tal").length;i<max;i++) {
 		tale[i].onclick = function() { 
-			leftBlocker.remove();
+			remove(leftBlocker);
 			dotCounter.style.left = 150;
 			dotCounter.style.top = 390;
 			dotCounter.style.display = "block";
@@ -439,7 +439,7 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 	skil = document.getElementsByClassName("ski");
 	for (i=0,max = document.getElementsByClassName("ski").length;i<max;i++) {
 		skil[i].onclick = function() { 
-			centerBlocker.remove();
+			remove(centerBlocker);
 			dotCounter.style.left = 460;
 			dotCounter.style.top = 390;
 			dotCounter.style.display = "block";
@@ -454,7 +454,7 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 	know = document.getElementsByClassName("kno");
 	for (i=0,max = document.getElementsByClassName("kno").length;i<max;i++) {
 		know[i].onclick = function() { 
-			rightBlocker.remove();
+			remove(rightBlocker);
 			dotCounter.style.left = 775;
 			dotCounter.style.top = 390;
 			dotCounter.style.display = "block";

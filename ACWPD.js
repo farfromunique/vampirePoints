@@ -1,6 +1,6 @@
 /******************************************************************************
 These functions are designed for use in ACWPD projects.
-All code is Copyright 2014 Aaron Coquet.
+All code is Copyright 2014 Aaron Coquet unless otherwise noted.
 Direct inquiries to aaron@acwpd.com
 ******************************************************************************/
 
@@ -59,8 +59,22 @@ function removeAllMyEventListeners(id) {
 }
 
 function changeFirstCharacters(id, newText) {
+	/****************************************
+	This code provided by http://stackoverflow.com/users/44853/lc , in answer to question http://stackoverflow.com/questions/24237147/dynamically-changing-innertexts-start-without-eval/24237235#24237235 */
 	var el = document.getElementById(id);
-
 	el.innerHTML = newText + el.innerHTML.substr(el.innerText.length, el.innerHTML.length - el.innerText.length) + "\n";
 }
 
+function remove(id) {
+	try {
+		id.remove()
+	} 
+	catch (e) {
+		try {
+			id.removeNode()
+		}
+		catch (f) {
+			error.log ("Tried object.remove: " + e + "\n Then tried object.removeNode: " + f)
+		}
+	}
+}
