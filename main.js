@@ -470,27 +470,27 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 function backgroundBuilder() {
 	
 	document.getElementById('background1').onchange = function () {
-		changeFirstCharacters('bk1', document.getElementById('background1').value);
+		document.getElementById('bk1text').innerText = document.getElementById('background1').value;
 		initialDotSetup();
 	}
 	document.getElementById('background2').onchange = function () {
-		changeFirstCharacters('bk2', document.getElementById('background2').value);
+		document.getElementById('bk2text').innerText = document.getElementById('background2').value;
 		initialDotSetup();
 	}
 	document.getElementById('background3').onchange = function () {
-		changeFirstCharacters('bk3', document.getElementById('background3').value);
+		document.getElementById('bk3text').innerText = document.getElementById('background3').value;
 		initialDotSetup();
 	}
 	document.getElementById('background4').onchange = function () {
-		changeFirstCharacters('bk4', document.getElementById('background4').value);
+		document.getElementById('bk4text').innerText = document.getElementById('background4').value;
 		initialDotSetup();
 	}
 	document.getElementById('background5').onchange = function () {
-		changeFirstCharacters('bk5', document.getElementById('background5').value);
+		document.getElementById('bk5text').innerText = document.getElementById('background5').value;
 		initialDotSetup();
 	}
 	document.getElementById('background6').onchange = function () {
-		changeFirstCharacters('bk6', document.getElementById('background6').value);
+		document.getElementById('bk6text').innerText = document.getElementById('background6').value;
 		initialDotSetup();
 	}
 	

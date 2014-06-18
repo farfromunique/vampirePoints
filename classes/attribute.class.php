@@ -47,9 +47,9 @@ class attribute {
 	
 	private function buildCode() {
 		if ($this->standalone == 'no') {
-			$this->code = '<div id="' . $this->shortName . '" class="attr">' . $this->visibleName . "\n" . '<div class="container">' . "\n";
+			$this->code = '<div id="' . $this->shortName . '" class="attr"><span id="' . $this->shortName . 'text">' . $this->visibleName . "\n" . '</span><div class="container">' . "\n";
 		} else {
-			$this->code = '<div id="' . $this->shortName . '" class="attr">' . $this->visibleName . '<br />' . "\n";
+			$this->code = '<div id="' . $this->shortName . '" class="attr"><span id="' . $this->shortName . 'text">' . $this->visibleName . "\n" . '</span><br />' . "\n";
 		}
 		for ($i = 1; $i <= count($this->dots); $i++) {
 			$this->code .= $this->dots[$i]->showCode();
