@@ -656,7 +656,7 @@ function xpDotSetup() {
 	var i;
 	var startPos=0;
 	
-	for (i=0,max = allDots.length;i<max;i++) {
+	for (i=0,max = allDots.length;i<max;i++) /* disable all checked dots, enable all others */ {
 		if (allDots[i].checked) {
 			allDots[i].disabled = true;
 		} else {
@@ -671,9 +671,9 @@ function xpDotSetup() {
 	for (i=0;i<attributeDots.length;i++) /* add function */ {
 		attributeDots[i].onclick = function() { 
 			if (this.checked) {
-				decrementCounter(4 * (i % 5));
+				decrementCounter(xpCost(this, 'attribute'));
 			} else {
-				incrementCounter(4 * (i % 5));
+				incrementCounter(xpCost(this, 'attribute'));
 			};
 		}
 	}
@@ -686,19 +686,11 @@ function xpDotSetup() {
 	
 	for (i=0;i<abilityDots.length;i++) /* add function */ {
 		abilityDots[i].onclick = function() { 
-			if ((i % 5) === 0) {
-				if (this.checked) {
-					decrementCounter(3);
-				} else {
-					incrementCounter(3);
-				};
+			if (this.checked) {
+				decrementCounter(xpCost(this, 'ability'));
 			} else {
-				if (this.checked) {
-					decrementCounter(2 * (i % 5));
-				} else {
-					incrementCounter(2 * (i % 5));
-				};
-			}
+				incrementCounter(xpCost(this, 'ability'));
+			};
 		}
 	}
 	
@@ -710,19 +702,11 @@ function xpDotSetup() {
 	
 	for (i=0;i<inDisciplineDots.length;i++) /* add function */ {
 		inDisciplineDots[i].onclick = function() { 
-			if ((i % 5) === 0) {
-				if (this.checked) {
-					decrementCounter(10);
-				} else {
-					incrementCounter(10);
-				};
+			if (this.checked) {
+				decrementCounter(xpCost(this, 'inDiscipline'));
 			} else {
-				if (this.checked) {
-					decrementCounter(5 * (i % 5));
-				} else {
-					incrementCounter(5 * (i % 5));
-				};
-			}
+				incrementCounter(xpCost(this, 'inDiscipline'));
+			};
 		}
 	}
 	
@@ -734,19 +718,11 @@ function xpDotSetup() {
 	
 	for (i=0;i<outDisciplineDots.length;i++) /* add function */ {
 		outDisciplineDots[i].onclick = function() { 
-			if ((i % 5) === 0) {
-				if (this.checked) {
-					decrementCounter(10);
-				} else {
-					incrementCounter(10);
-				};
+			if (this.checked) {
+				decrementCounter(xpCost(this, 'outDiscipline'));
 			} else {
-				if (this.checked) {
-					decrementCounter(7 * (i % 5));
-				} else {
-					incrementCounter(7 * (i % 5));
-				};
-			}
+				incrementCounter(xpCost(this, 'outDiscipline'));
+			};
 		}
 	}
 	
@@ -775,9 +751,9 @@ function xpDotSetup() {
 	for (i=0;i<virtueDots.length;i++) /* add function */ {
 		virtueDots[i].onclick = function() { 
 			if (this.checked) {
-				decrementCounter(2 * (i % 5));
+				decrementCounter(xpCost(this, 'virtue'));
 			} else {
-				incrementCounter(2 * (i % 5));
+				incrementCounter(xpCost(this, 'virtue'));
 			};
 		}
 	}
@@ -791,9 +767,9 @@ function xpDotSetup() {
 	for (i=0;i<humanityDots.length;i++) /* add function */ {
 		humanityDots[i].onclick = function() { 
 			if (this.checked) {
-				decrementCounter(2 * (i % 5));
+				decrementCounter(xpCost(this, 'humanity'));
 			} else {
-				incrementCounter(2 * (i % 5));
+				incrementCounter(xpCost(this, 'humanity'));
 			};
 		}
 	}
@@ -807,9 +783,9 @@ function xpDotSetup() {
 	for (i=0;i<willpowerDots.length;i++) /* add function */ {
 		willpowerDots[i].onclick = function() { 
 			if (this.checked) {
-				decrementCounter(i % 5);
+				decrementCounter(xpCost(this, 'willpower'));
 			} else {
-				incrementCounter(i % 5);
+				incrementCounter(xpCost(this, 'willpower'));
 			};
 		}
 	}

@@ -53,7 +53,7 @@
 		
 		private function buildCode($settings) {
 			$header = '<div id="charSheet">';
-			$clanOrGame = '<div id="clanName"><H1>' . $this->game . '</H1></div>';
+			$clanOrGame = '<div id="clanName"><H1>' . $this->clan . '</H1></div>';
 			$text = new textfields($settings['fluff'],'web');
 			$attributes = $this->attributes->showCode();
 			$abilities = $this->abilities->showCode();
@@ -82,7 +82,7 @@
 		
 		private function buildPrint($settings) {
 			$header = '<div id="charSheet">';
-			$clanOrGame = '<div id="clanName"><H1>' . $this->game . '</H1></div>';
+			$clanOrGame = '<div id="clanName"><H1>' . $this->clan . '</H1></div>';
 			$text = new textfields($settings['fluff'],'print');
 			$attributes = $this->attributes->showPrint();
 			$abilities = $this->abilities->showPrint();

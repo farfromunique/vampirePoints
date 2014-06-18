@@ -26,12 +26,12 @@ input[type=text] {
 
 .characterBox {
 	border: 1px black solid;
-	border-radius: 15;
-	width: 149;
-	height: 149;
+	border-radius: 15px;
+	width: 149px;
+	height: 149px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 10;
+	margin-top: 10px;
 	text-align: center;
 	cursor: pointer;
 }

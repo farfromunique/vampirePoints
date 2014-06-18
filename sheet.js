@@ -86,6 +86,61 @@ function finalBeforeSend() {
 	getFluff()
 }
 
+function xpCost(id, group) {
+	
+	var rating = id.id.substr(id.id.length-1,1);
+	console.log('id = ' + id + '; rating = ' & rating & '; group = ' & group);
+	switch (group) {
+		case group = 'attribute':
+			var costs = new Array(5)
+			costs = [99,4,8,12,16];
+			break;
+		
+		case group = 'ability':
+			var costs = new Array(5)
+			costs = [3,2,4,6,8];
+			break;
+			
+		case group = 'inDiscipline':
+			var costs = new Array(5)
+			costs = [10,5,10,15,20];
+			break;
+		
+		case group = 'outDiscipline':
+			var costs = new Array(5)
+			costs = [10,7,14,21,28];
+			break;
+		
+		case group = 'background':
+			var costs = new Array(5)
+			costs = [99,99,99,99,99];
+			break;
+		
+		case group = 'virtue':
+			var costs = new Array(5)
+			costs = [99,2,4,6,8];
+			break;
+		
+		case group = 'humanity':
+			var costs = new Array(10)
+			costs = [99,2,4,6,8,10,12,14,16,18];
+			break;
+		
+		case group = 'willpower':
+			var costs = new Array(10)
+			costs = [99,1,2,3,4,5,6,7,8,9];
+			break;
+	}
+	
+	if (id.checked) /* this is backwards, because it fires after the click goes through! */ {
+		return costs[rating-1];
+	} else {
+		return costs[rating-1]
+	};
+	
+	
+}
+
 function Step00() /* Things to do onLoad */ {
 	disableDotsInGroup('All');
 	disableDotsInGroup('bloodPool');
