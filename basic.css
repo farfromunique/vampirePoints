@@ -24,16 +24,44 @@ input[type=text] {
 	right: 5px;
 }
 
+.holder {
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .characterBox {
 	border: 1px black solid;
 	border-radius: 15px;
-	width: 149px;
-	height: 149px;
+	width: 148px;
+	height: 148px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
 	text-align: center;
 	cursor: pointer;
+}
+
+.characterBox p {
+	margin: 0px;
+}
+
+.loadBox {
+	border: 1px black solid;
+	border-radius: 15px;
+	width: 148px;
+	height: 148px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.loadBox p {
+	width: 148px;
+	margin: 0px;
 }
 
 .spacer {
@@ -43,3 +71,150 @@ input[type=text] {
 #newCharacter {
 	background-image: url('images/vampire-light.png');
 }
+
+#newCharacter:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/vampire-light.png');
+	color: rgb(255, 82, 82);
+}
+
+.Brujah {
+	background-image: url('images/brujah-light.png');
+}
+
+.Brujah:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/brujah.png');
+	color: rgb(255, 82, 82);
+}
+
+.Gangrel {
+	background-image: url('images/gangrel-light.png');
+}
+
+.Gangrel:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/gangrel.png');
+	color: rgb(255, 82, 82);
+}
+
+.Malkavian {
+	background-image: url('images/malkavian-light.png');
+}
+
+.Malkavian:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/malkavian.png');
+	color: rgb(255, 82, 82);
+}
+
+.Nosferatu {
+	background-image: url('images/nosferatu-light.png');
+}
+
+.Nosferatu:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/nosferatu.png');
+	color: rgb(255, 82, 82);
+}
+
+.Toreador {
+	background-image: url('images/toreador-light.png');
+}
+
+.Toreador:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/toreador.png');
+	color: rgb(255, 82, 82);
+}
+
+.Tremere {
+	background-image: url('images/tremere-light.png');
+}
+
+.Tremere:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/tremere.png');
+	color: rgb(255, 82, 82);
+}
+
+.Ventrue {
+	background-image: url('images/ventrue-light.png');
+}
+
+.Ventrue:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/ventrue.png');
+	color: rgb(255, 82, 82);
+}
+
+.Lasombra {
+	background-image: url('images/lasombra-light.png');
+}
+
+.Lasombra:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/lasombra.png');
+	color: rgb(255, 82, 82);
+}
+
+.Tzimisce {
+	background-image: url('images/tzimisce-light.png');
+}
+
+.Tzimisce:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/tzimisce.png');
+	color: rgb(255, 82, 82);
+}
+
+.Assimite {
+	background-image: url('images/assimite-light.png');
+}
+
+.Assimite:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/assimite.png');
+	color: rgb(255, 82, 82);
+}
+
+.Giovanni {
+	background-image: url('images/giovanni-light.png');
+}
+
+.Giovanni:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/giovanni.png');
+	color: rgb(255, 82, 82);
+}
+
+.Ravnos {
+	background-image: url('images/ravnos-light.png');
+}
+
+.Ravnos:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/ravnos.png');
+	color: rgb(255, 82, 82);
+}
+
+.Setite {
+	background-image: url('images/setite-light.png');
+}
+
+.Setite:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/setite.png');
+	color: rgb(255, 82, 82);
+}
+
+.Salubri {
+	background-image: url('images/salubri-light.png');
+}
+
+.Salubri:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/salubri.png');
+	color: rgb(255, 82, 82);
+}
+

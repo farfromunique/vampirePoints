@@ -1,5 +1,5 @@
 <?php
-
+	include_once 'connect.php';
 	spl_autoload_register(function ($class) {
 		include 'classes/' . $class . '.class.php';
 	});
@@ -23,12 +23,26 @@
 		<div id="characterArea" class="characterContainer">
 			<div id="newCharacter" class="characterBox">
 				<div class="spacer"></div>
-				New Vampire<br />
+				<p>New Vampire<br />
 				No Clan (yet)<br />
 				15 freebies<br />
-				0 XP
+				15 XP</p>
 			</div>
-			
+			<div class='holder'>
+<?php
+			for ($i=0;$i<count($fiveChars);$i++) {
+				$data = unserialize($fiveChars[$i]['Data']);
+				$thisChar = $fiveChars[$i];
+				echo "<div id='load" . $thisChar['UID'] . "' class='loadBox " . $data['fluff']['clan'] . "'>" . "\n" . 
+					"<div class='spacer'></div>" . "\n" . 
+					"<p>" . $data['fluff']['character'] . "<br />" . "\n" . 
+					$data['fluff']['clan'] . "<br />" . "\n" . 
+					"15 freebies<br />" . "\n" . 
+					"15 XP" . "</p>" . "\n" . 
+				"</div>";
+				}
+?>
+			</div>
 		</div>
 <?php
 	require_once('footer.php');
