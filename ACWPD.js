@@ -1,38 +1,40 @@
 /******************************************************************************
 These functions are designed for use in ACWPD projects.
-All code is Copyright 2014 Aaron Coquet.
+All code is Copyright 2014 Aaron Coquet unless otherwise noted.
 Direct inquiries to aaron@acwpd.com
 ******************************************************************************/
+
 function addEventToID(selector, eventType, functionText) {
 	var commandText;
 	if (!window[selector]) { return false; };
 	commandText = "document.getElementById('" + selector;
+	eventType = eventType.toLowerCase();
 	switch (eventType) {
-		case "Click":
+		case "click":
 			commandText = commandText + "').onclick";
 			break;
 		
-		case "Load":
+		case "load":
 			commandText = commandText + "').onload";
 			break;
 			
-		case "Change":
+		case "change":
 			commandText = commandText + "').onchange";
 			break;
 		
-		case "Mouseover":
+		case "mouseover":
 			commandText = commandText + "').onmouseover";
 			break;
 		
-		case "Mouseout":
+		case "mouseout":
 			commandText = commandText + "').onmouseout";
 			break;
 		
-		case "Submit":
+		case "submit":
 			commandText = commandText + "').onsubmit";
 			break;
 		
-		case "DoubleClick":
+		case "doubleclick":
 			commandText = commandText + "').ondblclick";
 			break;
 		
@@ -44,4 +46,28 @@ function addEventToID(selector, eventType, functionText) {
 	
 	commandText = commandText + " = function () { " + functionText + "};";
 	eval(commandText);
+}
+
+function removeAllMyEventListeners(id) {
+	id.onclick = "";
+	id.onload = "";
+	id.onchange = "";
+	id.onmouseover = "";
+	id.onmouseout = "";
+	id.onsubmit = "";
+	id.ondblclick = "";
+}
+
+function remove(id) {
+	try {
+		id.remove()
+	} 
+	catch (e) {
+		try {
+			id.removeNode()
+		}
+		catch (f) {
+			error.log ("Tried object.remove: " + e + "\n Then tried object.removeNode: " + f)
+		}
+	}
 }

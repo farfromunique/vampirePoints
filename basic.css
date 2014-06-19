@@ -1,16 +1,20 @@
-/* Basic elements */
+.characterContainer {
+	width: 85%;
+	height: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px black solid;
+	border-radius: 15px;
+}
+
 div {
-position: relative;
+	position: relative;
 }
 
 h1 {
 	text-align: center;
 	font-size: 60;
 	margin: 5;
-}
-
-input[type=checkbox] {
-	visibility: hidden;
 }
 
 input[type=text] {
@@ -20,6 +24,7 @@ input[type=text] {
 	right: 5px;
 }
 
+<<<<<<< HEAD
 /* Dots */
 .dots {
 	width: 20px;
@@ -59,31 +64,49 @@ input[type=text] {
 	background: #000;
 
 	-webkit-border-radius: 15px;
+=======
+.holder {
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.characterBox {
+	border: 1px black solid;
+>>>>>>> origin/PHP-ify
 	border-radius: 15px;
-	top: 1px;
-	left: 1px;
-
+	width: 148px;
+	height: 148px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	text-align: center;
+	cursor: pointer;
 }
 
-.dots label:hover::after {
-	opacity: 0.75;
+.characterBox p {
+	margin: 0px;
 }
 
-.dots input[type=checkbox]:checked + label:after {
-	opacity: 1;
-	
+.loadBox {
+	border: 1px black solid;
+	border-radius: 15px;
+	width: 148px;
+	height: 148px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
 }
 
-.dots input[type=checkbox]:checked:disabled + label:after {
-	background: #999;
-	content: '';
+.loadBox p {
+	width: 148px;
+	margin: 0px;
 }
 
-.dots input[type=checkbox]:disabled + label:after {
-	background-image: url('noDot.png');
-	content: '';
-}
-
+<<<<<<< HEAD
 /* bloodPool */
 .bloodPool {
 	width: 20px;
@@ -151,215 +174,165 @@ visibility: hidden;
 /* Character Sheet sections */
 #text1 {
 	text-align: left;
+=======
+.spacer {
+	height: 30px;
+>>>>>>> origin/PHP-ify
 }
 
-#text2 {
-	text-align: left;
+#newCharacter {
+	background-image: url('images/vampire-light.png');
 }
 
-#text3 {
-	text-align: left;
+#newCharacter:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/vampire-light.png');
+	color: rgb(255, 82, 82);
 }
 
-#charSheet {
-	width: 930px;
-	border: 1px black solid;
+.Brujah {
+	background-image: url('images/brujah-light.png');
 }
 
-.section {
-	position: relative;
-	width: 930px;
-	display: inline-block;
-	text-align: center;
-	font-size: large;
-	font-weight: bold;
-	margin: 5px 0 10px 0;
-	padding-top: 5px;
-	border: black solid;
-	border-width: 2px 0 0 0;
+.Brujah:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/brujah.png');
+	color: rgb(255, 82, 82);
 }
 
-.lefty {
-	width: 300;
-	position: relative;
-	left: 10;
-	top: 0;
-	float: left;
-	text-align: center;
-	font-size: initial;
-	font-weight: bold;
+.Gangrel {
+	background-image: url('images/gangrel-light.png');
 }
 
-.lefty div {
-	text-align: left;
-	font-weight: normal;
+.Gangrel:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/gangrel.png');
+	color: rgb(255, 82, 82);
 }
 
-.centery {
-	width: 300;
-	position: relative;
-	left: 20;
-	top: 0;
-	float: left;
-	text-align: center;
-	font-size: initial;
-	font-weight: bold;
+.Malkavian {
+	background-image: url('images/malkavian-light.png');
 }
 
-.centery div {
-	text-align: left;
-	font-weight: normal;
+.Malkavian:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/malkavian.png');
+	color: rgb(255, 82, 82);
 }
 
-.righty {
-	width: 300;
-	position: relative;
-	left: 30;
-	top: 0;
-	float: left;
-	text-align: center;
-	font-size: initial;
-	font-weight: bold;
+.Nosferatu {
+	background-image: url('images/nosferatu-light.png');
 }
 
-.righty div {
-	text-align: left;
-	font-weight: normal;
+.Nosferatu:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/nosferatu.png');
+	color: rgb(255, 82, 82);
 }
 
-#humanity {
-	text-align: center;
-	font-weight: bold;
-	height: 40px;
+.Toreador {
+	background-image: url('images/toreador-light.png');
 }
 
-#willpower {
-	text-align: center;
-	font-weight: bold;
-	height: 40px;
+.Toreador:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/toreador.png');
+	color: rgb(255, 82, 82);
 }
 
-#bloodPool {
-	text-align: center;
-	font-weight: bold;
-	height: 130px;
+.Tremere {
+	background-image: url('images/tremere-light.png');
 }
 
+<<<<<<< HEAD
 .checks {
 	position: absolute;
 	left: 30;
+=======
+.Tremere:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/tremere.png');
+	color: rgb(255, 82, 82);
 }
 
-.checky {
-	margin-bottom: 30px;
+.Ventrue {
+	background-image: url('images/ventrue-light.png');
+>>>>>>> origin/PHP-ify
 }
 
-.container {
-	border-style: solid;
-	border-width: 1;
-	display: inline-flex;
-	right: 5;
-	position: absolute;
+.Ventrue:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/ventrue.png');
+	color: rgb(255, 82, 82);
 }
 
-.attr {
-	height: 20;
-	margin: 5;
+.Lasombra {
+	background-image: url('images/lasombra-light.png');
 }
 
-#phases {
-	margin-right: -1px;
-	margin-left: auto;
-	background-color: darkblue;
-	width: 250;
-	position: fixed;
-	z-index: 50;
-	top: 35;
-	color: white;
-	padding: 40px;
+.Lasombra:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/lasombra.png');
+	color: rgb(255, 82, 82);
 }
 
-#phasesName {
-	position: relative;
-	left: -93;
-	font-weight: bold;
-	top: 100;
-	display: inline-block;
-	cursor: default;
-	/* Safari */
-	-webkit-transform: rotate(-90deg);
-
-	/* Firefox */
-	-moz-transform: rotate(-90deg);
-
-	/* IE */
-	-ms-transform: rotate(-90deg);
-
-	/* Opera */
-	-o-transform: rotate(-90deg);
-
-	/* Internet Explorer */
-	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-
+.Tzimisce {
+	background-image: url('images/tzimisce-light.png');
 }
 
-#phasesBody {
-	left: -15px;
-	top: -50px;
-	width: 275px;
-	display: none;
+.Tzimisce:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/tzimisce.png');
+	color: rgb(255, 82, 82);
 }
 
-.current {
-	background-color: darkslateblue;
-	padding: 5;
+.Assimite {
+	background-image: url('images/assimite-light.png');
 }
 
-.current div {
-	display: block;
+.Assimite:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/assimite.png');
+	color: rgb(255, 82, 82);
 }
 
-.next {
-	color: grey;
+.Giovanni {
+	background-image: url('images/giovanni-light.png');
 }
 
-.next div {
-	display: none;
+.Giovanni:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/giovanni.png');
+	color: rgb(255, 82, 82);
 }
 
-.previous {
-	color: grey;
+.Ravnos {
+	background-image: url('images/ravnos-light.png');
 }
 
-
-.previous div {
-	display: none;
+.Ravnos:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/ravnos.png');
+	color: rgb(255, 82, 82);
 }
 
-#dotCounter {
-	display: none;
-	color: red;
-	font-weight: bold;
-	font-size: 48;
-	position: absolute;
-	background-color: fff;
-	z-index: 25;
+.Setite {
+	background-image: url('images/setite-light.png');
 }
 
-li {
-	cursor: pointer;
+.Setite:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/setite.png');
+	color: rgb(255, 82, 82);
 }
 
-#freebiePoints {
-	right: 75px;
-	width: 50px;
+.Salubri {
+	background-image: url('images/salubri-light.png');
 }
 
-#freebieUpdate {
-	margin-top: 2px;
-	margin-bottom: 2px;
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	right: 10px;
-	position: absolute;
+.Salubri:hover {
+	background: rgba(0, 0, 0, 0.75);
+	background-image: url('images/salubri.png');
+	color: rgb(255, 82, 82);
 }
+

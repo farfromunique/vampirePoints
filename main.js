@@ -12,6 +12,7 @@ function disableDotsInGroup(groupName) /* str, dex, etc */ {
 		};
 		
 	} else if (groupName == 'bloodPool') {
+<<<<<<< HEAD
 		
 		var blood = document.getElementsByClassName('blood');
 		
@@ -19,6 +20,15 @@ function disableDotsInGroup(groupName) /* str, dex, etc */ {
 			blood[i].disabled = true;
 		}
 		
+=======
+		
+		var blood = document.getElementsByClassName('blood');
+		
+		for (var i=0;i<blood.length;i++) {
+			blood[i].disabled = true;
+		}
+		
+>>>>>>> origin/PHP-ify
 	} else {
 	
 		var dots = [];
@@ -53,71 +63,82 @@ function enableDotsInGroup(groupName, enable1, enable2, enable3, enable4, enable
 function disableDotsInMetaGroup(metaGroup) /* physical, mental, etc */ {
 	switch (metaGroup) {
 		case "Physical":
-			disableDotsInGroup("str");
-			disableDotsInGroup("dex");
-			disableDotsInGroup("sta");
+			disableDotsInGroup("stren");
+			disableDotsInGroup("dexte");
+			disableDotsInGroup("stami");
 			break;
 		
 		case "Social":
-			disableDotsInGroup("cha");
-			disableDotsInGroup("man");
-			disableDotsInGroup("app");
+			disableDotsInGroup("chari");
+			disableDotsInGroup("manip");
+			disableDotsInGroup("appea");
 			break;
 		
 		case "Mental":
-			disableDotsInGroup("per");
-			disableDotsInGroup("int");
-			disableDotsInGroup("wit");
+			disableDotsInGroup("perce");
+			disableDotsInGroup("intel");
+			disableDotsInGroup("wits");
 			break;
 		
 		case "Talents":
-			disableDotsInGroup("alertness");
-			disableDotsInGroup("athletics");
+			disableDotsInGroup("alert");
+			disableDotsInGroup("athle");
 			disableDotsInGroup("brawl");
 			disableDotsInGroup("dodge");
-			disableDotsInGroup("empathy");
-			disableDotsInGroup("expression");
-			disableDotsInGroup("intimidation");
-			disableDotsInGroup("leadership");
-			disableDotsInGroup("streetwise");
-			disableDotsInGroup("subterfuge");
+			disableDotsInGroup("empat");
+			disableDotsInGroup("expre");
+			disableDotsInGroup("intim");
+			disableDotsInGroup("leade");
+			disableDotsInGroup("stree");
+			disableDotsInGroup("subte");
 			break;
 		
 		case "Skills":
-			disableDotsInGroup("animalKen");
-			disableDotsInGroup("crafts");
+			disableDotsInGroup("anima");
+			disableDotsInGroup("craft");
 			disableDotsInGroup("drive");
-			disableDotsInGroup("etiquette");
-			disableDotsInGroup("firearms");
+			disableDotsInGroup("etiqu");
+			disableDotsInGroup("firea");
 			disableDotsInGroup("melee");
-			disableDotsInGroup("performance");
-			disableDotsInGroup("security");
-			disableDotsInGroup("stealth");
-			disableDotsInGroup("survival");
+			disableDotsInGroup("perfo");
+			disableDotsInGroup("secur");
+			disableDotsInGroup("steal");
+			disableDotsInGroup("survi");
 			break;
 		
 		case "Knowledges":
-			disableDotsInGroup("academics");
-			disableDotsInGroup("computer");
-			disableDotsInGroup("finance");
-			disableDotsInGroup("investigation");
+			disableDotsInGroup("acade");
+			disableDotsInGroup("compu");
+			disableDotsInGroup("finan");
+			disableDotsInGroup("inves");
 			disableDotsInGroup("law");
-			disableDotsInGroup("linguistics");
-			disableDotsInGroup("medicine");
-			disableDotsInGroup("occult");
-			disableDotsInGroup("politics");
-			disableDotsInGroup("science");
+			disableDotsInGroup("lingu");
+			disableDotsInGroup("medic");
+			disableDotsInGroup("occul");
+			disableDotsInGroup("polit");
+			disableDotsInGroup("scien");
 			break;
 		
 		case "In-Clan":
-			disableDotsInGroup("in-clan-disc1-");
-			disableDotsInGroup("in-clan-disc2-");
-			disableDotsInGroup("in-clan-disc3-");
+			disableDotsInGroup("in1");
+			disableDotsInGroup("in2");
+			disableDotsInGroup("in3");
 			break;
 			
 		case "Out-Clan":
+			disableDotsInGroup("ou1");
+			disableDotsInGroup("ou2");
+			disableDotsInGroup("ou3");
+			break;
 		
 		case "Backgrounds":
+			disableDotsInGroup("bk1");
+			disableDotsInGroup("bk2");
+			disableDotsInGroup("bk3");
+			disableDotsInGroup("bk4");
+			disableDotsInGroup("bk5");
+			disableDotsInGroup("bk6");
+			break;
 		
 		case "Virtues":
 		
@@ -131,88 +152,97 @@ function disableDotsInMetaGroup(metaGroup) /* physical, mental, etc */ {
 function enableDotsInMetaGroup(metaGroup, enable1, enable2, enable3, enable4, enable5) /* physical, mental, etc */ {
 	switch (metaGroup) {
 		case "Physical":
-			enableDotsInGroup("str", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("dex", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("sta", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("stren", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("dexte", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("stami", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Social":
-			enableDotsInGroup("cha", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("man", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("app", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("chari", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("manip", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("appea", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Mental":
-			enableDotsInGroup("per", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("int", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("wit", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("perce", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("intel", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("wits", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Talents":
-			enableDotsInGroup("alertness", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("athletics", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("alert", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("athle", enable1, enable2, enable3, enable4, enable5);
 			enableDotsInGroup("brawl", enable1, enable2, enable3, enable4, enable5);
 			enableDotsInGroup("dodge", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("empathy", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("expression", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("intimidation", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("leadership", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("streetwise", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("subterfuge", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("empat", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("expre", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("intim", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("leade", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("stree", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("subte", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Skills":
-			enableDotsInGroup("animalKen", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("crafts", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("anima", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("craft", enable1, enable2, enable3, enable4, enable5);
 			enableDotsInGroup("drive", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("etiquette", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("firearms", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("etiqu", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("firea", enable1, enable2, enable3, enable4, enable5);
 			enableDotsInGroup("melee", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("performance", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("security", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("stealth", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("survival", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("perfo", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("secur", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("steal", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("survi", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Knowledges":
-			enableDotsInGroup("academics", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("computer", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("finance", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("investigation", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("acade", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("compu", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("finan", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("inves", enable1, enable2, enable3, enable4, enable5);
 			enableDotsInGroup("law", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("linguistics", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("medicine", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("occult", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("politics", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("science", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("lingu", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("medic", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("occul", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("polit", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("scien", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "In-Clan":
-			enableDotsInGroup("in-clan-disc1-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("in-clan-disc2-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("in-clan-disc3-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("in1", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("in2", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("in3", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Out-Clan":
-			enableDotsInGroup("out-clan-disc1-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("out-clan-disc2-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("out-clan-disc3-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("ou1", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("ou2", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("ou3", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Backgrounds":
-			enableDotsInGroup("bkgd-1-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("bkgd-2-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("bkgd-3-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("bkgd-4-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("bkgd-5-", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("bkgd-6-", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk1", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk2", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk3", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk4", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk5", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("bk6", enable1, enable2, enable3, enable4, enable5);
 			break;
 		
 		case "Virtues":
-			enableDotsInGroup("conscience", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("selfControl", enable1, enable2, enable3, enable4, enable5);
-			enableDotsInGroup("courage", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("consc", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("self ", enable1, enable2, enable3, enable4, enable5);
+			enableDotsInGroup("coura", enable1, enable2, enable3, enable4, enable5);
 			break;
+			
+		case "All":
+			var dots = [];
+			dots = document.getElementsByTagName("input")
+			for (var i=0;i<document.getElementsByTagName("input").length;i++) {
+				dots[i].disabled = false;
+			}
+			break;
+			
 		
 		default:
 			console.log("Error encountered when calling enableDotsInMetaGroup: bad metaGroup");
@@ -224,30 +254,35 @@ function enableDotsInMetaGroup(metaGroup, enable1, enable2, enable3, enable4, en
 function checkGeneration() {
 	var dropdowns = document.getElementsByTagName('select');
 	var pool;
+	var background;
+	
 	for (var i=1;i<dropdowns.length;i++) /* Skipping the first one, because it's not in the group */ {
 		if (dropdowns[i].value == "Generation") {
-			if (document.getElementById(dropdowns[i].id.slice(0,6)+'-5').checked) {
+			background = "bk" + i;
+			console.log(background);
+			if (document.getElementById(background+'5').checked) {
 				document.getElementById('generation').value = '8';
 				pool = 15;
-			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-4').checked) {
+			} else if (document.getElementById(background+'4').checked) {
 				document.getElementById('generation').value = '9';
 				pool = 14;
-			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-3').checked) {	
+			} else if (document.getElementById(background+'3').checked) {	
 				document.getElementById('generation').value = '10';
 				pool = 13;
-			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-2').checked) {	
+			} else if (document.getElementById(background+'2').checked) {	
 				document.getElementById('generation').value = '11';
 				pool = 12;
-			} else if (document.getElementById(dropdowns[1].id.slice(0,6)+'-1').checked) {	
+			} else if (document.getElementById(background+'1').checked) {	
 				document.getElementById('generation').value = '12';
 				pool = 11;
 			} else {
 				document.getElementById('generation').value = '13';
+				pool = 10;
 			}
 		}
 	}
 	var blood = document.getElementsByClassName('blood');
-	for (i=blood.length-1;i>pool;i--) {
+	for (i=blood.length-1;i>=pool;i--) {
 		blood[i].checked = true;
 		blood[i].disabled = true;
 	}
@@ -351,7 +386,7 @@ function attributeSelectionBuilder() /* build the steps menu feature that allows
 	phys = document.getElementsByClassName("phy");
 	for (i=0,max = document.getElementsByClassName("phy").length;i<max;i++) {
 		phys[i].onclick = function() { 
-			leftBlocker.remove();
+			remove(leftBlocker);
 			dotCounter.style.left = 170;
 			dotCounter.style.top = 260;
 			dotCounter.style.display = "block";
@@ -366,7 +401,7 @@ function attributeSelectionBuilder() /* build the steps menu feature that allows
 	soci = document.getElementsByClassName("soc");
 	for (i=0,max = document.getElementsByClassName("soc").length;i<max;i++) {
 		soci[i].onclick = function() { 
-			centerBlocker.remove();
+			remove(centerBlocker);
 			dotCounter.style.left = 475;
 			dotCounter.style.top = 260;
 			dotCounter.style.display = "block";
@@ -382,7 +417,7 @@ function attributeSelectionBuilder() /* build the steps menu feature that allows
 	ment = document.getElementsByClassName("men");
 	for (i=0,max = document.getElementsByClassName("men").length;i<max;i++) {
 		ment[i].onclick = function() { 
-			rightBlocker.remove();
+			remove(rightBlocker);
 			dotCounter.style.left = 785;
 			dotCounter.style.top = 260;
 			dotCounter.style.display = "block";
@@ -399,7 +434,7 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 	tale = document.getElementsByClassName("tal");
 	for (i=0,max = document.getElementsByClassName("tal").length;i<max;i++) {
 		tale[i].onclick = function() { 
-			leftBlocker.remove();
+			remove(leftBlocker);
 			dotCounter.style.left = 150;
 			dotCounter.style.top = 390;
 			dotCounter.style.display = "block";
@@ -414,7 +449,7 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 	skil = document.getElementsByClassName("ski");
 	for (i=0,max = document.getElementsByClassName("ski").length;i<max;i++) {
 		skil[i].onclick = function() { 
-			centerBlocker.remove();
+			remove(centerBlocker);
 			dotCounter.style.left = 460;
 			dotCounter.style.top = 390;
 			dotCounter.style.display = "block";
@@ -429,7 +464,7 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 	know = document.getElementsByClassName("kno");
 	for (i=0,max = document.getElementsByClassName("kno").length;i<max;i++) {
 		know[i].onclick = function() { 
-			rightBlocker.remove();
+			remove(rightBlocker);
 			dotCounter.style.left = 775;
 			dotCounter.style.top = 390;
 			dotCounter.style.display = "block";
@@ -442,9 +477,39 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 	};
 }
 
+function backgroundBuilder() {
+	
+	document.getElementById('background1').onchange = function () {
+		document.getElementById('bk1text').innerText = document.getElementById('background1').value;
+		initialDotSetup();
+	}
+	document.getElementById('background2').onchange = function () {
+		document.getElementById('bk2text').innerText = document.getElementById('background2').value;
+		initialDotSetup();
+	}
+	document.getElementById('background3').onchange = function () {
+		document.getElementById('bk3text').innerText = document.getElementById('background3').value;
+		initialDotSetup();
+	}
+	document.getElementById('background4').onchange = function () {
+		document.getElementById('bk4text').innerText = document.getElementById('background4').value;
+		initialDotSetup();
+	}
+	document.getElementById('background5').onchange = function () {
+		document.getElementById('bk5text').innerText = document.getElementById('background5').value;
+		initialDotSetup();
+	}
+	document.getElementById('background6').onchange = function () {
+		document.getElementById('bk6text').innerText = document.getElementById('background6').value;
+		initialDotSetup();
+	}
+	
+}
+
 function initialDotSetup() {
 	allDots = document.getElementsByClassName("dot");
 	for (i=0,max = document.getElementsByClassName("dot").length;i<max;i++) {
+		removeAllMyEventListeners(allDots[i]);
 		allDots[i].onclick = function() { 
 			if (this.checked) {
 				decrementCounter(1);
@@ -601,7 +666,7 @@ function xpDotSetup() {
 	var i;
 	var startPos=0;
 	
-	for (i=0,max = allDots.length;i<max;i++) {
+	for (i=0,max = allDots.length;i<max;i++) /* disable all checked dots, enable all others */ {
 		if (allDots[i].checked) {
 			allDots[i].disabled = true;
 		} else {
@@ -616,9 +681,9 @@ function xpDotSetup() {
 	for (i=0;i<attributeDots.length;i++) /* add function */ {
 		attributeDots[i].onclick = function() { 
 			if (this.checked) {
-				decrementCounter(4 * (i % 5));
+				decrementCounter(xpCost(this, 'attribute'));
 			} else {
-				incrementCounter(4 * (i % 5));
+				incrementCounter(xpCost(this, 'attribute'));
 			};
 		}
 	}
@@ -631,19 +696,11 @@ function xpDotSetup() {
 	
 	for (i=0;i<abilityDots.length;i++) /* add function */ {
 		abilityDots[i].onclick = function() { 
-			if ((i % 5) === 0) {
-				if (this.checked) {
-					decrementCounter(3);
-				} else {
-					incrementCounter(3);
-				};
+			if (this.checked) {
+				decrementCounter(xpCost(this, 'ability'));
 			} else {
-				if (this.checked) {
-					decrementCounter(2 * (i % 5));
-				} else {
-					incrementCounter(2 * (i % 5));
-				};
-			}
+				incrementCounter(xpCost(this, 'ability'));
+			};
 		}
 	}
 	
@@ -655,19 +712,11 @@ function xpDotSetup() {
 	
 	for (i=0;i<inDisciplineDots.length;i++) /* add function */ {
 		inDisciplineDots[i].onclick = function() { 
-			if ((i % 5) === 0) {
-				if (this.checked) {
-					decrementCounter(10);
-				} else {
-					incrementCounter(10);
-				};
+			if (this.checked) {
+				decrementCounter(xpCost(this, 'inDiscipline'));
 			} else {
-				if (this.checked) {
-					decrementCounter(5 * (i % 5));
-				} else {
-					incrementCounter(5 * (i % 5));
-				};
-			}
+				incrementCounter(xpCost(this, 'inDiscipline'));
+			};
 		}
 	}
 	
@@ -679,19 +728,11 @@ function xpDotSetup() {
 	
 	for (i=0;i<outDisciplineDots.length;i++) /* add function */ {
 		outDisciplineDots[i].onclick = function() { 
-			if ((i % 5) === 0) {
-				if (this.checked) {
-					decrementCounter(10);
-				} else {
-					incrementCounter(10);
-				};
+			if (this.checked) {
+				decrementCounter(xpCost(this, 'outDiscipline'));
 			} else {
-				if (this.checked) {
-					decrementCounter(7 * (i % 5));
-				} else {
-					incrementCounter(7 * (i % 5));
-				};
-			}
+				incrementCounter(xpCost(this, 'outDiscipline'));
+			};
 		}
 	}
 	
@@ -720,9 +761,9 @@ function xpDotSetup() {
 	for (i=0;i<virtueDots.length;i++) /* add function */ {
 		virtueDots[i].onclick = function() { 
 			if (this.checked) {
-				decrementCounter(2 * (i % 5));
+				decrementCounter(xpCost(this, 'virtue'));
 			} else {
-				incrementCounter(2 * (i % 5));
+				incrementCounter(xpCost(this, 'virtue'));
 			};
 		}
 	}
@@ -736,9 +777,9 @@ function xpDotSetup() {
 	for (i=0;i<humanityDots.length;i++) /* add function */ {
 		humanityDots[i].onclick = function() { 
 			if (this.checked) {
-				decrementCounter(2 * (i % 5));
+				decrementCounter(xpCost(this, 'humanity'));
 			} else {
-				incrementCounter(2 * (i % 5));
+				incrementCounter(xpCost(this, 'humanity'));
 			};
 		}
 	}
@@ -752,9 +793,9 @@ function xpDotSetup() {
 	for (i=0;i<willpowerDots.length;i++) /* add function */ {
 		willpowerDots[i].onclick = function() { 
 			if (this.checked) {
-				decrementCounter(i % 5);
+				decrementCounter(xpCost(this, 'willpower'));
 			} else {
-				incrementCounter(i % 5);
+				incrementCounter(xpCost(this, 'willpower'));
 			};
 		}
 	}
