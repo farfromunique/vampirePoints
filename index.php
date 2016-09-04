@@ -4,16 +4,27 @@
 		include 'classes/' . $class . '.class.php';
 	});
 
+	if (array_key_exists('target',$_GET)) {
+		$target = $_GET["target"];
+	} else {
+		$target = 'web';
+	}
+	
+	if (array_key_exists('character',$_GET)) {
+		$charNum = $_GET["character"];
+	} else {
+		$charNum = 1000;
+	}
+	
+	$parser = new parser();
+	
+	$DB = new DB();
+
+	$basic_vampire = unserialize($DB->getVampire('1000'));
+	
+	$header = new header($target);
+	echo $header;
 ?>
-<html>
-	<head>
-		<meta charset='UTF-8'>
-		<link rel="stylesheet" type="text/css" href="basic.css">
-		<title>Freebies / XP checker for V:tM characters</title>
-		<script type="text/javascript" src="ACWPD.js"></script>
-		<script type="text/javascript" src="splash.js"></script>
-		<script type="text/javascript" src="analytics.js"></script>
-	</head>
 	<body>
 		<h1>White Wolf character sheet generator</h1>
 		<p>I see the look in your eyes. The look that says, "I have a PDF of the character sheet. Heck, I have the famous fillable sheets from Mr. Gone! What do I need this site for?"</p>

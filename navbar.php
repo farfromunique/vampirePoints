@@ -1,7 +1,8 @@
 <div id="dotCounter">0</div>
 
 <?php
-	$nav = new navbar($basic['fluff']['game']);
+	global $basic_vampire;
+	$nav = new navbar($basic_vampire['fluff']['game']);
 ?>
 <div id='phases'>
 	<div id="phasesName">Phases / Instructions</div>
