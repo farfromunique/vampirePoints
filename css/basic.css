@@ -24,7 +24,6 @@ input[type=text] {
 	right: 5px;
 }
 
-<<<<<<< HEAD
 /* Dots */
 .dots {
 	width: 20px;
@@ -64,7 +63,7 @@ input[type=text] {
 	background: #000;
 
 	-webkit-border-radius: 15px;
-=======
+}
 .holder {
 	width: 850px;
 	margin-left: auto;
@@ -73,7 +72,6 @@ input[type=text] {
 
 .characterBox {
 	border: 1px black solid;
->>>>>>> origin/PHP-ify
 	border-radius: 15px;
 	width: 148px;
 	height: 148px;
@@ -106,7 +104,6 @@ input[type=text] {
 	margin: 0px;
 }
 
-<<<<<<< HEAD
 /* bloodPool */
 .bloodPool {
 	width: 20px;
@@ -174,10 +171,9 @@ visibility: hidden;
 /* Character Sheet sections */
 #text1 {
 	text-align: left;
-=======
+}
 .spacer {
 	height: 30px;
->>>>>>> origin/PHP-ify
 }
 
 #newCharacter {
@@ -244,11 +240,10 @@ visibility: hidden;
 	background-image: url('images/tremere-light.png');
 }
 
-<<<<<<< HEAD
 .checks {
 	position: absolute;
 	left: 30;
-=======
+}
 .Tremere:hover {
 	background: rgba(0, 0, 0, 0.75);
 	background-image: url('images/tremere.png');
@@ -257,7 +252,6 @@ visibility: hidden;
 
 .Ventrue {
 	background-image: url('images/ventrue-light.png');
->>>>>>> origin/PHP-ify
 }
 
 .Ventrue:hover {
