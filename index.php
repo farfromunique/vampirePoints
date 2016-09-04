@@ -45,7 +45,6 @@
 				$data = unserialize($fiveChars[$i]['Data']);
 				$thisChar = $fiveChars[$i];
 				echo "<div id='load" . $thisChar['UID'] . "' class='loadBox " . $data['fluff']['clan'] . "'>" . "\n" . 
-					"<div class='spacer'></div>" . "\n" . 
 					"<p>" . $data['fluff']['character'] . "<br />" . "\n" . 
 					$data['fluff']['clan'] . "<br />" . "\n" . 
 					"15 freebies<br />" . "\n" . 
