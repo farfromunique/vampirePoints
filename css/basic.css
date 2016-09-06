@@ -1,12 +1,4 @@
-.characterContainer {
-	width: 85%;
-	height: 60%;
-	margin-left: auto;
-	margin-right: auto;
-	border: 1px black solid;
-	border-radius: 15px;
-}
-
+/* General Styles */
 div {
 	position: relative;
 }
@@ -24,46 +16,16 @@ input[type=text] {
 	right: 5px;
 }
 
-/* Dots */
-.dots {
-	width: 20px;
-	height: 20px;
-	background: #000;
-
-	display: inline-block;
-	
-	margin: 1px auto;
-
-	-webkit-border-radius: 15px;
+/* Character Select */
+.characterContainer {
+	width: 85%;
+	height: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px black solid;
 	border-radius: 15px;
-
-	position: relative;
 }
 
-.dots label {
-	cursor: pointer;
-	position: absolute;
-	width: 14px;
-	height: 14px;
-
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
-	left: 3px;
-	top: 3px;
-
-	background: #fff;
-}
-
-.dots label:after {
-	opacity: 0;
-	content: '';
-	position: absolute;
-	width: 12px;
-	height: 12px;
-	background: #000;
-
-	-webkit-border-radius: 15px;
-}
 .holder {
 	width: 850px;
 	margin-left: auto;
@@ -104,78 +66,7 @@ input[type=text] {
 	margin: 0px;
 }
 
-/* bloodPool */
-.bloodPool {
-	width: 20px;
-	height: 20px;
-	background: #000;
-
-	display: inline-block;
-	
-	margin: 1px auto;
-
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-
-	position: relative;
-}
-
-.bloodPool label {
-	cursor: pointer;
-	position: absolute;
-	width: 14px;
-	height: 14px;
-
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	left: 3px;
-	top: 3px;
-
-	background: #fff;
-}
-
-.bloodPool label:after {
-	opacity: 0;
-	content: '';
-	position: absolute;
-	width: 12px;
-	height: 12px;
-	background: #000;
-
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	top: 1px;
-	left: 1px;
-
-}
-
-.bloodPool label:hover::after {
-	opacity: 0.75;
-}
-
-.bloodPool input[type=checkbox]:checked + label {
-visibility: hidden;
-}
-
-.bloodPool input[type=checkbox]:checked + label:after {
-	opacity: 1;
-	
-}
-
-.bloodPool input[type=checkbox]:checked:disabled + label:after {
-	background: #999;
-	content: '';
-	display: none;
-}
-
-/* Character Sheet sections */
-#text1 {
-	text-align: left;
-}
-.spacer {
-	height: 30px;
-}
-
+/* New Character */
 #newCharacter {
 	background-image: url('images/vampire-light.png');
 }
@@ -186,6 +77,7 @@ visibility: hidden;
 	color: rgb(255, 82, 82);
 }
 
+/* Vampire Clans / Bloodlines */
 .Brujah {
 	background-image: url('images/brujah-light.png');
 }
@@ -329,4 +221,122 @@ visibility: hidden;
 	background-image: url('images/salubri.png');
 	color: rgb(255, 82, 82);
 }
+
+/* Character Sheet */
+/* Dots */
+.dots {
+	width: 20px;
+	height: 20px;
+	background: #000;
+
+	display: inline-block;
+	
+	margin: 1px auto;
+
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+
+	position: relative;
+}
+
+.dots label {
+	cursor: pointer;
+	position: absolute;
+	width: 14px;
+	height: 14px;
+
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	left: 3px;
+	top: 3px;
+
+	background: #fff;
+}
+
+.dots label:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	background: #000;
+
+	-webkit-border-radius: 15px;
+}
+
+
+
+/* bloodPool */
+.bloodPool {
+	width: 20px;
+	height: 20px;
+	background: #000;
+
+	display: inline-block;
+	
+	margin: 1px auto;
+
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+
+	position: relative;
+}
+
+.bloodPool label {
+	cursor: pointer;
+	position: absolute;
+	width: 14px;
+	height: 14px;
+
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	left: 3px;
+	top: 3px;
+
+	background: #fff;
+}
+
+.bloodPool label:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	background: #000;
+
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	top: 1px;
+	left: 1px;
+
+}
+
+.bloodPool label:hover::after {
+	opacity: 0.75;
+}
+
+.bloodPool input[type=checkbox]:checked + label {
+visibility: hidden;
+}
+
+.bloodPool input[type=checkbox]:checked + label:after {
+	opacity: 1;
+	
+}
+
+.bloodPool input[type=checkbox]:checked:disabled + label:after {
+	background: #999;
+	content: '';
+	display: none;
+}
+
+/* Character Sheet sections */
+#text1 {
+	text-align: left;
+}
+.spacer {
+	height: 30px;
+}
+
+
 

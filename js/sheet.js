@@ -207,10 +207,13 @@ function Step02() /* Attributes (1 of 3) */ {
 	blocker.style.opacity = .5;
 	
 	window.leftBlocker = document.body.appendChild(blocker);
+	window.leftBlocker.classList.add("blocker-left");
 	window.centerBlock = leftBlocker.cloneNode(false);
 	window.centerBlocker = document.body.appendChild(centerBlock);
+	window.centerBlocker.classList.add("blocker-center");
 	window.rightBlock = leftBlocker.cloneNode(false);
 	window.rightBlocker = document.body.appendChild(rightBlock);
+	window.rightBlocker.classList.add("blocker-right");
 	
 	centerBlocker.style.left = 325;
 	rightBlocker.style.left = 635;
