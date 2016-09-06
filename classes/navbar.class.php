@@ -15,6 +15,7 @@
 			$this->clanCode = '<select name="clan" id="clanSelect">' . "\n";
 			switch ($this->game) {
 				case 'Vampire: the Masquerade':
+				default:
 					$clanEquivalent = [
 						'Select your Clan',
 						'- Camarilla -',
@@ -37,10 +38,6 @@
 						'Salubri',
 						'Cappadocian'
 						];
-					break;
-				
-				default:
-					$this->clanCode .= 'Error!';
 					break;
 				}
 			for ($i = 0; $i < (count($clanEquivalent) - 1); $i++) {
