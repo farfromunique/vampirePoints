@@ -16,3 +16,6 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 *.db
+
+# PhpStorm
+.idea/*
