@@ -13,8 +13,8 @@ function flyoutOnRight() {
 function flyout() {
 	window.phases.style.left = window.innerWidth - (window.phases.style.width.replace("px","").valueOf());
 	window.flown = true;
-	phasesName = document.getElementById("phasesName");
-	phasesBody = document.getElementById("phasesBody");
+	var phasesName = document.getElementById("phasesName");
+	var phasesBody = document.getElementById("phasesBody");
 	
 	phasesName.style.display = "none";
 	phasesBody.style.display = "block";
@@ -44,7 +44,7 @@ function getMaxCheckedElements() {
 			}
 		}
 	}
-	output = "";
+	var output = "";
 	for (i = 0;i<groups.length;i++) {
 		output += groups[i].id + "=>" + groups[i].highestDot + ";\n";
 	}
@@ -80,63 +80,52 @@ function getFluff() {
 }
 
 function finalBeforeSend() {
-	getMaxCheckedElements()
+	getMaxCheckedElements();
 	document.getElementById("outClanName").value = document.getElementById("clanName").innerText;
-	getCustomNames()
-	getFluff()
+	getCustomNames();
+	getFluff();
 }
 
 function xpCost(id, group) {
 	
 	var rating = id.id.substr(id.id.length-1,1);
+	var costs = [];
 	console.log('id = ' + id + '; rating = ' & rating & '; group = ' & group);
 	switch (group) {
 		case group = 'attribute':
-			var costs = new Array(5)
 			costs = [99,4,8,12,16];
 			break;
 		
 		case group = 'ability':
-			var costs = new Array(5)
 			costs = [3,2,4,6,8];
 			break;
 			
 		case group = 'inDiscipline':
-			var costs = new Array(5)
 			costs = [10,5,10,15,20];
 			break;
 		
 		case group = 'outDiscipline':
-			var costs = new Array(5)
 			costs = [10,7,14,21,28];
 			break;
 		
 		case group = 'background':
-			var costs = new Array(5)
 			costs = [99,99,99,99,99];
 			break;
 		
 		case group = 'virtue':
-			var costs = new Array(5)
 			costs = [99,2,4,6,8];
 			break;
 		
 		case group = 'humanity':
-			var costs = new Array(10)
 			costs = [99,2,4,6,8,10,12,14,16,18];
 			break;
 		
 		case group = 'willpower':
-			var costs = new Array(10)
 			costs = [99,1,2,3,4,5,6,7,8,9];
 			break;
 	}
 	
-	if (id.checked) /* this is backwards, because it fires after the click goes through! */ {
-		return costs[rating-1];
-	} else {
-		return costs[rating-1]
-	};
+	return costs[rating-1];
 	
 	
 }
@@ -144,23 +133,21 @@ function xpCost(id, group) {
 function Step00() /* Things to do onLoad */ {
 	disableDotsInGroup('All');
 	disableDotsInGroup('bloodPool');
-	addEventToID("Save","click","finalBeforeSend()")
+	addEventToID("Save","click","finalBeforeSend()");
 	flyoutOnRight();
 	flyout();
 }
 
 function Step01() /* Clan Selection */ {
 	stepName = 'Step01';
-	clan = document.getElementById('clanSelect');
+	var clan = document.getElementById('clanSelect');
 	clan = clan.value;
-			
+	
 	if (clan == "Nosferatu") {
 		document.getElementById('appea1').checked = false;
-	} else {
-		document.getElementById('appea1').checked = true;
 	}
 
-	var disciplinesByClan = new Array();
+	var disciplinesByClan = [];
 	disciplinesByClan['Assimite'] = ['Celerity', 'Obfuscate', 'Quietus'];
 	disciplinesByClan['Brujah'] = ['Celerity', 'Potence', 'Presence'];
 	disciplinesByClan['Gangrel'] = ['Animalism', 'Fortitude', 'Protean'];
@@ -178,10 +165,10 @@ function Step01() /* Clan Selection */ {
 	var allDisciplines = [' ', 'Animalism', 'Auspex', 'Celerity', 'Chimerstry', 'Dementation', 'Dominate', 'Fortitude', 'Obfuscate', 'Obtenebration', 'Potence', 'Presence', 'Protean', 'Quietus', 'Serpentis', 'Vicissitude']
 
 	var thisClan = disciplinesByClan[clan];
-	var indisciplines = new Array();
-	var outdisciplines1 = new Array();
-	var outdisciplines2 = new Array();
-	var outdisciplines3 = new Array();
+	var indisciplines = [];
+	var outdisciplines1 = [];
+	var outdisciplines2 = [];
+	var outdisciplines3 = [];
 			
 		document.getElementById('in1text').innerText = thisClan[0];
 		document.getElementById('in2text').innerText = thisClan[1];
@@ -189,7 +176,7 @@ function Step01() /* Clan Selection */ {
 	
 	document.getElementById('clanName').innerHTML = "<h1>" + clan + "</h1>";
 	
-	window.initialDotSetup()
+	window.initialDotSetup();
 	
 	window.nextStep();
 }
@@ -307,7 +294,8 @@ function Step07() /* Abilities (3 of 3) */ {
 
 function Step08() /* Disciplines */ {
 	stepName = 'Step08';
-	document.getElementById("dotCounter").innerHTML = "3";
+	var dotCounter = document.getElementById("dotCounter");
+	dotCounter.innerHTML = "3";
 	dotCounter.style.left = 150;
 	dotCounter.style.top = 690;
 	dotCounter.style.display = "block";
@@ -321,7 +309,8 @@ function Step08() /* Disciplines */ {
 
 function Step09() /* Backgrounds */ {
 	stepName = 'Step09';
-	document.getElementById("dotCounter").innerHTML = "5";
+	var dotCounter = document.getElementById("dotCounter");
+	dotCounter.innerHTML = "5";
 	dotCounter.style.left = 460;
 	dotCounter.style.top = 710;
 	dotCounter.style.display = "block";
@@ -338,9 +327,10 @@ function Step09() /* Backgrounds */ {
 function Step10() /* Virtues */ {
 	stepName = 'Step10';
 	
-	checkGeneration()
-	
-	document.getElementById("dotCounter").innerHTML = "7";
+	checkGeneration();
+
+	var dotCounter = document.getElementById("dotCounter");
+	dotCounter.innerHTML = "7";
 	dotCounter.style.left = 775;
 	dotCounter.style.top = 710;
 	dotCounter.style.display = "block";
@@ -358,7 +348,8 @@ function Step11() /* Freebie Points */ {
 	
 	stepName = 'Step11';
 	
-	document.getElementById("dotCounter").innerHTML = document.getElementById("freebiePoints").value;
+	var dotCounter = document.getElementById("dotCounter");
+	dotCounter.innerHTML = document.getElementById("freebiePoints").value;
 	dotCounter.style.right = 150;
 	dotCounter.style.top = 500;
 	dotCounter.style.display = "block";
@@ -368,8 +359,8 @@ function Step11() /* Freebie Points */ {
 	document.getElementById("Step11").className = "current";
 	
 	for (var i=0;i<5;i++) {
-		if (document.getElementById('consc' + (i+1)).checked) { humanity++; };
-		if (document.getElementById('self ' + (i+1)).checked) { humanity++; };
+		if (document.getElementById('consc' + (i+1)).checked) { humanity++; }
+		if (document.getElementById('self ' + (i+1)).checked) { humanity++; }
 	}
 	
 	for (i=0;i<humanity;i++) {
@@ -377,8 +368,8 @@ function Step11() /* Freebie Points */ {
 		document.getElementById('human' + (i+1)).disabled = true;
 	}
 	
-	for (var i=0;i<5;i++) {
-		if (document.getElementById('coura' + (i+1)).checked) { courage++; };
+	for (i=0;i<5;i++) {
+		if (document.getElementById('coura' + (i+1)).checked) { courage++; }
 	}
 	
 	for (i=0;i<courage;i++) {
@@ -392,8 +383,9 @@ function Step11() /* Freebie Points */ {
 
 function Step12() /* Experience Points */ {
 	stepName = 'Step12';
-	
-	document.getElementById("dotCounter").innerHTML = document.getElementById("xp").value;
+
+	var dotCounter = document.getElementById("dotCounter");
+	dotCounter.innerHTML = document.getElementById("xp").value;
 	dotCounter.style.right = 150;
 	dotCounter.style.top = 500;
 	dotCounter.style.display = "block";
@@ -415,16 +407,15 @@ function updateXP() {
 }
 
 document.addEventListener('DOMContentLoaded',function() {
-	var i;
 	
-	window.onresize = function() { 
+	document.addEventListener('resize',function(){
 		flyoutOnRight();
 		if (flown) {
 			flyin();
 		} else {
 			flyout();
-		};
-	};
+		}
+	});
 	
 	addEventToID("charSheet","Click","flyin()");
 	addEventToID("phases","Click","flyout()");
@@ -434,11 +425,11 @@ document.addEventListener('DOMContentLoaded',function() {
 	
 	if (document.getElementById('Step02')) {
 		attributeSelectionBuilder();
-	};
+	}
 	
 	if (document.getElementById('Step05')) {
 		abilitySelectionBuilder();
-	};
+	}
 
 	initialDotSetup();
 	

@@ -55,7 +55,7 @@
 		<div id="Step05" class="next"><!-- TSK 1 /-->
 			Step 5
 			<div>
-				Choose an ability group to be PRIMARY (gets 7 dots added):
+				Choose an ability group to be PRIMARY (gets 13 dots added):
 				<div>
 					<div class="tal" id="tal1"><ul><li>Talents</li></ul></div>
 					<div class="ski" id="ski1"><ul><li>Skills</li></ul></div>
@@ -67,7 +67,7 @@
 		<div id="Step06" class="next"><!-- TSK 2 /-->
 			Step 6
 			<div>
-				Choose an ability group to be PRIMARY (gets 7 dots added):
+				Choose an ability group to be PRIMARY (gets 9 dots added):
 				<div>
 					<div class="tal" id="tal2"><ul><li>Talents</li></ul></div>
 					<div class="ski" id="ski2"><ul><li>Skills</li></ul></div>
@@ -79,7 +79,7 @@
 		<div id="Step07" class="next"><!-- TSK 3 /-->
 			Step 7
 			<div>
-				Choose an ability group to be PRIMARY (gets 7 dots added):
+				Choose an ability group to be PRIMARY (gets 5 dots added):
 				<div>
 					<div class="tal" id="tal3"><ul><li>Talents</li></ul></div>
 					<div class="ski" id="ski3"><ul><li>Skills</li></ul></div>
@@ -98,8 +98,6 @@
 			Step 9
 			<div>
 				Place dots in Backgrounds (total of 5 dots at this stage).
-				<?php echo $nav->showBackgrounds(); ?>
-				
 			</div>
 		</div>
 		<div id="Step10" class="next"><!-- Virtues /-->
@@ -112,7 +110,7 @@
 			Step 11
 			<div>
 				Spend Freebie Points (15 available).<br />
-				To override the freebies you have, change this value:
+				<label for="freebiePoints">To override the freebies you have, change this value:</label>
 				<input type="text" id="freebiePoints" value="15"><input type="submit" id="freebieUpdate" value="update">
 			</div>
 		</div>
@@ -120,7 +118,7 @@
 			Step 12
 			<div>
 				Spend XP (0 available).<br />
-				To override the XP you have, change this value:
+				<label for="xp">To override the XP you have, change this value:</label>
 				<input type="text" id="xp" value="15"><input type="submit" id="xpUpdate" value="update">
 			</div>
 		</div>
