@@ -8,7 +8,8 @@
 		$this->code = 	'<html>' . "\n" . 
 							'<head>' . "\n" . 
 								'<meta charset="UTF-8">' . "\n" . 
-								'<link rel="stylesheet" type="text/css" href="/css/main.css">' . "\n" . 
+								'<link rel="stylesheet" type="text/css" href="/css/main.css">' . "\n" .
+			'<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">' . "\n" .
 								'<title>Freebies / XP checker for V:tM characters</title>' . "\n";
 		if ($target == 'web') {
 			$this->code .= 		'<script type="text/javascript" src="/js/ACWPD-ajax.js"></script>' . "\n" . 
@@ -41,11 +42,12 @@
 			$this->code .=	'</head>' . "\n";
 	}
 	
-	function showCode() {
-		return $this->code;
-	}
-
 	public function __toString() {
 		return $this->showCode();
+	}
+		
+		function showCode()
+		{
+			return $this->code;
 	}
 }
