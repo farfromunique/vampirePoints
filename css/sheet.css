@@ -470,3 +470,21 @@ h1 {
 .rating > input:disabled + label:before {
 	content: "\f057";
 }
+
+.information input[type=text] {
+	position: static;
+}
+
+.description .col-md-12 {
+	padding: 0;
+}
+
+.description .well {
+	margin-bottom: 0;
+}
+
+.description {
+	margin-top: 20px;
+	margin-bottom: 5px;
+	padding-bottom: 0;
+}
