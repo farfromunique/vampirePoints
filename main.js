@@ -12,23 +12,11 @@ function disableDotsInGroup(groupName) /* str, dex, etc */ {
 		};
 		
 	} else if (groupName == 'bloodPool') {
-<<<<<<< HEAD
-		
 		var blood = document.getElementsByClassName('blood');
 		
 		for (var i=0;i<blood.length;i++) {
 			blood[i].disabled = true;
 		}
-		
-=======
-		
-		var blood = document.getElementsByClassName('blood');
-		
-		for (var i=0;i<blood.length;i++) {
-			blood[i].disabled = true;
-		}
-		
->>>>>>> origin/PHP-ify
 	} else {
 	
 		var dots = [];

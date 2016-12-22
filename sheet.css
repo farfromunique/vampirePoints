@@ -281,6 +281,8 @@ input[type=checkbox] {
 	/* Internet Explorer */
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
+	/* Everything else */
+	transform: rotate(-90deg);
 }
 
 #phasesBody {
@@ -346,7 +348,8 @@ li {
 
 /* Print styles */
 .plain {
-font-weight: normal;
-text-align: right;
-position: absolute;
-right: 10;
+	font-weight: normal;
+	text-align: right;
+	position: absolute;
+	right: 10;
+}

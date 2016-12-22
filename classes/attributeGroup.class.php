@@ -47,4 +47,3 @@ class attributeGroup {
 		return $this->printCode;
 	}
 }
-?>
