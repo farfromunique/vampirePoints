@@ -161,8 +161,9 @@ function Step01() /* Clan Selection */ {
 	disciplinesByClan['Ventrue'] = ['Dominate', 'Fortitude', 'Presence'];
 	disciplinesByClan['Tzimisce'] = ['Animalism', 'Auspex', 'Vicissitude'];
 	disciplinesByClan['Setite'] = ['Obfuscate', 'Presence', 'Serpentis'];
+	disciplinesByClan['Salubri'] = ['Auspex', 'Fortitude', 'Obeah'];
 
-	var allDisciplines = [' ', 'Animalism', 'Auspex', 'Celerity', 'Chimerstry', 'Dementation', 'Dominate', 'Fortitude', 'Obfuscate', 'Obtenebration', 'Potence', 'Presence', 'Protean', 'Quietus', 'Serpentis', 'Vicissitude']
+	var allDisciplines = [' ', 'Animalism', 'Auspex', 'Celerity', 'Chimerstry', 'Dementation', 'Dominate', 'Fortitude', 'Obeah', 'Obfuscate', 'Obtenebration', 'Potence', 'Presence', 'Protean', 'Quietus', 'Serpentis', 'Vicissitude']
 
 	var thisClan = disciplinesByClan[clan];
 	var indisciplines = [];

@@ -363,3 +363,4 @@ paket-files/
 # JetBrains Rider
 *.sln.iml
 
+config.php
