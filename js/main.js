@@ -34,12 +34,12 @@ function disableDotsInGroup(groupName) /* str, dex, etc */ {
 
 function enableDotsInGroup(groupName, enable1, enable2, enable3, enable4, enable5) /* enableN are boolean */ {
 	var dots = [];
-		
-	dots[0] = document.getElementById(groupName+1)
-	dots[1] = document.getElementById(groupName+2)
-	dots[2] = document.getElementById(groupName+3)
-	dots[3] = document.getElementById(groupName+4)
-	dots[4] = document.getElementById(groupName+5)
+	
+	dots[0] = document.getElementById(groupName + 1);
+	dots[1] = document.getElementById(groupName + 2);
+	dots[2] = document.getElementById(groupName + 3);
+	dots[3] = document.getElementById(groupName + 4);
+	dots[4] = document.getElementById(groupName + 5);
 	
 	if (enable1) { dots[0].disabled = false; }
 	if (enable2) { dots[1].disabled = false; }
@@ -464,7 +464,8 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 }
 
 function backgroundBuilder() {
-	
+	/* Disabling to resolve #43 */
+	/* 
 	document.getElementById('background1').onchange = function () {
 		document.getElementById('bk1text').innerText = document.getElementById('background1').value;
 		initialDotSetup();
@@ -489,6 +490,7 @@ function backgroundBuilder() {
 		document.getElementById('bk6text').innerText = document.getElementById('background6').value;
 		initialDotSetup();
 	}
+	*/
 	
 }
 
