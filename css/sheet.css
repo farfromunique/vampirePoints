@@ -488,3 +488,8 @@ h1 {
 	margin-bottom: 5px;
 	padding-bottom: 0;
 }
+
+input[type=text].backgroundInput {
+	left: 0;
+	top: 2px;
+}

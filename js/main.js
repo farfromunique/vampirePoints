@@ -237,43 +237,6 @@ function enableDotsInMetaGroup(metaGroup, enable1, enable2, enable3, enable4, en
 	}
 }
 
-function checkGeneration() {
-	var dropdowns = document.getElementsByTagName('select');
-	var pool;
-	var background;
-	
-	for (var i=1;i<dropdowns.length;i++) /* Skipping the first one, because it's not in the group */ {
-		if (dropdowns[i].value == "Generation") {
-			background = "bk" + i;
-			console.log(background);
-			if (document.getElementById(background+'5').checked) {
-				document.getElementById('generation').value = '8';
-				pool = 15;
-			} else if (document.getElementById(background+'4').checked) {
-				document.getElementById('generation').value = '9';
-				pool = 14;
-			} else if (document.getElementById(background+'3').checked) {	
-				document.getElementById('generation').value = '10';
-				pool = 13;
-			} else if (document.getElementById(background+'2').checked) {	
-				document.getElementById('generation').value = '11';
-				pool = 12;
-			} else if (document.getElementById(background+'1').checked) {	
-				document.getElementById('generation').value = '12';
-				pool = 11;
-			} else {
-				document.getElementById('generation').value = '13';
-				pool = 10;
-			}
-		}
-	}
-	var blood = document.getElementsByClassName('blood');
-	for (i=blood.length-1;i>=pool;i--) {
-		blood[i].checked = true;
-		blood[i].disabled = true;
-	}
-}
-
 function enableOnlyUnchecked() {
 	for (var i=0;i<document.getElementsByClassName('dot').length;i++) {
 		document.getElementsByClassName('dot')[i].disabled = document.getElementsByClassName('dot')[i].checked /* disabled if checked */
@@ -282,8 +245,12 @@ function enableOnlyUnchecked() {
 
 function decrementCounter(step) {
 	var myValue = document.getElementById("dotCounter").innerHTML.valueOf();
-	for (var i=0;i<step;i++) {
-		myValue--;
+	if (step <= myValue) {
+		for (var i = 0; i < step; i++) {
+			myValue--;
+		}
+	} else {
+		alert("Not enough points! Trying to spend " + step + " while having only " + myValue);
 	}
 	document.getElementById("dotCounter").innerHTML = myValue;
 	updateScreen();
@@ -360,8 +327,10 @@ function nextStep() /* Advances to the next step */{
 		case "Step11":
 			Step12();
 			break;
-	
-	
+
+		case "Step12":
+			allDone();
+			break;
 	};
 	flown = true;
 	updateScreen();
@@ -464,34 +433,20 @@ function abilitySelectionBuilder() /* build the steps menu feature that allows t
 }
 
 function backgroundBuilder() {
-	/* Disabling to resolve #43 */
-	/* 
-	document.getElementById('background1').onchange = function () {
-		document.getElementById('bk1text').innerText = document.getElementById('background1').value;
-		initialDotSetup();
-	}
-	document.getElementById('background2').onchange = function () {
-		document.getElementById('bk2text').innerText = document.getElementById('background2').value;
-		initialDotSetup();
-	}
-	document.getElementById('background3').onchange = function () {
-		document.getElementById('bk3text').innerText = document.getElementById('background3').value;
-		initialDotSetup();
-	}
-	document.getElementById('background4').onchange = function () {
-		document.getElementById('bk4text').innerText = document.getElementById('background4').value;
-		initialDotSetup();
-	}
-	document.getElementById('background5').onchange = function () {
-		document.getElementById('bk5text').innerText = document.getElementById('background5').value;
-		initialDotSetup();
-	}
-	document.getElementById('background6').onchange = function () {
-		document.getElementById('bk6text').innerText = document.getElementById('background6').value;
-		initialDotSetup();
-	}
-	*/
-	
+	let backgrounds = document.querySelectorAll("#backgrounds .attr span");
+	backgrounds.forEach(function (element) {
+		replaceTextWithDropdown(element,"background");
+	}, this);
+}
+
+function disciplineBuilder() {
+	console.log("Fired disciplineBuilder");
+	let disciplines = document.querySelectorAll("#disciplines .attr span");
+	disciplines.forEach(function (element) {
+		if (element.id.search(/ou\d/) !== -1) {
+			replaceTextWithDropdown(element,"discipline");
+		}
+	}, this);
 }
 
 function initialDotSetup() {
@@ -787,5 +742,10 @@ function xpDotSetup() {
 			};
 		}
 	}
+}
+
+function allDone() {
+	stepName = 'Done';
+	alert("All points spent!");
 }
 

@@ -90,7 +90,6 @@ function xpCost(id, group) {
 	
 	var rating = id.id.substr(id.id.length-1,1);
 	var costs = [];
-	console.log('id = ' + id + '; rating = ' & rating & '; group = ' & group);
 	switch (group) {
 		case group = 'attribute':
 			costs = [99,4,8,12,16];
@@ -327,8 +326,6 @@ function Step09() /* Backgrounds */ {
 
 function Step10() /* Virtues */ {
 	stepName = 'Step10';
-	
-	checkGeneration();
 
 	var dotCounter = document.getElementById("dotCounter");
 	dotCounter.innerHTML = "7";
@@ -348,6 +345,8 @@ function Step11() /* Freebie Points */ {
 	var courage = 0;
 	
 	stepName = 'Step11';
+
+	disciplineBuilder();
 	
 	var dotCounter = document.getElementById("dotCounter");
 	dotCounter.innerHTML = document.getElementById("freebiePoints").value;
@@ -405,6 +404,138 @@ function updateFreebies() {
 
 function updateXP() {
 	document.getElementById('dotCounter').innerHTML = document.getElementById('xp').value;
+}
+
+function replaceTextWithDropdown(textID,group) {
+	let currentValue = textID.innerText;
+	let backgrounds = [
+		"Allies",
+		"Alternate Identity",
+		"Blank Hand Membership",
+		"Contacts",
+		"Domain",
+		"Fame",
+		"Generation",
+		"Herd",
+		"Influence",
+		"Mentor",
+		"Resources",
+		"Retainer",
+		"Rituals",
+		"Status"
+	];
+	let disciplines = [
+		"Animalism",
+		"Auspex",
+		"Celerity",
+		"Chimerstry",
+		"Dementation",
+		"Dominate",
+		"Fortitude",
+		"Necromancy",
+		"Obeah",
+		"Obfuscate",
+		"Obtenebration",
+		"Potence",
+		"Presence",
+		"Protean",
+		"Quietus",
+		"Serpentis",
+		"Vicissitude"
+	];
+	let newElem = document.createElement("select");
+	newElem.id = textID.id+"_dropdown";
+	newElem.classList.add("backgroundInput");
+	defaultOpt = document.createElement("option");
+	defaultOpt.id = textID.id + "_dropdown_blank";
+	defaultOpt.innerText = " -- Please Select --";
+	defaultOpt.selected = true;
+	defaultOpt.value = "(blank)";
+	newElem.appendChild(defaultOpt);
+	switch (group) {
+		case "background":	
+			backgrounds.forEach(function(element) {
+			let opt = document.createElement("option");
+			opt.id = textID.id + "_dropdown_" + element;
+			opt.innerText = element;
+			newElem.appendChild(opt);
+		}, this);
+			break;
+		
+		case "discipline":
+		let outOfClanDisciplines = disciplines.filter(
+		function (element) {
+			let clanDisc = [
+				document.querySelector("in1text").innerText,
+				document.querySelector("in2text").innerText,
+				document.querySelector("in3text").innerText
+			];
+			return clanDisc.includes(element);
+		})	
+			disciplines.forEach(function(element) {
+				let opt = document.createElement("option");
+				opt.id = textID.id + "_dropdown_" + element;
+				opt.innerText = element;
+				newElem.appendChild(opt);
+			}, this);
+			break;	
+	
+		default:
+			break;
+	}
+	otherOpt = document.createElement("option");
+	otherOpt.id = textID.id + "_dropdown_other";
+	otherOpt.innerText = "Other (add)";
+	otherOpt.value = "(other)";
+	newElem.appendChild(otherOpt);
+	newElem.addEventListener("change", function () {
+		/* special situation handlers */
+		switch (this.value) {
+			case "(other)":
+				let toAdd = prompt("What is the name of the option you wish to add?");
+				let moreOpt = document.createElement("option");
+				moreOpt.id = textID.id + "_dropdown_" + toAdd.replace(/\W/gi, "-");
+				moreOpt.innerText = toAdd;
+				moreOpt.value = "custom:" + toAdd.replace(/\W/gi, "-");
+				moreOpt.selected = true;
+				newElem.appendChild(moreOpt);
+				break;
+				
+			case "Generation":
+				let myDots = document.querySelector("#backgrounds").querySelectorAll(".dot");
+				let gen = document.querySelector("#generation");
+				myDots.forEach(function (elem) {
+					elem.addEventListener("click", function () {
+						if (elem.parentElement.parentElement.previousSibling.value == "Generation") {
+							if (this.checked) {
+								gen.value--;
+							} else {
+								gen.value++;
+							}
+						}
+						let blood = document.querySelectorAll("#bloodpool .blood");
+						/* Reset blood to starting position */
+						let targetBlood = 23 - gen.value;
+						/*
+						 * 23 is a magic number.
+						 * 23 = bloodpool + generation before points are spent on bloodpool.
+						 */
+						for (let bloodCount = 0; bloodCount < blood.length; bloodCount++) {
+							if (bloodCount < targetBlood) {
+								blood[bloodCount].checked = false;
+							} else {
+								blood[bloodCount].checked = true;
+							}
+						}
+					});
+				});
+				break;
+
+			default:
+				break;
+		}	
+	});
+	textID.replaceWith(newElem);
 }
 
 document.addEventListener('DOMContentLoaded',function() {
