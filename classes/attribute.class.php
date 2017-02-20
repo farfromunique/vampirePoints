@@ -83,4 +83,3 @@ class attribute {
 		return $this->printCode;
 	}
 }
-?>

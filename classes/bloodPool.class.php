@@ -60,4 +60,3 @@ class bloodPool {
 		return $this->printCode;
 	}
 }
-?>

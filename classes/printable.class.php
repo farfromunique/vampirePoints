@@ -27,7 +27,7 @@
 
 								'<div id="plainText" class="section">' . "\n";
 
-					$this->code .= '<div id="text1" class="lefty">' . "\n" .
+			$this->code .=		'<div id="text1" class="lefty">' . "\n" .
 										'Character\'s Name:' . "\n" .
 										'<span class="plain">' . $this->data['fluff']['character'] . '</span>' . "\n" .
 										'<br />' . "\n" .
@@ -139,14 +139,12 @@
 								break;
 						}
 					}
-			$this->code .= 	'</div>' . "\n";
+				$this->code .= 	'</div>' . "\n";
+				}
 			}
-		}
 		}
 		
 		public function showCode() {
 			return $this->code;
 		}
 	}
-
-?>

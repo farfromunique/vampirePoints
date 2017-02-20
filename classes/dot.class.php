@@ -46,4 +46,3 @@ class dot {
 		return $this->printCode;
 	}
 }
-?>
