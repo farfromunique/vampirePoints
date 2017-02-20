@@ -219,10 +219,10 @@
 			], //End of Backgrounds(T2)
 			'Virtues','Virtues' => [
 				'Conscience','Conscience' => [
-					'checked' => rtrim($AllDots['virtu'])
+					'checked' => rtrim($AllDots['consc'])
 				],
 				'Self Control','Self Control' => [
-					'checked' => rtrim($AllDots['self '])
+					'checked' => rtrim($AllDots['self'])
 				],
 				'Courage','Courage' => [
 					'checked' => rtrim($AllDots['coura'])
@@ -235,25 +235,21 @@
 		'willpower' => [
 			'checked' => rtrim($AllDots['willp'])
 		],
-		'blood' =>  20 - $AllDots['blood']
+		'blood' =>  20 - $AllDots['bloodPool']
 	];
 	
-	$a = serialize($store);
+	$DB = new DB();
 
-	$ud = new PDO('mysql:host=localhost;dbname=vampires','prince','letmebeyourruler');
-	
-	$basicVamp = $ud->prepare('INSERT INTO  `vampires`.`vampireList` (`Name`,`Data`) VALUES (:name,:data)');
-	if (!$basicVamp->bindparam(":name",$store['fluff']['character'])) {echo 'bind :name as `' . $store['fluff']['character'] . '` failed!'; };
-	if (!$basicVamp->bindparam(":data",$a)) {echo 'bind :data as `' . $a . '` failed!'; };
-	if (!$basicVamp->execute()) {echo 'Query failed';};
-	
-	$newest = $ud->prepare('SELECT Max(`UID`) FROM `vampireList`');
-	$char = 1000;
-	if ($newest->execute()) {$char = $newest->fetchColumn();}
-	
-	$host  = $_SERVER['HTTP_HOST'];
-	$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
-	$extra = 'show.php?character=' . $char;
-	header("Location: http://$host$uri/$extra");
-	exit;
+	$out = $DB->saveVampire($store);
+
+	if (is_numeric($out)) {
+		$host  = $_SERVER['HTTP_HOST'];
+		$uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+		$extra = 'show.php?character=' . $out;
+		header("Location: http://$host$uri/$extra");
+		exit;
+	} else {
+		echo $out;
+	}
+
 ?>

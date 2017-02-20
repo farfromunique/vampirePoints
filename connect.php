@@ -1,12 +1,6 @@
 <?php
-	if ($_SERVER['SERVER_NAME'] == 'vampire.acwpd.dev') {
-		$host = 'localhost';
-	} else {
-		$host = 'sdgame.db';
-	}
-	$con = new PDO('mysql:host=' . $host . ';dbname=vampires','prince','letmebeyourruler');
-	
-	
+	require_once('config.php');
+	$con = new PDO('mysql:host=' . VAMPIRE_DB_HOST . ';dbname=' . VAMPIRE_DB_NAME,VAMPIRE_DB_USER,VAMPIRE_DB_PASS);
 	
 	$basicVamp = $con->prepare('SELECT `Data` FROM `vampireList` WHERE UID = :char');
 	$basicVamp->bindparam(":char",$charNum);

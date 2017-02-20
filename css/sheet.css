@@ -5,8 +5,8 @@ position: relative;
 
 h1 {
 	text-align: center;
-	font-size: 60;
-	margin: 5;
+	font-size: 60px;
+	margin: 5px;
 }
 
 input[type=text] {
@@ -81,7 +81,7 @@ input[type=checkbox] {
 }
 
 .dots input[type=checkbox]:disabled + label:after {
-	background-image: url('images/noDot.png');
+	background-image: url('/images/noDot.png');
 	content: '';
 }
 
@@ -111,11 +111,11 @@ input[type=checkbox] {
 	opacity: 0;
 	content: '';
 	position: absolute;
-	width: 14;
-	height: 14;
+	width: 14px;
+	height: 14px;
 	background: #000000;
-	top: 1;
-	left: 1;
+	top: 1px;
+	left: 1px;
 }
 
 .bloodPool label:hover::after {
@@ -162,9 +162,9 @@ input[type=checkbox] {
 }
 
 .lefty {
-	width: 300;
+	width: 300px;
 	position: relative;
-	left: 10;
+	left: 10px;
 	top: 0;
 	float: left;
 	text-align: center;
@@ -178,9 +178,9 @@ input[type=checkbox] {
 }
 
 .centery {
-	width: 300;
+	width: 300px;
 	position: relative;
-	left: 20;
+	left: 20px;
 	top: 0;
 	float: left;
 	text-align: center;
@@ -194,9 +194,9 @@ input[type=checkbox] {
 }
 
 .righty {
-	width: 300;
+	width: 300px;
 	position: relative;
-	left: 30;
+	left: 30px;
 	top: 0;
 	float: left;
 	text-align: center;
@@ -229,7 +229,7 @@ input[type=checkbox] {
 
 .checks {
 	position: absolute;
-	left: 30;
+	left: 30px;
 }
 
 .checky {
@@ -238,32 +238,32 @@ input[type=checkbox] {
 
 .container {
 	display: inline-flex;
-	right: 5;
+	right: 5px;
 	position: absolute;
 }
 
 .attr {
-	height: 20;
-	margin: 5;
+	height: 20px;
+	margin: 5px;
 }
 
 #phases {
 	margin-right: -1px;
 	margin-left: auto;
 	background-color: darkblue;
-	width: 250;
+	width: 250px;
 	position: fixed;
 	z-index: 50;
-	top: 35;
+	top: 35px;
 	color: white;
 	padding: 40px;
 }
 
 #phasesName {
 	position: relative;
-	left: -93;
+	left: -93px;
 	font-weight: bold;
-	top: 100;
+	top: 100px;
 	display: inline-block;
 	cursor: default;
 	/* Safari */
@@ -281,8 +281,6 @@ input[type=checkbox] {
 	/* Internet Explorer */
 	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 
-	/* Everything else */
-	transform: rotate(-90deg);
 }
 
 #phasesBody {
@@ -294,7 +292,7 @@ input[type=checkbox] {
 
 .current {
 	background-color: darkslateblue;
-	padding: 5;
+	padding: 5px;
 }
 
 .current div {
@@ -322,9 +320,9 @@ input[type=checkbox] {
 	display: none;
 	color: red;
 	font-weight: bold;
-	font-size: 48;
+	font-size: 48px;
 	position: absolute;
-	background-color: fff;
+	background-color: #FFFFFF;
 	z-index: 25;
 }
 
@@ -346,10 +344,152 @@ li {
 	position: absolute;
 }
 
+#xp {
+	right: 75px;
+	width: 50px;
+}
+
+#xpupdate {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	right: 10px;
+	position: absolute;
+}
+
 /* Print styles */
 .plain {
 	font-weight: normal;
 	text-align: right;
 	position: absolute;
-	right: 10;
+	right: 10px;
+}
+
+/* CSS version of dots */
+
+fieldset, label {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 20px;
+}
+
+h1 {
+	font-size: 1.5em;
+	margin: 10px;
+}
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+	float: left;
+	width: 90%;
+	margin-left: 4%;
+	margin-right: 4%;
+}
+
+.rating:after {
+	content: attr(data-title);
+	float: left;
+	font-size: 1.25em;
+	text-align: right;
+	width: 40%;
+}
+
+.rating > input {
+	display: none;
+}
+
+.rating > label:before {
+	margin-left: 1px;
+	margin-right: 1px;
+	font-size: 1.25em;
+	font-family: FontAwesome;
+	display: inline-block;
+	content: "\f10c";
+}
+
+.rating > label {
+	color: #bbb;
+	float: right;
+	margin-left: 1px;
+	margin-right: 1px;
+	font-size: 1.25em;
+	font-family: FontAwesome;
+	display: inline-block;
+	content: "\f10c";
+}
+
+/* FILLED */
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+	color: #000;
+	font-size: 1.25em;
+	font-family: FontAwesome;
+	display: inline-block;
+	content: "\f111";
+}
+
+.rating > input:checked ~ label:before {
+	margin-left: 1px;
+	margin-right: 1px;
+	font-size: 1.25em;
+	font-family: FontAwesome;
+	display: inline-block;
+	content: "\f111";
+}
+
+/* HOVERED */
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+	color: #000;
+	margin-left: 1px;
+	margin-right: 1px;
+	font-size: 1.25em;
+	font-family: FontAwesome;
+	display: inline-block;
+	content: "\f111";
+}
+
+/* DISABLED */
+.rating > input:disabled + label:hover {
+	color: #F00;
+	margin-left: 1px;
+	margin-right: 1px;
+	font-size: 1.25em;
+	font-family: FontAwesome;
+	display: inline-block;
+}
+
+.rating > input:disabled + label:before {
+	content: "\f057";
+}
+
+.information input[type=text] {
+	position: static;
+}
+
+.description .col-md-12 {
+	padding: 0;
+}
+
+.description .well {
+	margin-bottom: 0;
+}
+
+.description {
+	margin-top: 20px;
+	margin-bottom: 5px;
+	padding-bottom: 0;
+}
+
+input[type=text].backgroundInput {
+	left: 0;
+	top: 2px;
 }
