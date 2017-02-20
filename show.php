@@ -20,8 +20,6 @@
 	
 	$parser = new parser();
 	
-	//require_once('printme.php');
-	
 	$header = new header($target);
 	
 	$sheet = new sheet($basic, $target);

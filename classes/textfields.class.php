@@ -91,7 +91,7 @@
 							'</div>' . "\n" . 
 							'<div id="text3" class="righty">' . "\n" . 
 								'<label>Generation' . "\n" . 
-									'<input type="text" id="generation" name="generation"' . $generation . '>' . "\n" . 
+									'<input type="text" id="generation" name="generation"' . $generation . 'disabled="disabled">' . "\n" . 
 								'</label>' . "\n" . 
 								'<br />' . "\n" . 
 								'<label>Sire' . "\n" . 
