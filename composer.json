@@ -1,0 +1,14 @@
+{
+    "name": "acwpd/vampire-points",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^7.0"
+    },
+    "authors": [
+        {
+            "name": "Aaron C",
+            "email": "aaron@acwpd.com"
+        }
+    ],
+    "require": {}
+}
