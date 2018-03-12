@@ -1,495 +1,158 @@
 /* Basic elements */
+
 div {
-position: relative;
+    position: relative;
+}
+
+.row .row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 h1 {
-	text-align: center;
-	font-size: 60px;
-	margin: 5px;
+    text-align: center;
+    font-size: 60px;
+    margin: 5px;
 }
 
 input[type=text] {
-	background: beige;
-	border: solid 1px;
-	position: absolute;
-	right: 5px;
-	text-align: center;
+    background: beige;
+    border: solid 1px;
+    text-align: center;
+    float: right;
+    width: 60%;
 }
 
-/* Dots */
-input[type=checkbox] {
-	visibility: hidden;
+label.inputLabel {
+    width: 100%;
+    margin-bottom: 0;
 }
 
-.dots {
-	width: 20px;
-	height: 20px;
-	background: #000;
-
-	display: inline-block;
-	
-	margin: 1px auto;
-
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
-
-	position: relative;
-}
-
-.dots label {
-	cursor: pointer;
-	position: absolute;
-	width: 14px;
-	height: 14px;
-
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
-	left: 3px;
-	top: 3px;
-
-	background: #fff;
-}
-
-.dots label:after {
-	opacity: 0;
-	content: '';
-	position: absolute;
-	width: 12px;
-	height: 12px;
-	background: #000;
-
-	-webkit-border-radius: 15px;
-	border-radius: 15px;
-	top: 1px;
-	left: 1px;
-
-}
-
-.dots label:hover::after {
-	opacity: 0.75;
-}
-
-.dots input[type=checkbox]:checked + label:after {
-	opacity: 1;
-	
-}
-
-.dots input[type=checkbox]:checked:disabled + label:after {
-	background: #999;
-	content: '';
-}
-
-.dots input[type=checkbox]:disabled + label:after {
-	background-image: url('/images/noDot.png');
-	content: '';
-}
-
-/* bloodPool */
-.bloodPool {
-	width: 20px;
-	height: 20px;
-	background: black;
-	position: relative;
-	display: inline-block;
-	margin-top: 3px;
-}
-
-.bloodPool label {
-	cursor: pointer;
-	position: absolute;
-	width: 16px;
-	height: 16px;
-	left: 2px;
-	top: 2px;
-	background: white;
-}
-
-.bloodPool label:after {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	filter: alpha(opacity=0);
-	opacity: 0;
-	content: '';
-	position: absolute;
-	width: 14px;
-	height: 14px;
-	background: #000000;
-	top: 1px;
-	left: 1px;
-}
-
-.bloodPool label:hover::after {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-	filter: alpha(opacity=30);
-	opacity: 0.3;
-}
-
-.bloodPool input[type=checkbox]:checked + label:after {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	filter: alpha(opacity=100);
-	opacity: 1;
-}
-
-/* Character Sheet sections */
-#text1 {
-	text-align: left;
-}
-
-#text2 {
-	text-align: left;
-}
-
-#text3 {
-	text-align: left;
-}
-
-#charSheet {
-	width: 930px;
-	border: 1px black solid;
-}
-
-.section {
-	position: relative;
-	width: 930px;
-	display: inline-block;
-	text-align: center;
-	font-size: large;
-	font-weight: bold;
-	margin: 5px 0 10px 0;
-	padding-top: 5px;
-	border: black solid;
-	border-width: 2px 0 0 0;
-}
-
-.lefty {
-	width: 300px;
-	position: relative;
-	left: 10px;
-	top: 0;
-	float: left;
-	text-align: center;
-	font-size: initial;
-	font-weight: bold;
-}
-
-.lefty div {
-	text-align: left;
-	font-weight: normal;
-}
-
-.centery {
-	width: 300px;
-	position: relative;
-	left: 20px;
-	top: 0;
-	float: left;
-	text-align: center;
-	font-size: initial;
-	font-weight: bold;
-}
-
-.centery div {
-	text-align: left;
-	font-weight: normal;
-}
-
-.righty {
-	width: 300px;
-	position: relative;
-	left: 30px;
-	top: 0;
-	float: left;
-	text-align: center;
-	font-size: initial;
-	font-weight: bold;
-}
-
-.righty div {
-	text-align: left;
-	font-weight: normal;
-}
-
-#human {
-	text-align: center;
-	font-weight: bold;
-	height: 40px;
-}
-
-#willp {
-	text-align: center;
-	font-weight: bold;
-	height: 40px;
-}
-
-#bloodPool {
-	text-align: center;
-	font-weight: bold;
-	height: 130px;
-}
-
-.checks {
-	position: absolute;
-	left: 30px;
-}
-
-.checky {
-	margin-bottom: 30px;
-}
-
-.container {
-	display: inline-flex;
-	right: 5px;
-	position: absolute;
-}
-
-.attr {
-	height: 20px;
-	margin: 5px;
-}
-
-#phases {
-	margin-right: -1px;
-	margin-left: auto;
-	background-color: darkblue;
-	width: 250px;
-	position: fixed;
-	z-index: 50;
-	top: 35px;
-	color: white;
-	padding: 40px;
-}
-
-#phasesName {
-	position: relative;
-	left: -93px;
-	font-weight: bold;
-	top: 100px;
-	display: inline-block;
-	cursor: default;
-	/* Safari */
-	-webkit-transform: rotate(-90deg);
-
-	/* Firefox */
-	-moz-transform: rotate(-90deg);
-
-	/* IE */
-	-ms-transform: rotate(-90deg);
-
-	/* Opera */
-	-o-transform: rotate(-90deg);
-
-	/* Internet Explorer */
-	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-
-}
-
-#phasesBody {
-	left: -15px;
-	top: -50px;
-	width: 275px;
-	display: none;
-}
-
-.current {
-	background-color: darkslateblue;
-	padding: 5px;
-}
-
-.current div {
-	display: block;
-}
-
-.next {
-	color: grey;
-}
-
-.next div {
-	display: none;
-}
-
-.previous {
-	color: grey;
-}
-
-
-.previous div {
-	display: none;
-}
-
-#dotCounter {
-	display: none;
-	color: red;
-	font-weight: bold;
-	font-size: 48px;
-	position: absolute;
-	background-color: #FFFFFF;
-	z-index: 25;
-}
-
-li {
-	cursor: pointer;
-}
-
-#freebiePoints {
-	right: 75px;
-	width: 50px;
-}
-
-#freebieUpdate {
-	margin-top: 2px;
-	margin-bottom: 2px;
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	right: 10px;
-	position: absolute;
-}
-
-#xp {
-	right: 75px;
-	width: 50px;
-}
-
-#xpupdate {
-	margin-top: 2px;
-	margin-bottom: 2px;
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	right: 10px;
-	position: absolute;
-}
-
-/* Print styles */
-.plain {
-	font-weight: normal;
-	text-align: right;
-	position: absolute;
-	right: 10px;
-}
-
-/* CSS version of dots */
-
-fieldset, label {
-	margin: 0;
-	padding: 0;
+fieldset,
+label {
+    margin: 0;
+    padding: 0;
 }
 
 body {
-	margin: 20px;
+    margin: 20px;
 }
 
 h1 {
-	font-size: 1.5em;
-	margin: 10px;
+    font-size: 1.5em;
+    margin: 10px;
 }
+
 
 /****** Style Star Rating Widget *****/
 
-.rating {
-	float: left;
-	width: 90%;
-	margin-left: 4%;
-	margin-right: 4%;
+.dots-5:after {
+    content: attr(data-title);
+    font-size: 1.25em;
 }
 
-.rating:after {
-	content: attr(data-title);
-	float: left;
-	font-size: 1.25em;
-	text-align: right;
-	width: 40%;
+.dots-5>input {
+    display: none;
 }
 
-.rating > input {
-	display: none;
+.dots-5>label:before {
+    margin-left: 1px;
+    margin-right: 1px;
+    font-size: 1.25em;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+    display: inline-block;
+    content: "\f111";
 }
 
-.rating > label:before {
-	margin-left: 1px;
-	margin-right: 1px;
-	font-size: 1.25em;
-	font-family: FontAwesome;
-	display: inline-block;
-	content: "\f10c";
+.dots-5>label {
+    color: #bbb;
+    float: right;
+    margin-left: 1px;
+    margin-right: 1px;
+    font-size: 1.25em;
+    font-family: 'Font Awesome 5 Free';
+    display: inline-block;
+    content: "\f10c";
 }
 
-.rating > label {
-	color: #bbb;
-	float: right;
-	margin-left: 1px;
-	margin-right: 1px;
-	font-size: 1.25em;
-	font-family: FontAwesome;
-	display: inline-block;
-	content: "\f10c";
-}
 
 /* FILLED */
-.rating > input:checked ~ label,
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-	color: #000;
-	font-size: 1.25em;
-	font-family: FontAwesome;
-	display: inline-block;
-	content: "\f111";
+
+.dots-5>input:checked~label,
+.dots-5:not(:checked)>label:hover,
+.dots-5:not(:checked)>label:hover~label {
+    color: #000;
+    font-size: 1.25em;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    display: inline-block;
+    content: "\f111";
 }
 
-.rating > input:checked ~ label:before {
-	margin-left: 1px;
-	margin-right: 1px;
-	font-size: 1.25em;
-	font-family: FontAwesome;
-	display: inline-block;
-	content: "\f111";
+.dots-5>input:checked~label:before {
+    margin-left: 1px;
+    margin-right: 1px;
+    font-size: 1.25em;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    display: inline-block;
+    content: "\f111";
 }
+
 
 /* HOVERED */
-.rating > input:checked + label:hover,
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label,
-.rating > input:checked ~ label:hover ~ label {
-	color: #000;
-	margin-left: 1px;
-	margin-right: 1px;
-	font-size: 1.25em;
-	font-family: FontAwesome;
-	display: inline-block;
-	content: "\f111";
+
+.dots-5>input:checked+label:hover,
+.dots-5>input:checked~label:hover,
+.dots-5>label:hover~input:checked~label,
+.dots-5>input:checked~label:hover~label {
+    color: #000;
+    margin-left: 1px;
+    margin-right: 1px;
+    font-size: 1.25em;
+    font-family: 'Font Awesome 5 Free';
+    display: inline-block;
 }
+
 
 /* DISABLED */
-.rating > input:disabled + label:hover {
-	color: #F00;
-	margin-left: 1px;
-	margin-right: 1px;
-	font-size: 1.25em;
-	font-family: FontAwesome;
-	display: inline-block;
+
+.dots-5>input:disabled+label:hover {
+    color: #F00;
+    margin-left: 1px;
+    margin-right: 1px;
+    font-size: 1.25em;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    display: inline-block;
 }
 
-.rating > input:disabled + label:before {
-	content: "\f057";
+.dots-5>input:disabled+label:before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f057";
 }
 
 .information input[type=text] {
-	position: static;
+    position: static;
 }
 
 .description .col-md-12 {
-	padding: 0;
+    padding: 0;
 }
 
 .description .well {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 .description {
-	margin-top: 20px;
-	margin-bottom: 5px;
-	padding-bottom: 0;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    padding-bottom: 0;
 }
 
 input[type=text].backgroundInput {
-	left: 0;
-	top: 2px;
+    left: 0;
+    top: 2px;
 }
