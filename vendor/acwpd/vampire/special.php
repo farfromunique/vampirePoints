@@ -1,4 +1,7 @@
 <?php
+
+namespace ACWPD\Vampire;
+
 class special extends section {	
 	
 	function __construct($settings, $target = 'web') {

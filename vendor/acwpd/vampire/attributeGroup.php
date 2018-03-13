@@ -1,4 +1,7 @@
 <?php
+
+namespace ACWPD\Vampire;
+
 class attributeGroup {
 	public $name;
 	public $attributes = array();

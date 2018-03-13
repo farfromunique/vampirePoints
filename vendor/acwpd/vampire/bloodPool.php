@@ -1,4 +1,7 @@
 <?php
+
+namespace ACWPD\Vampire;
+
 class bloodPool {	
 	public $blood = array();
 	private $code;

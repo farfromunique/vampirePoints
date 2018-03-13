@@ -1,4 +1,7 @@
 <?php
+
+namespace ACWPD\Vampire;
+
 class blood {
 	public $name;
 	public $checked;

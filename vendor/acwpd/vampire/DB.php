@@ -1,4 +1,7 @@
 <?php 
+
+namespace ACWPD\Vampire;
+
 	require_once('config.php');
 	
 /**

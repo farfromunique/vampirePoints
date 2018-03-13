@@ -1,5 +1,8 @@
 <?php
 
+namespace ACWPD\Vampire;
+
+
 	class header {
 	
 	private $code;

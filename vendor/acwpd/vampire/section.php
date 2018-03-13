@@ -1,4 +1,7 @@
 <?php
+
+namespace ACWPD\Vampire;
+
 class section {	
 	public $name;
 	public $groups = array();

@@ -1,5 +1,8 @@
 <?php
-class attribute {
+
+namespace ACWPD\Vampire;
+
+class Attribute {
 	private $numberOfDots = 5;
 	public $name;
 	public $visibleName;
@@ -10,13 +13,14 @@ class attribute {
 	private $code;
 	private $printCode;
 	
+
 	function __construct($name, $dotsArray, $target = 'web', $numberOfDots = 5,$standalone = 'no') {
 	/** $name is a string (Proper case) that translates to the name of the dot group
-	*** $dotsArray is an array of integers with 2 named keys:
-	*** 	'disabled' contains the number of disabled dots (starting from index 1)
-	*** 	'checked' contains the number of checked dots (starting from index 1)
-	syntax: new attribute('NameOfAttribute',[3,5]);
-	result: NameOfAttribute (*)(*)(*)( )( )
+	**	$dotsArray is an array of integers with 2 named keys:
+	**		'disabled' contains the number of disabled dots (starting from index 1)
+	**		'checked' contains the number of checked dots (starting from index 1)
+	**	syntax: new attribute('NameOfAttribute',[3,5]);
+	**	result: NameOfAttribute (*)(*)(*)( )( )
 	*/
 		$this->name = $name;
 		$this->standalone = $standalone;

@@ -1,5 +1,8 @@
 <?php
 
+namespace ACWPD\Vampire;
+
+
 	class sheet {
 		public $character;
 		public $player;

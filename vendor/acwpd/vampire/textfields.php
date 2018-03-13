@@ -1,4 +1,7 @@
 <?php
+
+namespace ACWPD\Vampire;
+
 	class textfields {
 		
 		private $game;

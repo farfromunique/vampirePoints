@@ -1,5 +1,8 @@
 <?php
 
+namespace ACWPD\Vampire;
+
+
 	class navbar {
 		public $game;
 		private $clanCode;

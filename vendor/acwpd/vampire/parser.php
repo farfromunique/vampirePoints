@@ -1,4 +1,7 @@
 <?php
+
+namespace ACWPD\Vampire;
+
 	
 /* Provides parsing tools for ACWPD Projects
  * Feel free to use this in your projects! Just provide Attribution by keeping this block in place!

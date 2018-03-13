@@ -1,4 +1,7 @@
 <?php
+
+namespace ACWPD\Vampire;
+
 class dot {
 	public $name;
 	public $checked;

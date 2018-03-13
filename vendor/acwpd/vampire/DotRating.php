@@ -1,11 +1,7 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: aaron
- * Date: 10/22/2016
- * Time: 9:39 PM
- */
+namespace ACWPD\Vampire;
+
 class DotRating
 {
 	static function Display($name, $size, $dotStatus = null)

@@ -1,5 +1,8 @@
 <?php
 
+namespace ACWPD\Vampire;
+
+
 	class printable {
 		private $data = array();		
 		private $code;
