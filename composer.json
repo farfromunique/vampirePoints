@@ -9,7 +9,11 @@
         "name": "Aaron C",
         "email": "aaron@acwpd.com"
     }],
-    "require": {},
+    "require": {
+        "slim/slim": "^3.9",
+        "monolog/monolog": "^1.23",
+        "slim/twig-view": "^2.3"
+    },
     "autoload": {
         "psr-4": {
             "ACWPD\\Vampire\\": "acwpd/vampire"
