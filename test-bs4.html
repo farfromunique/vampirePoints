@@ -103,25 +103,31 @@
                     </div>
                 </div>
 
+                <!-- Emmet for attributes: div.row.attributes>(div.col-md-4>(div.row.px-2>div.col+fieldset.dots-5.col>legend.d-none+(input:radio+label.full)*5)*3)*3 -->
+
                 <div class="row attributes">
                     <div class="col-md-4 physical">
                         <div class="row px-2">
-                            <fieldset class="dots-5 col" data-title="Strength">
-                                <input type="radio" id="str5" value="5" disabled="disabled" />
+                            <div class="col">Strength</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Strength</legend>
+                                <input type="radio" id="str5" name="Strength" value="5" disabled="disabled" />
                                 <label class="full" for="str5" title="5 Dots in Strength"></label>
-                                <input type="radio" id="str4" value="4" />
+                                <input type="radio" id="str4" name="Strength" value="4" />
                                 <label class="full" for="str4" title="4 Dots in Strength"></label>
-                                <input type="radio" id="str3" value="3" />
+                                <input type="radio" id="str3" name="Strength" value="3" />
                                 <label class="full" for="str3" title="3 Dots in Strength"></label>
-                                <input type="radio" id="str2" value="2" />
+                                <input type="radio" id="str2" name="Strength" value="2" />
                                 <label class="full" for="str2" title="2 Dots in Strength"></label>
-                                <input type="radio" id="str1" value="1" checked="true" />
+                                <input type="radio" id="str1" name="Strength" value="1" checked="checked" />
                                 <label class="full" for="str1" title="1 Dot in Strength"></label>
                             </fieldset>
                         </div>
 
                         <div class="row px-2">
-                            <fieldset class="dots-5 col" data-title="Dexterity">
+                            <div class="col">Dexterity</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Dexterity</legend>
                                 <input type="radio" id="dex5" name="Dexterity" value="5" disabled="disabled" />
                                 <label class="full" for="dex5" title="5 Dots in Dexterity"></label>
                                 <input type="radio" id="dex4" name="Dexterity" value="4" />
@@ -136,7 +142,9 @@
                         </div>
 
                         <div class="row px-2">
-                            <fieldset class="dots-5 col" data-title="Stamina">
+                            <div class="col">Stamina</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Stamina</legend>
                                 <input type="radio" id="sta5" name="Stamina" value="5" disabled="disabled" />
                                 <label class="full" for="sta5" title="5 Dots in Stamina"></label>
                                 <input type="radio" id="sta4" name="Stamina" value="4" />
@@ -152,7 +160,9 @@
                     </div>
 
                     <div class="col-md-4 social">
-                        <fieldset class="dots-5 w-75 mx-auto" data-title="Charisma">
+                        <div class="col">Charisma</div>
+                        <fieldset class="dots-5 w-75 mx-auto">
+                            <legend class="d-none">Charisma</legend>
                             <input type="radio" id="cha5" name="Charisma" value="5" disabled="disabled" />
                             <label class="full" for="cha5" title="5 Dots in Charisma"></label>
                             <input type="radio" id="cha4" name="Charisma" value="4" />
@@ -164,7 +174,9 @@
                             <input type="radio" id="cha1" name="Charisma" value="1" checked="checked" />
                             <label class="full" for="cha1" title="1 Dot in Charisma"></label>
                         </fieldset>
-                        <fieldset class="dots-5 w-75 mx-auto" data-title="Manipulation">
+                        <div class="col">Manipulation</div>
+                        <fieldset class="dots-5 w-75 mx-auto">
+                            <legend class="d-none">Manipulation</legend>
                             <input type="radio" id="man5" name="Manipulation" value="5" disabled="disabled" />
                             <label class="full" for="man5" title="5 Dots in Manipulation"></label>
                             <input type="radio" id="man4" name="Manipulation" value="4" />
@@ -176,7 +188,9 @@
                             <input type="radio" id="man1" name="Manipulation" value="1" checked="checked" />
                             <label class="full" for="man1" title="1 Dot in Manipulation"></label>
                         </fieldset>
-                        <fieldset class="dots-5 w-75 mx-auto" data-title="Appearance">
+                        <div class="col">Appearance</div>
+                        <fieldset class="dots-5 w-75 mx-auto">
+                            <legend class="d-none">Appearance</legend>
                             <input type="radio" id="app5" name="Appearance" value="5" disabled="disabled" />
                             <label class="full" for="app5" title="5 Dots in Appearance"></label>
                             <input type="radio" id="app4" name="Appearance" value="4" />
@@ -185,12 +199,16 @@
                             <label class="full" for="app3" title="3 Dots in Appearance"></label>
                             <input type="radio" id="app2" name="Appearance" value="2" />
                             <label class="full" for="app2" title="2 Dots in Appearance"></label>
-                            <input type="radio" id="app1" name="Appearance" value="1" checked="checked" />
+                            <input type="radio" id="app1" name="Appearance" value="1" />
                             <label class="full" for="app1" title="1 Dot in Appearance"></label>
+                            <input type="radio" id="app0" name="Appearance" value="0" checked="true" />
+                            <label class="no-dot" for="app0" title="No Dots in Appearance"></label>
                         </fieldset>
                     </div>
                     <div class="col-md-4 mental">
-                        <fieldset class="dots-5 w-75 mx-auto" data-title="Perception">
+                        <div class="col">Perception</div>
+                        <fieldset class="dots-5 w-75 mx-auto">
+                            <legend class="d-none">Perception</legend>
                             <input type="radio" id="per5" name="Perception" value="5" disabled="disabled" />
                             <label class="full" for="per5" title="5 Dots in Perception"></label>
                             <input type="radio" id="per4" name="Perception" value="4" />
@@ -202,7 +220,9 @@
                             <input type="radio" id="per1" name="Perception" value="1" checked="checked" />
                             <label class="full" for="per1" title="1 Dot in Perception"></label>
                         </fieldset>
-                        <fieldset class="dots-5 w-75 mx-auto" data-title="Intelligence">
+                        <div class="col">Intelligence</div>
+                        <fieldset class="dots-5 w-75 mx-auto">
+                            <legend class="d-none">Intelligence</legend>
                             <input type="radio" id="int5" name="Intelligence" value="5" disabled="disabled" />
                             <label class="full" for="int5" title="5 Dots in Intelligence"></label>
                             <input type="radio" id="int4" name="Intelligence" value="4" />
@@ -214,7 +234,9 @@
                             <input type="radio" id="int1" name="Intelligence" value="1" checked="checked" />
                             <label class="full" for="int1" title="1 Dot in Intelligence"></label>
                         </fieldset>
-                        <fieldset class="dots-5 w-75 mx-auto" data-title="Wits">
+                        <div class="col">Wits</div>
+                        <fieldset class="dots-5 w-75 mx-auto">
+                            <legend class="d-none">Wits</legend>
                             <input type="radio" id="wit5" name="Wits" value="5" disabled="disabled" />
                             <label class="full" for="wit5" title="5 Dots in Wits"></label>
                             <input type="radio" id="wit4" name="Wits" value="4" />
@@ -229,73 +251,7 @@
                     </div>
                 </div>
 
-                <div class="row description">
-                    <div class="col-md-12">
-                        <div class="well well-sm text-center">Abilities</div>
-                    </div>
-                </div>
 
-                <div class="row abilities">
-                    <div class="col-md-4">
-                        <fieldset class="rating" data-title="Alertness">
-                            <input type="radio" id="alert5" name="Alertness" value="5" />
-                            <label class="full" for="alert5" title="5 Dots in Alertness"></label>
-                            <input type="radio" id="alert4" name="Alertness" value="4" />
-                            <label class="full" for="alert4" title="4 Dots in Alertness"></label>
-                            <input type="radio" id="alert3" name="Alertness" value="3" />
-                            <label class="full" for="alert3" title="3 Dots in Alertness"></label>
-                            <input type="radio" id="alert2" name="Alertness" value="2" />
-                            <label class="full" for="alert2" title="2 Dots in Alertness"></label>
-                            <input type="radio" id="alert1" name="Alertness" value="1" />
-                            <label class="full" for="alert1" title="1 Dot in Alertness"></label>
-                        </fieldset>
-                        <fieldset class="rating" data-title="Athletics">
-                            <input type="radio" id="wit5" name="Athletics" value="5" />
-                            <label class="full" for="wit5" title="5 Dots in Athletics"></label>
-                            <input type="radio" id="wit4" name="Athletics" value="4" />
-                            <label class="full" for="wit4" title="4 Dots in Athletics"></label>
-                            <input type="radio" id="wit3" name="Athletics" value="3" />
-                            <label class="full" for="wit3" title="3 Dots in Athletics"></label>
-                            <input type="radio" id="wit2" name="Athletics" value="2" />
-                            <label class="full" for="wit2" title="2 Dots in Athletics"></label>
-                            <input type="radio" id="wit1" name="Athletics" value="1" />
-                            <label class="full" for="wit1" title="1 Dot in Athletics"></label>
-                        </fieldset>
-
-                        Brawl Dodge Empathy Expression Intimidation Leadership Streetwise Subterfuge
-                    </div>
-                    <div class="col-md-4">
-                    </div>
-                    <div class="col-md-4">
-                    </div>
-                </div>
-
-                <div class="row description">
-                    <div class="col-md-12">
-                        <div class="well well-sm text-center">Advantages</div>
-                    </div>
-                </div>
-
-                <div class="row advantages">
-                    <div class="col-md-4">
-                    </div>
-                    <div class="col-md-4">
-                    </div>
-                    <div class="col-md-4">
-                    </div>
-                </div>
-
-                <div class="row description">
-                    <div class="col-md-12">
-                        <div class="well well-sm text-center">Abilities</div>
-                    </div>
-                </div>
-
-                <div class="row abilities">
-                    <div class="physical col-sm-4"></div>
-                    <div class="social col-sm-4"></div>
-                    <div class="mental col-sm-4"></div>
-                </div>
 
                 <div class="row description">
                     <div class="col-md-12">
@@ -316,7 +272,9 @@
                 <div class="row willpower">
                     <div class="offset-md-3 col-md-6 physical">
                         <div class="row px-2">
-                            <fieldset class="dots-5 col" data-title="Strength">
+                            <div class="col">Strength</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Strength</legend>
                                 <input type="radio" id="str5" value="10" />
                                 <label class="full" for="str5" title="10 Dots in Strength"></label>
                                 <input type="radio" id="str4" value="9" />
