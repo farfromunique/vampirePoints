@@ -6,6 +6,7 @@ analytics.js
 !vendor/acwpd/vampire/*
 
 config.php
+settings.php
 logs/*.*
 
 # Created by https://www.gitignore.io/api/windows,composer,visualstudiocode

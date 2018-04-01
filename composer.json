@@ -12,11 +12,23 @@
     "require": {
         "slim/slim": "^3.9",
         "monolog/monolog": "^1.23",
-        "slim/twig-view": "^2.3"
+        "slim/php-view": "^2.2"
     },
     "autoload": {
         "psr-4": {
             "ACWPD\\Vampire\\": "acwpd/vampire"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "process-timeout": 0
+    },
+    "scripts": {
+        "start": "php -S localhost:8080 -t public",
+        "test": "phpunit"
     }
 }

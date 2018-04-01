@@ -1,29 +1,30 @@
 <?php 
+if (PHP_SAPI == 'cli-server') {
+    // To help the built-in PHP dev server, check if the request was actually for
+    // something which should probably be served as a static file
+    $url  = parse_url($_SERVER['REQUEST_URI']);
+    $file = __DIR__ . $url['path'];
+    if (is_file($file)) {
+        return false;
+    }
+}
 
-DEFINE('projectRoot',dirname(dirname(__FILE__)));
+require_once __DIR__ . '/../vendor/autoload.php';
 
-require_once projectRoot . '/vendor/autoload.php';
-require_once projectRoot . '/config.php';
+session_start();
 
 // instantiate the App object
+$settings = require_once __DIR__ . 
 $app = new \Slim\App($slimConfig);
 
-$container = $app->getContainer();
-$container['logger'] = function($c) {
-    $logger = new \Monolog\Logger('VampireLog');
-    $file_handler = new \Monolog\Handler\StreamHandler("logs/vampire.log");
-    $logger->pushHandler($file_handler);
-    return $logger;
-};
+// Set up dependencies
+require __DIR__ . '/../src/dependencies.php';
 
+// Register middleware
+require __DIR__ . '/../src/middleware.php';
 
-// Add route callbacks
-$app->get('/', function ($request, $response, $args) {
-	$this->logger->addInfo("Root");
-	return $response->withStatus(200)->write('Hello World!');
-});
-
-
+// Register routes
+require __DIR__ . '/../src/routes.php';
 
 // Run application
 $app->run();
