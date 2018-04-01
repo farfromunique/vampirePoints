@@ -10,7 +10,7 @@ $app->get('/', function ($request, $response, $args) {
 	return $response->withStatus(200)->write('Hello World!');
 });
 
-$app->get('/[{name}]', function (Request $request, Response $response, array $args) {
+$app->get('/{name}', function (Request $request, Response $response, array $args) {
     // Sample log message
     $this->logger->info("Slim-Skeleton '/' route");
 
