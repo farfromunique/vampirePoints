@@ -3,6 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAEBLgAAAAAAP//AAD+fwAA/n8AAP5/AAD+fwAA/n8AAO53AADeewAAwAMAANw7AAD73wAA9+8AAPfvAAD73wAA/D8AAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        rel="icon" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="css/sheet.css">
     <link rel="stylesheet" href="css/bootstrap.4.0.0.min.css">
     <link rel="stylesheet" href="css/fontawesome-all.css">
@@ -10,6 +12,8 @@
 </head>
 
 <body>
+
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -44,10 +48,9 @@
             </div>
             <div class="col-lg-9 col-xl-8">
                 <div class="row description">
-
-                    <div class="col-12">
-                        <div class="well well-sm text-center">Basic Information</div>
-                    </div>
+                    <div class="divider-before col"></div>
+                    <h2 class="text-center col">Basic Information</h2>
+                    <div class="divider-after col"></div>
                 </div>
 
                 <div class="row information">
@@ -98,12 +101,10 @@
                 </div>
 
                 <div class="row description">
-                    <div class="col-md-12">
-                        <div class="well well-sm text-center">Attributes</div>
-                    </div>
+                    <div class="divider-before col"></div>
+                    <h2 class="text-center col">Attributes</h2>
+                    <div class="divider-after col"></div>
                 </div>
-
-                <!-- Emmet for attributes: div.row.attributes>(div.col-md-4>(div.row.px-2>div.col+fieldset.dots-5.col>legend.d-none+(input:radio+label.full)*5)*3)*3 -->
 
                 <div class="row attributes">
                     <div class="col-md-4 physical">
@@ -159,156 +160,578 @@
                         </div>
                     </div>
 
-                    <div class="col-md-4 social">
-                        <div class="col">Charisma</div>
-                        <fieldset class="dots-5 w-75 mx-auto">
-                            <legend class="d-none">Charisma</legend>
-                            <input type="radio" id="cha5" name="Charisma" value="5" disabled="disabled" />
-                            <label class="full" for="cha5" title="5 Dots in Charisma"></label>
-                            <input type="radio" id="cha4" name="Charisma" value="4" />
-                            <label class="full" for="cha4" title="4 Dots in Charisma"></label>
-                            <input type="radio" id="cha3" name="Charisma" value="3" />
-                            <label class="full" for="cha3" title="3 Dots in Charisma"></label>
-                            <input type="radio" id="cha2" name="Charisma" value="2" />
-                            <label class="full" for="cha2" title="2 Dots in Charisma"></label>
-                            <input type="radio" id="cha1" name="Charisma" value="1" checked="checked" />
-                            <label class="full" for="cha1" title="1 Dot in Charisma"></label>
-                        </fieldset>
-                        <div class="col">Manipulation</div>
-                        <fieldset class="dots-5 w-75 mx-auto">
-                            <legend class="d-none">Manipulation</legend>
-                            <input type="radio" id="man5" name="Manipulation" value="5" disabled="disabled" />
-                            <label class="full" for="man5" title="5 Dots in Manipulation"></label>
-                            <input type="radio" id="man4" name="Manipulation" value="4" />
-                            <label class="full" for="man4" title="4 Dots in Manipulation"></label>
-                            <input type="radio" id="man3" name="Manipulation" value="3" />
-                            <label class="full" for="man3" title="3 Dots in Manipulation"></label>
-                            <input type="radio" id="man2" name="Manipulation" value="2" />
-                            <label class="full" for="man2" title="2 Dots in Manipulation"></label>
-                            <input type="radio" id="man1" name="Manipulation" value="1" checked="checked" />
-                            <label class="full" for="man1" title="1 Dot in Manipulation"></label>
-                        </fieldset>
-                        <div class="col">Appearance</div>
-                        <fieldset class="dots-5 w-75 mx-auto">
-                            <legend class="d-none">Appearance</legend>
-                            <input type="radio" id="app5" name="Appearance" value="5" disabled="disabled" />
-                            <label class="full" for="app5" title="5 Dots in Appearance"></label>
-                            <input type="radio" id="app4" name="Appearance" value="4" />
-                            <label class="full" for="app4" title="4 Dots in Appearance"></label>
-                            <input type="radio" id="app3" name="Appearance" value="3" />
-                            <label class="full" for="app3" title="3 Dots in Appearance"></label>
-                            <input type="radio" id="app2" name="Appearance" value="2" />
-                            <label class="full" for="app2" title="2 Dots in Appearance"></label>
-                            <input type="radio" id="app1" name="Appearance" value="1" />
-                            <label class="full" for="app1" title="1 Dot in Appearance"></label>
-                            <input type="radio" id="app0" name="Appearance" value="0" checked="true" />
-                            <label class="no-dot" for="app0" title="No Dots in Appearance"></label>
-                        </fieldset>
-                    </div>
                     <div class="col-md-4 mental">
-                        <div class="col">Perception</div>
-                        <fieldset class="dots-5 w-75 mx-auto">
-                            <legend class="d-none">Perception</legend>
-                            <input type="radio" id="per5" name="Perception" value="5" disabled="disabled" />
-                            <label class="full" for="per5" title="5 Dots in Perception"></label>
-                            <input type="radio" id="per4" name="Perception" value="4" />
-                            <label class="full" for="per4" title="4 Dots in Perception"></label>
-                            <input type="radio" id="per3" name="Perception" value="3" />
-                            <label class="full" for="per3" title="3 Dots in Perception"></label>
-                            <input type="radio" id="per2" name="Perception" value="2" />
-                            <label class="full" for="per2" title="2 Dots in Perception"></label>
-                            <input type="radio" id="per1" name="Perception" value="1" checked="checked" />
-                            <label class="full" for="per1" title="1 Dot in Perception"></label>
-                        </fieldset>
-                        <div class="col">Intelligence</div>
-                        <fieldset class="dots-5 w-75 mx-auto">
-                            <legend class="d-none">Intelligence</legend>
-                            <input type="radio" id="int5" name="Intelligence" value="5" disabled="disabled" />
-                            <label class="full" for="int5" title="5 Dots in Intelligence"></label>
-                            <input type="radio" id="int4" name="Intelligence" value="4" />
-                            <label class="full" for="int4" title="4 Dots in Intelligence"></label>
-                            <input type="radio" id="int3" name="Intelligence" value="3" />
-                            <label class="full" for="int3" title="3 Dots in Intelligence"></label>
-                            <input type="radio" id="int2" name="Intelligence" value="2" />
-                            <label class="full" for="int2" title="2 Dots in Intelligence"></label>
-                            <input type="radio" id="int1" name="Intelligence" value="1" checked="checked" />
-                            <label class="full" for="int1" title="1 Dot in Intelligence"></label>
-                        </fieldset>
-                        <div class="col">Wits</div>
-                        <fieldset class="dots-5 w-75 mx-auto">
-                            <legend class="d-none">Wits</legend>
-                            <input type="radio" id="wit5" name="Wits" value="5" disabled="disabled" />
-                            <label class="full" for="wit5" title="5 Dots in Wits"></label>
-                            <input type="radio" id="wit4" name="Wits" value="4" />
-                            <label class="full" for="wit4" title="4 Dots in Wits"></label>
-                            <input type="radio" id="wit3" name="Wits" value="3" />
-                            <label class="full" for="wit3" title="3 Dots in Wits"></label>
-                            <input type="radio" id="wit2" name="Wits" value="2" />
-                            <label class="full" for="wit2" title="2 Dots in Wits"></label>
-                            <input type="radio" id="wit1" name="Wits" value="1" checked="checked" />
-                            <label class="full" for="wit1" title="1 Dot in Wits"></label>
-                        </fieldset>
-                    </div>
-                </div>
-
-
-
-                <div class="row description">
-                    <div class="col-md-12">
-                        <div class="well well-sm text-center">Powers</div>
-                    </div>
-                </div>
-
-                <div class="row powers">
-                    <div class="disciplines col-sm-4"></div>
-                    <div class="backgrounds col-sm-4"></div>
-                    <div class="virtues col-sm-4"></div>
-                </div>
-
-                <div class="row humanity">
-                    <div class="humanity offset-md-3 col-md-6"></div>
-                </div>
-
-                <div class="row willpower">
-                    <div class="offset-md-3 col-md-6 physical">
                         <div class="row px-2">
-                            <div class="col">Strength</div>
+                            <div class="col">Charisma</div>
                             <fieldset class="dots-5 col">
-                                <legend class="d-none">Strength</legend>
-                                <input type="radio" id="str5" value="10" />
-                                <label class="full" for="str5" title="10 Dots in Strength"></label>
-                                <input type="radio" id="str4" value="9" />
-                                <label class="full" for="str4" title="9 Dots in Strength"></label>
-                                <input type="radio" id="str3" value="8" />
-                                <label class="full" for="str3" title="8 Dots in Strength"></label>
-                                <input type="radio" id="str2" value="7" />
-                                <label class="full" for="str2" title="7 Dots in Strength"></label>
-                                <input type="radio" id="str1" value="6" />
-                                <label class="full" for="str1" title="6 Dot in Strength"></label>
-                                <input type="radio" id="str5" value="5" />
-                                <label class="full" for="str5" title="5 Dots in Strength"></label>
-                                <input type="radio" id="str4" value="4" />
-                                <label class="full" for="str4" title="4 Dots in Strength"></label>
-                                <input type="radio" id="str3" value="3" />
-                                <label class="full" for="str3" title="3 Dots in Strength"></label>
-                                <input type="radio" id="str2" value="2" />
-                                <label class="full" for="str2" title="2 Dots in Strength"></label>
-                                <input type="radio" id="str1" value="1" />
-                                <label class="full" for="str1" title="1 Dot in Strength"></label>
+                                <legend class="d-none">Charisma</legend>
+                                <input type="radio" id="cha5" name="Charisma" value="5" disabled="disabled" />
+                                <label class="full" for="cha5" title="5 Dots in Charisma"></label>
+                                <input type="radio" id="cha4" name="Charisma" value="4" />
+                                <label class="full" for="cha4" title="4 Dots in Charisma"></label>
+                                <input type="radio" id="cha3" name="Charisma" value="3" />
+                                <label class="full" for="cha3" title="3 Dots in Charisma"></label>
+                                <input type="radio" id="cha2" name="Charisma" value="2" />
+                                <label class="full" for="cha2" title="2 Dots in Charisma"></label>
+                                <input type="radio" id="cha1" name="Charisma" value="1" checked="checked" />
+                                <label class="full" for="cha1" title="1 Dot in Charisma"></label>
+                            </fieldset>
+                        </div>
+
+                        <div class="row px-2">
+                            <div class="col">Manipulation</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Manipulation</legend>
+                                <input type="radio" id="man5" name="Manipulation" value="5" disabled="disabled" />
+                                <label class="full" for="man5" title="5 Dots in Manipulation"></label>
+                                <input type="radio" id="man4" name="Manipulation" value="4" />
+                                <label class="full" for="man4" title="4 Dots in Manipulation"></label>
+                                <input type="radio" id="man3" name="Manipulation" value="3" />
+                                <label class="full" for="man3" title="3 Dots in Manipulation"></label>
+                                <input type="radio" id="man2" name="Manipulation" value="2" />
+                                <label class="full" for="man2" title="2 Dots in Manipulation"></label>
+                                <input type="radio" id="man1" name="Manipulation" value="1" checked="checked" />
+                                <label class="full" for="man1" title="1 Dot in Manipulation"></label>
+                            </fieldset>
+                        </div>
+
+                        <div class="row px-2">
+                            <div class="col">Appearance</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Appearance</legend>
+                                <input type="radio" id="app5" name="Appearance" value="5" disabled="disabled" />
+                                <label class="full" for="app5" title="5 Dots in Appearance"></label>
+                                <input type="radio" id="app4" name="Appearance" value="4" />
+                                <label class="full" for="app4" title="4 Dots in Appearance"></label>
+                                <input type="radio" id="app3" name="Appearance" value="3" />
+                                <label class="full" for="app3" title="3 Dots in Appearance"></label>
+                                <input type="radio" id="app2" name="Appearance" value="2" />
+                                <label class="full" for="app2" title="2 Dots in Appearance"></label>
+                                <input type="radio" id="app1" name="Appearance" value="1" />
+                                <label class="full" for="app1" title="1 Dot in Appearance"></label>
+                                <input type="radio" id="app0" name="Appearance" value="0" checked="checked" />
+                                <label class="no-dot" for="app0" title="No dots in Appearance"></label>
                             </fieldset>
                         </div>
                     </div>
-                    <div class="col-md-2"></div>
+
+                    <div class="col-md-4 social">
+                        <div class="row px-2">
+                            <div class="col">Perception</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Perception</legend>
+                                <input type="radio" id="per5" name="Perception" value="5" disabled="disabled" />
+                                <label class="full" for="per5" title="5 Dots in Perception"></label>
+                                <input type="radio" id="per4" name="Perception" value="4" />
+                                <label class="full" for="per4" title="4 Dots in Perception"></label>
+                                <input type="radio" id="per3" name="Perception" value="3" />
+                                <label class="full" for="per3" title="3 Dots in Perception"></label>
+                                <input type="radio" id="per2" name="Perception" value="2" />
+                                <label class="full" for="per2" title="2 Dots in Perception"></label>
+                                <input type="radio" id="per1" name="Perception" value="1" checked="checked" />
+                                <label class="full" for="per1" title="1 Dot in Perception"></label>
+                            </fieldset>
+                        </div>
+
+                        <div class="row px-2">
+                            <div class="col">Intelligence</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Intelligence</legend>
+                                <input type="radio" id="int5" name="Intelligence" value="5" disabled="disabled" />
+                                <label class="full" for="int5" title="5 Dots in Intelligence"></label>
+                                <input type="radio" id="int4" name="Intelligence" value="4" />
+                                <label class="full" for="int4" title="4 Dots in Intelligence"></label>
+                                <input type="radio" id="int3" name="Intelligence" value="3" />
+                                <label class="full" for="int3" title="3 Dots in Intelligence"></label>
+                                <input type="radio" id="int2" name="Intelligence" value="2" />
+                                <label class="full" for="int2" title="2 Dots in Intelligence"></label>
+                                <input type="radio" id="int1" name="Intelligence" value="1" checked="checked" />
+                                <label class="full" for="int1" title="1 Dot in Intelligence"></label>
+                            </fieldset>
+                        </div>
+
+                        <div class="row px-2">
+                            <div class="col">Wits</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Wits</legend>
+                                <input type="radio" id="wit5" name="Wits" value="5" disabled="disabled" />
+                                <label class="full" for="wit5" title="5 Dots in Wits"></label>
+                                <input type="radio" id="wit4" name="Wits" value="4" />
+                                <label class="full" for="wit4" title="4 Dots in Wits"></label>
+                                <input type="radio" id="wit3" name="Wits" value="3" />
+                                <label class="full" for="wit3" title="3 Dots in Wits"></label>
+                                <input type="radio" id="wit2" name="Wits" value="2" />
+                                <label class="full" for="wit2" title="2 Dots in Wits"></label>
+                                <input type="radio" id="wit1" name="Wits" value="1" checked="checked" />
+                                <label class="full" for="wit1" title="1 Dot in Wits"></label>
+                            </fieldset>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="row bloodpool">
+                <div class="row description">
+                    <div class="divider-before col"></div>
+                    <h2 class="text-center col">Abilities</h2>
+                    <div class="divider-after col"></div>
+                </div>
 
+                <div class="row abilities">
+                    <div class="col-md-4 talents">
+                        <div class="row px-2">
+                            <div class="col">Alertness</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Alertness</legend>
+                                <input type="radio" id="ale5" name="Alertness" value="5" disabled="disabled" />
+                                <label class="full" for="ale5" title="5 Dots in Alertness"></label>
+                                <input type="radio" id="ale4" name="Alertness" value="4" />
+                                <label class="full" for="ale4" title="4 Dots in Alertness"></label>
+                                <input type="radio" id="ale3" name="Alertness" value="3" />
+                                <label class="full" for="ale3" title="3 Dots in Alertness"></label>
+                                <input type="radio" id="ale2" name="Alertness" value="2" />
+                                <label class="full" for="ale2" title="2 Dots in Alertness"></label>
+                                <input type="radio" id="ale1" name="Alertness" value="1" />
+                                <label class="full" for="ale1" title="1 Dot in Alertness"></label>
+                                <input type="radio" id="ale0" name="Alertness" value="0" checked="checked" />
+                                <label class="no-dot" for="ale0" title="No dots in Alertness"></label>
+                            </fieldset>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 skills">
+                        <div class="row px-2">
+                            <div class="col">Animal Ken</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Animal Ken</legend>
+                                <input type="radio" id="ani5" name="Animal Ken" value="5" disabled="disabled" />
+                                <label class="full" for="ani5" title="5 Dots in Animal Ken"></label>
+                                <input type="radio" id="ani4" name="Animal Ken" value="4" />
+                                <label class="full" for="ani4" title="4 Dots in Animal Ken"></label>
+                                <input type="radio" id="ani3" name="Animal Ken" value="3" />
+                                <label class="full" for="ani3" title="3 Dots in Animal Ken"></label>
+                                <input type="radio" id="ani2" name="Animal Ken" value="2" />
+                                <label class="full" for="ani2" title="2 Dots in Animal Ken"></label>
+                                <input type="radio" id="ani1" name="Animal Ken" value="1" />
+                                <label class="full" for="ani1" title="1 Dot in Animal Ken"></label>
+                                <input type="radio" id="ani0" name="Animal Ken" value="0" checked="checked" />
+                                <label class="no-dot" for="ani0" title="No dots in Animal Ken"></label>
+                            </fieldset>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 knowledges">
+                        <div class="row px-2">
+                            <div class="col">Academics</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Academics</legend>
+                                <input type="radio" id="aca5" name="Academics" value="5" disabled="disabled" />
+                                <label class="full" for="aca5" title="5 Dots in Academics"></label>
+                                <input type="radio" id="aca4" name="Academics" value="4" />
+                                <label class="full" for="aca4" title="4 Dots in Academics"></label>
+                                <input type="radio" id="aca3" name="Academics" value="3" />
+                                <label class="full" for="aca3" title="3 Dots in Academics"></label>
+                                <input type="radio" id="aca2" name="Academics" value="2" />
+                                <label class="full" for="aca2" title="2 Dots in Academics"></label>
+                                <input type="radio" id="aca1" name="Academics" value="1" />
+                                <label class="full" for="aca1" title="1 Dot in Academics"></label>
+                                <input type="radio" id="aca0" name="Academics" value="0" checked="checked" />
+                                <label class="no-dot" for="aca0" title="No dots in Academics"></label>
+                            </fieldset>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row description">
+                    <div class="divider-before col"></div>
+                    <h2 class="text-center col">Advantages</h2>
+                    <div class="divider-after col"></div>
+                </div>
+
+                <div class="row advantages">
+                    <div class="col-md-4 disceplines">
+                        <div class="row px-2">
+                            <div class="col">Discepline1</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Discepline1</legend>
+                                <input type="radio" id="dis5" name="Disc1" value="5" disabled="disabled" />
+                                <label class="full" for="dis5" title="5 Dots in Disc1"></label>
+                                <input type="radio" id="dis4" name="Disc1" value="4" />
+                                <label class="full" for="dis4" title="4 Dots in Disc1"></label>
+                                <input type="radio" id="dis3" name="Disc1" value="3" />
+                                <label class="full" for="dis3" title="3 Dots in Disc1"></label>
+                                <input type="radio" id="dis2" name="Disc1" value="2" />
+                                <label class="full" for="dis2" title="2 Dots in Disc1"></label>
+                                <input type="radio" id="dis1" name="Disc1" value="1" />
+                                <label class="full" for="dis1" title="1 Dot in Disc1"></label>
+                                <input type="radio" id="dis0" name="Disc1" value="0" checked="checked" />
+                                <label class="no-dot" for="dis0" title="No dots in Disc1"></label>
+                            </fieldset>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 backgrounds">
+                        <div class="row px-2">
+                            <div class="col">Background1</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Background1</legend>
+                                <input type="radio" id="bkg5" name="Background1" value="5" disabled="disabled" />
+                                <label class="full" for="bkg5" title="5 Dots in Background1"></label>
+                                <input type="radio" id="bkg4" name="Background1" value="4" />
+                                <label class="full" for="bkg4" title="4 Dots in Background1"></label>
+                                <input type="radio" id="bkg3" name="Background1" value="3" />
+                                <label class="full" for="bkg3" title="3 Dots in Background1"></label>
+                                <input type="radio" id="bkg2" name="Background1" value="2" />
+                                <label class="full" for="bkg2" title="2 Dots in Background1"></label>
+                                <input type="radio" id="bkg1" name="Background1" value="1" />
+                                <label class="full" for="bkg1" title="1 Dot in Background1"></label>
+                                <input type="radio" id="bkg0" name="Background1" value="0" checked="checked" />
+                                <label class="no-dot" for="bkg0" title="No dots in Background1"></label>
+                            </fieldset>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 vitrues double-spaced">
+                        <div class="row px-2">
+                            <div class="col">Virtue1</div>
+                            <fieldset class="dots-5 col">
+                                <legend class="d-none">Virtue1</legend>
+                                <input type="radio" id="vir5" name="Virtue1" value="5" disabled="disabled" />
+                                <label class="full" for="vir5" title="5 Dots in Virtue1"></label>
+                                <input type="radio" id="vir4" name="Virtue1" value="4" />
+                                <label class="full" for="vir4" title="4 Dots in Virtue1"></label>
+                                <input type="radio" id="vir3" name="Virtue1" value="3" />
+                                <label class="full" for="vir3" title="3 Dots in Virtue1"></label>
+                                <input type="radio" id="vir2" name="Virtue1" value="2" />
+                                <label class="full" for="vir2" title="2 Dots in Virtue1"></label>
+                                <input type="radio" id="vir1" name="Virtue1" value="1" />
+                                <label class="full" for="vir1" title="1 Dot in Virtue1"></label>
+                                <input type="radio" id="vir0" name="Virtue1" value="0" checked="checked" />
+                                <label class="no-dot" for="vir0" title="No dots in Virtue1"></label>
+                            </fieldset>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row description">
+                    <div class="divider-before col"></div>
+                    <h2 class="text-center col">Misc</h2>
+                    <div class="divider-after col"></div>
+                </div>
+
+
+                <div class="row misc">
+                    <div class="col-md-4 meritsandflaws">
+                        <div class="row subhead">
+                            <h3 class="text-center col">Merits</h3>
+                        </div>
+                        <div class="row px-2">
+                            <select class="custom-select" id="merit1" name="merit1">
+							<option selected>Open this select menu</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+                        </div>
+                        <div class="row px-2">
+                            <select class="custom-select" id="merit2" name="merit2">
+							<option selected>Open this select menu</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+                        </div>
+                        <div class="row px-2">
+                            <select class="custom-select" id="merit3" name="merit3">
+							<option selected>Open this select menu</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+                        </div>
+                        <div class="row px-2">
+                            <select class="custom-select" id="merit4" name="merit4">
+							<option selected>Open this select menu</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+                        </div>
+                        <div class="row px-2">
+                            <select class="custom-select" id="merit5" name="merit5">
+							<option selected>Open this select menu</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+                        </div>
+
+                        <div class="row subhead">
+                            <h3 class="text-center col">Flaws</h3>
+                        </div>
+                        <div class="row px-2">
+                            <select class="custom-select" id="flaw1" name="flaw1">
+							<option selected>Open this select menu</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+                        </div>
+                        <div class="row px-2">
+                            <select class="custom-select" id="flaw2" name="flaw2">
+							<option selected>Open this select menu</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+                        </div>
+                        <div class="row px-2">
+                            <select class="custom-select" id="flaw3" name="flaw3">
+							<option selected>Open this select menu</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+                        </div>
+                        <div class="row px-2">
+                            <select class="custom-select" id="flaw4" name="flaw4">
+							<option selected>Open this select menu</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+                        </div>
+                        <div class="row px-2">
+                            <select class="custom-select" id="flaw5" name="flaw5">
+							<option selected>Open this select menu</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 humanity">
+                        <div class="row subhead">
+                            <h3 class="text-center col">Humanity</h3>
+                        </div>
+                        <div class="row">
+                            <fieldset class="dots-5 mx-auto">
+                                <legend class="d-none ">Humanity</legend>
+                                <input type="radio" id="path10" name="Humanity" value="10 " />
+                                <label class="full" for="path10" title="10 Dots in Humanity "></label>
+                                <input type="radio" id="path09" name="Humanity" value="9 " />
+                                <label class="full" for="path09" title="9 Dots in Humanity "></label>
+                                <input type="radio" id="path08" name="Humanity" value="8 " />
+                                <label class="full" for="path08" title="8 Dots in Humanity "></label>
+                                <input type="radio" id="path07" name="Humanity" value="7 " />
+                                <label class="full" for="path07" title="7 Dots in Humanity "></label>
+                                <input type="radio" id="path06" name="Humanity" value="6 " />
+                                <label class="full" for="path06" title="6 Dots in Humanity "></label>
+                                <input type="radio" id="path05" name="Humanity" value="5 " />
+                                <label class="full" for="path05" title="5 Dots in Humanity "></label>
+                                <input type="radio" id="path04" name="Humanity" value="4 " />
+                                <label class="full" for="path04" title="4 Dots in Humanity "></label>
+                                <input type="radio" id="path03" name="Humanity" value="3 " />
+                                <label class="full" for="path03" title="3 Dots in Humanity "></label>
+                                <input type="radio" id="path02" name="Humanity" value="2 " />
+                                <label class="full" for="path02" title="2 Dots in Humanity "></label>
+                                <input type="radio" id="path01" name="Humanity" value="1 " />
+                                <label class="full" for="path01" title="1 Dot in Humanity "></label>
+                            </fieldset>
+                        </div>
+
+                        <div class="row subhead">
+                            <h3 class="text-center col">Willpower</h3>
+                        </div>
+                        <div class="row">
+                            <fieldset class="dots-5 mx-auto">
+                                <legend class="d-none ">Willpower</legend>
+                                <input type="radio" id="will10" name="Willpower" value="10" />
+                                <label class="full" for="will10" title="10 Dots in Willpower "></label>
+                                <input type="radio" id="will09" name="Willpower" value="9" />
+                                <label class="full" for="will09" title="9 Dots in Willpower "></label>
+                                <input type="radio" id="will08" name="Willpower" value="8" />
+                                <label class="full" for="will08" title="8 Dots in Willpower "></label>
+                                <input type="radio" id="will07" name="Willpower" value="7" />
+                                <label class="full" for="will07" title="7 Dots in Willpower "></label>
+                                <input type="radio" id="will06" name="Willpower" value="6" />
+                                <label class="full" for="will06" title="6 Dots in Willpower "></label>
+                                <input type="radio" id="will05" name="Willpower" value="5" />
+                                <label class="full" for="will05" title="5 Dots in Willpower "></label>
+                                <input type="radio" id="will04" name="Willpower" value="4" />
+                                <label class="full" for="will04" title="4 Dots in Willpower "></label>
+                                <input type="radio" id="will03" name="Willpower" value="3" />
+                                <label class="full" for="will03" title="3 Dots in Willpower "></label>
+                                <input type="radio" id="will02" name="Willpower" value="2" />
+                                <label class="full" for="will02" title="2 Dots in Willpower "></label>
+                                <input type="radio" id="will01" name="Willpower" value="1" />
+                                <label class="full" for="will01" title="1 Dot in Willpower "></label>
+                            </fieldset>
+                        </div>
+
+                        <div class="row subhead">
+                            <h3 class="text-center col">Blood</h3>
+                        </div>
+
+                        <div class="row">
+                            <fieldset class="blood mx-auto">
+                                <legend class="d-none ">Blood</legend>
+                                <input type="checkbox" id="blood10" name="Blood" value="10" />
+                                <label class="blood-check" for="blood10" title="10 Dots in Blood"></label>
+                                <input type="checkbox" id="blood09" name="Blood" value="9" />
+                                <label class="blood-check" for="blood09" title="9 Dots in Blood"></label>
+                                <input type="checkbox" id="blood08" name="Blood" value="8" />
+                                <label class="blood-check" for="blood08" title="8 Dots in Blood"></label>
+                                <input type="checkbox" id="blood07" name="Blood" value="7" />
+                                <label class="blood-check" for="blood07" title="7 Dots in Blood"></label>
+                                <input type="checkbox" id="blood06" name="Blood" value="6" />
+                                <label class="blood-check" for="blood06" title="6 Dots in Blood"></label>
+                                <input type="checkbox" id="blood05" name="Blood" value="5" />
+                                <label class="blood-check" for="blood05" title="5 Dots in Blood"></label>
+                                <input type="checkbox" id="blood04" name="Blood" value="4" />
+                                <label class="blood-check" for="blood04" title="4 Dots in Blood"></label>
+                                <input type="checkbox" id="blood03" name="Blood" value="3" />
+                                <label class="blood-check" for="blood03" title="3 Dots in Blood"></label>
+                                <input type="checkbox" id="blood02" name="Blood" value="2" />
+                                <label class="blood-check" for="blood02" title="2 Dots in Blood"></label>
+                                <input type="checkbox" id="blood01" name="Blood" value="1" />
+                                <label class="blood-check" for="blood01" title="1 Dot in Blood"></label>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 damage">
+                        <div class="row subhead">
+                            <h3 class="text-center col">Damage</h3>
+                        </div>
+
+                        <div class="row mx-auto compressed">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Bruised</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center">&nbsp;</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-1" value="health-1">
+                                <label for="health-1" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed bg-light">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Hurt</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">-1</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-2" value="health-2">
+                                <label for="health-2" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Injured</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">-1</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-3" value="health-3">
+                                <label for="health-3" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed bg-light">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Wounded</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">-2</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-4" value="health-4">
+                                <label for="health-4" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed bg-light">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Mauled</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">-2</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-5" value="health-5">
+                                <label for="health-5" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Crippled</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">-5</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-6" value="health-6">
+                                <label for="health-6" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed bg-light">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Incapacitated</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">&nbsp;</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-7" value="health-7">
+                                <label for="health-7" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row subhead">
+                            <h3 class="text-center col">Weakness</h3>
+                        </div>
+
+                        <div class="row px-2">
+                            <label class="inputLabel col-md-3 col-lg-12 text-center text-nowrap d-none" for="weakness">Weakness</label>
+                            <input class="form-control col-md-9 col-lg-12 mb-2" id="weakness" placeholder="Weakness" type="text">
+                        </div>
+
+                        <div class="row subhead">
+                            <h3 class="text-center col">Experience</h3>
+                        </div>
+
+                        <div class="row px-2">
+                            <label class="inputLabel col text-center text-nowrap" for="xp-gain">XP Gained</label>
+                            <label class="inputLabel col text-center text-nowrap" for="xp-spent">XP Spent</label>
+                        </div>
+                        <div class="row px-2">
+                            <input class="form-control col mb-2 mx-1" id="xp-gain" placeholder="0" type="text">
+                            <input class="form-control col mb-2 mx-1" id="xp-spent" placeholder="0" type="text" disabled>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hidden">
-                <script src="js/jquery-3.3.1.min.js"></script>
-                <script src="js/bootstrap.4.0.0.min.js"></script>
-            </div>
+
+        </div>
+        <div class="hidden ">
+            <script src="js/jquery-3.3.1.min.js "></script>
+            <script src="js/bootstrap.4.0.0.min.js "></script>
+        </div>
 </body>
 
 </html>
