@@ -29,3 +29,17 @@ $container['notFoundHandler'] = function ($container) {
 			
     };
 };
+
+$container['firebase'] = function($container) {
+	$settings = $container->get('settings')['firebase'];
+	if(is_file($settings['Firebase_JSON_Key'])) {
+		$container->logger->info('Firebase key present');
+		$serviceAccount = Kreait\Firebase\ServiceAccount::fromJsonFile($settings['Firebase_JSON_Key']);
+		$firebase = (new Kreait\Firebase\Factory)->withServiceAccount($serviceAccount)->create();
+		return $firebase;
+	} else {
+		$container->logger->info('Firebase key missing!');
+		throw new \Exception('Firebase key missing! Check your settings file! (' . __DIR__ . '/settings.php', 1);
+	}
+	
+};

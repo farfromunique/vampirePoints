@@ -27,10 +27,17 @@ return [
 		// Database
 		'database' => [
 			// TODO: get this from environment variables
-			'type' => 'MySQL',
-			'name' => 'Fill with your values',
-			'user' => 'Fill with your values',
-			'pass' => 'Fill with your values'
+			'DSN_type' => '',
+			'DSN_path' => '',
+			'DSN_name' => '',
+			'DSN_user' => '',
+			'DSN_pass' => '',
+			'DSN_full' => '' // use this to provide a custom DSN that PDO can accept. This overrides all other database[] variables!
 		],
+		'firebase' => [
+			/* Note: Firebase connection types are not DSNs! */
+			// TODO: get this from environment variables
+			'Firebase_JSON_Key' => '/path/to/key.json'
+		]
     ],
 ];

@@ -1,12 +1,8 @@
 # Custom
-analytics.js
+public/analytics.js
 
-!vendor/acwpd/
-!vendor/acwpd/vampire/
-!vendor/acwpd/vampire/*
-
-config.php
 settings.php
+firebase_key.json
 logs/*.*
 
 # Created by https://www.gitignore.io/api/windows,composer,visualstudiocode

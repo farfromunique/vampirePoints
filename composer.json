@@ -12,11 +12,12 @@
     "require": {
         "slim/slim": "^3.9",
         "monolog/monolog": "^1.23",
-        "slim/php-view": "^2.2"
+        "slim/php-view": "^2.2",
+        "kreait/firebase-php": "4.0"
     },
     "autoload": {
         "psr-4": {
-            "ACWPD\\Vampire\\": "acwpd/vampire"
+            "ACWPD\\Vampire\\": "acwpd/vampire/"
         }
     },
     "autoload-dev": {
