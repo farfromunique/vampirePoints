@@ -26,19 +26,18 @@ $container['notFoundHandler'] = function ($container) {
             ->withStatus(404)
             ->withHeader('Content-Type', 'text/html')
 			->write('Page not found.<br />' . "\n" . 'Path requested: ' . $container['request']->getRequestTarget());
-			
     };
 };
 
+// Firebase
 $container['firebase'] = function($container) {
 	$settings = $container->get('settings')['firebase'];
 	if(is_file($settings['Firebase_JSON_Key'])) {
-		$container->logger->info('Firebase key present');
 		$serviceAccount = Kreait\Firebase\ServiceAccount::fromJsonFile($settings['Firebase_JSON_Key']);
 		$firebase = (new Kreait\Firebase\Factory)->withServiceAccount($serviceAccount)->create();
 		return $firebase;
 	} else {
-		$container->logger->info('Firebase key missing!');
+		$container->logger->info('Firebase key missing! Settings file says' . "\n" . '> $settings["firebase"]["Firebase_JSON_Key"] = ' . $settings['Firebase_JSON_Key']);
 		throw new \Exception('Firebase key missing! Check your settings file! (' . __DIR__ . '/settings.php', 1);
 	}
 	
