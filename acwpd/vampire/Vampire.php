@@ -11,33 +11,27 @@ class Vampire {
 		$this->firebase = $c->firebase;
 	}
 
+	public function loadFromJSON(string $JSON) : bool {
+		// Short circuit if not valid JSON
+		$throwaway = json_decode($JSON, true, 10);
+		if ( is_null($throwaway) ) {
+			return false;
+		}
+		$this->JSON = $JSON;
+		return true;
+	}
+
 	public function loadFromID(int $id) {
-		$db = $this->firebase->getDatabase();
-		$data = $db->getReference('/' . $id)->getValue();
-		return $data;
+		# code...
 	}
 
 	public function createNew() {
-		//TODO set to '/base' when ready for production
-		return $this->getData('/test/base'); 
+		// loadFromID(base);
 	}
 
-	public function getData(string $id) {
+	public function getData($id = 1000) {
 		$db = $this->firebase->getDatabase();
 		$data = $db->getReference('/' . $id)->getValue();
 		return $data;
-	}
-
-	public function saveData(string $json, $id = null) : string {
-		$decoded = json_decode($json);
-		if (is_null($id)) {
-			$ref = $this->firebase->getDatabase()->getReference('/test')->push($decoded);
-			$key = $ref->getKey();
-			return $key;
-		} else {
-			$ref = $this->firebase->getDatabase()->getReference('/test');
-			$ref->update([$id => $decoded]);
-			return $id;
-		}
 	}
 }
