@@ -11,9 +11,9 @@ class Vampire {
     $this->firebase = $c->firebase;
   }
  
-  public function loadFromID(int $id) {
+  public function loadFromID(string $id) {
     $db = $this->firebase->getDatabase();
-    $data = $db->getReference('/' . $id)->getValue();
+    $data = $db->getReference('/test/' . $id)->getValue();
     return $data;
   }
  
