@@ -22,7 +22,7 @@ $app->group('/a', function () { // AJAX paths
 });
 
 $app->group('/static', function() { // static resources
-	$this->any('/static/sheet', function (Request $request, Response $response, array $args) {
+	$this->any('/sheet', function (Request $request, Response $response, array $args) {
 		// Sample log message
 		$this->logger->info("BS4 Sheet page");
 
@@ -30,7 +30,7 @@ $app->group('/static', function() { // static resources
 		return $this->renderer->render($response, 'sheet.phtml', $args);
 	});
 
-	$this->any('/static/home', function (Request $request, Response $response, array $args) {
+	$this->any('/home', function (Request $request, Response $response, array $args) {
 		// Sample log message
 		$this->logger->info("BS4 Homepage");
 
@@ -40,7 +40,7 @@ $app->group('/static', function() { // static resources
 });
 
 $app->group('/vt', function() { // test routes; will be removed before production
-	$this->get('/vt/new', function (Request $request, Response $response) {
+	$this->get('/new', function (Request $request, Response $response) {
 		$vamp = new \ACWPD\Vampire\Vampire($this);
 		$data = $vamp->createNew();
 		die(var_dump($data));
@@ -50,7 +50,7 @@ $app->group('/vt', function() { // test routes; will be removed before productio
 				->write('Created Vampire! ' . print_r($data));
 	});
 
-	$this->get('/vt/save', function (Request $request, Response $response) {
+	$this->get('/save', function (Request $request, Response $response) {
 		$vamp = new \ACWPD\Vampire\Vampire($this);
 		$data = $vamp->saveData(file_get_contents('../public/js/base.json'));
 		return $response
@@ -59,7 +59,7 @@ $app->group('/vt', function() { // test routes; will be removed before productio
 				->write('Saved Vampire! ' . print_r($data));
 	});
 
-	$this->get('/vt/savetobase', function (Request $request, Response $response, array $args) {
+	$this->get('/savetobase', function (Request $request, Response $response, array $args) {
 		$vamp = new \ACWPD\Vampire\Vampire($this);
 		var_dump($args);
 		echo "\n\n";
