@@ -1,0 +1,192 @@
+{
+    "attributes": {
+        "Physical": {
+            "Dexterity": {
+                "checked": 1
+            },
+            "Stamina": {
+                "checked": 1
+            },
+            "Strength": {
+                "checked": 1
+            }
+        },
+        "Mental": {
+            "Intelligence": {
+                "checked": 1
+            },
+            "Perception": {
+                "checked": 1
+            },
+            "Wits": {
+                "checked": 1
+            }
+        },
+        "Social": {
+            "Appearance": {
+                "checked": 1
+            },
+            "Charisma": {
+                "checked": 1
+            },
+            "Manipulation": {
+                "checked": 1
+            }
+        }
+    },
+    "abilities": {
+        "Talents": {
+            "Alertness": {
+                "checked": 0
+            },
+            "Athletics": {
+                "checked": 0
+            },
+            "Brawl": {
+                "checked": 0
+            },
+            "Dodge": {
+                "checked": 0
+            },
+            "Empathy": {
+                "checked": 0
+            },
+            "Expression": {
+                "checked": 0
+            },
+            "Intimidation": {
+                "checked": 0
+            },
+            "Leadership": {
+                "checked": 0
+            },
+            "Streetwise": {
+                "checked": 0
+            },
+            "Subterfuge": {
+                "checked": 0
+            }
+        },
+        "Skills": {
+            "Animal Ken": {
+                "checked": 0
+            },
+            "Crafts": {
+                "checked": 0
+            },
+            "Drive": {
+                "checked": 0
+            },
+            "Etiquette": {
+                "checked": 0
+            },
+            "Firearms": {
+                "checked": 0
+            },
+            "Melee": {
+                "checked": 0
+            },
+            "Performance": {
+                "checked": 0
+            },
+            "Security": {
+                "checked": 0
+            },
+            "Stealth": {
+                "checked": 0
+            },
+            "Survival": {
+                "checked": 0
+            }
+        },
+        "Knowledges": {
+            "Academics": {
+                "checked": 0
+            },
+            "Computer": {
+                "checked": 0
+            },
+            "Finance": {
+                "checked": 0
+            },
+            "Investigation": {
+                "checked": 0
+            },
+            "Law": {
+                "checked": 0
+            },
+            "Linguistics": {
+                "checked": 0
+            },
+            "Medicine": {
+                "checked": 0
+            },
+            "Occult": {
+                "checked": 0
+            },
+            "Politics": {
+                "checked": 0
+            },
+            "Science": {
+                "checked": 0
+            }
+        }
+    },
+    "advantages": {
+        "Disciplines": {
+            "In-Clan 1": {
+                "checked": 0,
+                "in-clan": true
+            },
+            "Out-of-Clan 1": {
+                "checked": 0,
+                "in-clan": false
+            }
+        },
+        "Backgrounds": {
+            "Background 1": {
+                "checked": 0
+            }
+        },
+        "Virtues": {
+            "Conscience": {
+                "checked": 1
+            },
+            "Courage": {
+                "checked": 1
+            },
+            "Self Control": {
+                "checked": 1
+            }
+        }
+    },
+    "misc": {
+        "blood": 10,
+        "fluff": {
+            "character": "",
+            "chronicle": "",
+            "clan": "",
+            "concept": "",
+            "demeanor": "",
+            "game": "Vampire: the Masquerade",
+            "generation": 13,
+            "nature": "",
+            "player": "",
+            "sire": "",
+            "title": ""
+        },
+        "path": {
+            "checked": 1,
+            "name": "Humanity"
+        },
+        "willpower": {
+            "checked": 1
+        }
+    },
+    "meta": {
+        "xp_spent": 0,
+        "xp_earned": 0,
+        "damage_track": 0,
+        "weakness": ""
+    }
+}
