@@ -50,6 +50,17 @@ $app->group('/vt', function() { // test routes; will be removed before productio
 				->write('Created Vampire! ' . print_r($data));
 	});
 
+	$this->any('/sheet', function (Request $request, Response $response, array $args) {
+		// Sample log message
+		$this->logger->info("Test sheet");
+
+		$vamp = new \ACWPD\Vampire\Vampire($this);
+		$data = $vamp->loadFromID('base');
+
+		// Render index view
+		return $this->renderer->render($response, 'vampire.phtml', $data);
+	});
+
 	$this->get('/save', function (Request $request, Response $response) {
 		$vamp = new \ACWPD\Vampire\Vampire($this);
 		$data = $vamp->saveData(file_get_contents('../public/js/base.json'));

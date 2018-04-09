@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAEBLgAAAAAAP//AAD+fwAA/n8AAP5/AAD+fwAA/n8AAO53AADeewAAwAMAANw7AAD73wAA9+8AAPfvAAD73wAA/D8AAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/css/sheet.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.4.0.0.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome-all.css">
+    <title>Freebies / XP checker for V:tM characters</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1>
+                        Freebies / XP checker for V:tM characters
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-xl-2">
+
+                <div class="card text-white bg-secondary">
+                    <a class="text-white btn btn-secondary" aria-role="button" data-toggle="collapse" href="#c-first" aria-expanded="false" aria-controls="collapseExample">
+                        <div class="card-header seamless-link">
+                            Header
+                        </div>
+                    </a>
+                    <div class="card-body collapse show" id="c-first">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+                <div class="card bg-dark text-white">
+                    <div class="card-header">Header</div>
+                    <div class="card-body collapse" id="c-second">
+                        <h5 class="card-title">dark card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-lg-9 col-xl-8">
+                <div class="row description">
+                    <div class="divider-before col"></div>
+                    <h2 class="text-center col">Basic Information</h2>
+                    <div class="divider-after col"></div>
+                </div>
+
+                <div class="row information">
+<?php foreach ($fluff as $groupname => $group) : ?>
+					<div class="col-md-4 <?= $groupname ?>">
+	<?php foreach ($group as $field => $options) : ?>
+                        <div class="row px-2">
+                            <label
+								class="inputLabel col-md-3 col-lg-12 text-center text-nowrap"
+								for="<?= $options['id']; ?>">
+									<?= $options['full']; ?>
+							</label>
+                            <input
+								class="form-control col-md-9 col-lg-12 mb-2"
+								name="<?= $field; ?>" 
+								id="<?= $options['id']; ?>" 
+								placeholder="<?= $options['full']; ?>" 
+								type="text">
+                        </div>
+	<?php endforeach; ?>
+					</div>
+<?php endforeach; ?>
+                </div>
+
+                <div class="row description">
+                    <div class="divider-before col"></div>
+                    <h2 class="text-center col">Attributes</h2>
+                    <div class="divider-after col"></div>
+				</div>
+				
+				<div class="row attributes">
+<?php foreach ($attributes as $groupname => $group) : ?>
+					<div class="col-md-4 <?= $groupname ?>">
+	<?php foreach ($group as $stat => $options) : ?>
+                        <div class="row px-2">
+                            <div class="col"><?= $options['name'] ?></div>
+                            <fieldset class="dots-5 col">
+								<legend class="d-none"><?= $options['name'] ?></legend>
+                                <input type="radio" id="<?= $options['name'] ?>5" name="<?= $options['name'] ?>" value="5" disabled="disabled" />
+                                <label class="full" for="<?= $options['name'] ?>5" title="5 Dots in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>4" name="<?= $options['name'] ?>" value="4" />
+                                <label class="full" for="<?= $options['name'] ?>4" title="4 Dots in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>3" name="<?= $options['name'] ?>" value="3" />
+                                <label class="full" for="<?= $options['name'] ?>3" title="3 Dots in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>2" name="<?= $options['name'] ?>" value="2" />
+								<label class="full" for="<?= $options['name'] ?>2" title="2 Dots in <?= $options['name'] ?>"></label>
+		<?php if ($options['clearable']) : ?>
+								<input type="radio" id="<?= $options['name'] ?>1" name="<?= $options['name'] ?>" value="1" />
+								<label class="full" for="<?= $options['name'] ?>1" title="1 Dot in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>0" name="<?= $options['name'] ?>" value="0" checked="checked" />
+                                <label class="no-dot" for="<?= $options['name'] ?>0" title="No dots in <?= $options['name'] ?>"></label>
+		<?php else : ?>
+                                <input type="radio" id="<?= $options['name'] ?>1" name="<?= $options['name'] ?>" value="1" checked="checked" />
+								<label class="full" for="<?= $options['name'] ?>1" title="1 Dot in <?= $options['name'] ?>"></label>
+		<?php endif; ?>
+                            </fieldset>
+						</div>
+	<?php endforeach; ?>
+					</div>
+<?php endforeach; ?>
+                </div>
+
+                <div class="row description">
+                    <div class="divider-before col"></div>
+                    <h2 class="text-center col">Abilities</h2>
+                    <div class="divider-after col"></div>
+                </div>
+
+                <div class="row abilities">
+<?php foreach ($abilities as $groupname => $group) : ?>
+					<div class="col-md-4 <?= $groupname ?>">
+	<?php foreach ($group as $stat => $options) : ?>
+                        <div class="row px-2">
+                            <div class="col"><?= $options['name'] ?></div>
+                            <fieldset class="dots-5 col">
+								<legend class="d-none"><?= $options['name'] ?></legend>
+                                <input type="radio" id="<?= $options['name'] ?>5" name="<?= $options['name'] ?>" value="5" disabled="disabled" />
+                                <label class="full" for="<?= $options['name'] ?>5" title="5 Dots in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>4" name="<?= $options['name'] ?>" value="4" />
+                                <label class="full" for="<?= $options['name'] ?>4" title="4 Dots in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>3" name="<?= $options['name'] ?>" value="3" />
+                                <label class="full" for="<?= $options['name'] ?>3" title="3 Dots in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>2" name="<?= $options['name'] ?>" value="2" />
+								<label class="full" for="<?= $options['name'] ?>2" title="2 Dots in <?= $options['name'] ?>"></label>
+								<input type="radio" id="<?= $options['name'] ?>1" name="<?= $options['name'] ?>" value="1" />
+								<label class="full" for="<?= $options['name'] ?>1" title="1 Dot in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>0" name="<?= $options['name'] ?>" value="0" checked="checked" />
+                                <label class="no-dot" for="<?= $options['name'] ?>0" title="No dots in <?= $options['name'] ?>"></label>
+                            </fieldset>
+						</div>
+	<?php endforeach; ?>
+					</div>
+<?php endforeach; ?>
+				</div>
+				
+				<div class="row description">
+                    <div class="divider-before col"></div>
+                    <h2 class="text-center col">Advantages</h2>
+                    <div class="divider-after col"></div>
+                </div>
+
+                <div class="row advantages">
+<?php foreach ($advantages as $groupname => $group) : ?>
+					<div class="col-md-4 <?= $groupname ?>">
+	<?php foreach ($group as $stat => $options) : ?>
+                        <div class="row px-2">
+                            <div class="col"><?= $options['name'] ?></div>
+                            <fieldset class="dots-5 col">
+								<legend class="d-none"><?= $options['name'] ?></legend>
+                                <input type="radio" id="<?= $options['name'] ?>5" name="<?= $options['name'] ?>" value="5" disabled="disabled" />
+                                <label class="full" for="<?= $options['name'] ?>5" title="5 Dots in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>4" name="<?= $options['name'] ?>" value="4" />
+                                <label class="full" for="<?= $options['name'] ?>4" title="4 Dots in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>3" name="<?= $options['name'] ?>" value="3" />
+                                <label class="full" for="<?= $options['name'] ?>3" title="3 Dots in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>2" name="<?= $options['name'] ?>" value="2" />
+								<label class="full" for="<?= $options['name'] ?>2" title="2 Dots in <?= $options['name'] ?>"></label>
+								<input type="radio" id="<?= $options['name'] ?>1" name="<?= $options['name'] ?>" value="1" />
+								<label class="full" for="<?= $options['name'] ?>1" title="1 Dot in <?= $options['name'] ?>"></label>
+                                <input type="radio" id="<?= $options['name'] ?>0" name="<?= $options['name'] ?>" value="0" checked="checked" />
+                                <label class="no-dot" for="<?= $options['name'] ?>0" title="No dots in <?= $options['name'] ?>"></label>
+                            </fieldset>
+						</div>
+	<?php endforeach; ?>
+					</div>
+<?php endforeach; ?>
+                </div>
+
+                <div class="row description">
+                    <div class="divider-before col"></div>
+                    <h2 class="text-center col">Misc</h2>
+                    <div class="divider-after col"></div>
+                </div>
+
+
+                <div class="row misc">
+                    <div class="col-md-4 meritsandflaws">
+                        <div class="row subhead">
+                            <h3 class="text-center col">Merits and Flaws</h3>
+                        </div>
+<?php
+	ob_start();
+	require(__DIR__ . '/MeritsFlaws.phtml');
+	$out = ob_get_contents();
+	ob_end_clean();
+	foreach ($misc['0-Merits'] as $merit => $data) {
+		$id = 'meritflaw-' . $merit;
+		echo preg_replace(["/::ID::/","/::NAME::/"],$id,$out);
+	}
+?>
+
+                    </div>
+
+
+                    <div class="col-md-4 humanity">
+                        <div class="row subhead">
+                            <h3 class="text-center col">Humanity</h3>
+                        </div>
+                        <div class="row">
+                            <fieldset class="dots-5 mx-auto">
+                                <legend class="d-none ">Humanity</legend>
+                                <input type="radio" id="path10" name="Humanity" value="10 " />
+                                <label class="full" for="path10" title="10 Dots in Humanity "></label>
+                                <input type="radio" id="path09" name="Humanity" value="9 " />
+                                <label class="full" for="path09" title="9 Dots in Humanity "></label>
+                                <input type="radio" id="path08" name="Humanity" value="8 " />
+                                <label class="full" for="path08" title="8 Dots in Humanity "></label>
+                                <input type="radio" id="path07" name="Humanity" value="7 " />
+                                <label class="full" for="path07" title="7 Dots in Humanity "></label>
+                                <input type="radio" id="path06" name="Humanity" value="6 " />
+                                <label class="full" for="path06" title="6 Dots in Humanity "></label>
+                                <input type="radio" id="path05" name="Humanity" value="5 " />
+                                <label class="full" for="path05" title="5 Dots in Humanity "></label>
+                                <input type="radio" id="path04" name="Humanity" value="4 " />
+                                <label class="full" for="path04" title="4 Dots in Humanity "></label>
+                                <input type="radio" id="path03" name="Humanity" value="3 " />
+                                <label class="full" for="path03" title="3 Dots in Humanity "></label>
+                                <input type="radio" id="path02" name="Humanity" value="2 " />
+                                <label class="full" for="path02" title="2 Dots in Humanity "></label>
+                                <input type="radio" id="path01" name="Humanity" value="1 " />
+                                <label class="full" for="path01" title="1 Dot in Humanity "></label>
+                            </fieldset>
+                        </div>
+
+                        <div class="row subhead">
+                            <h3 class="text-center col">Willpower</h3>
+                        </div>
+                        <div class="row">
+                            <fieldset class="dots-5 mx-auto">
+                                <legend class="d-none ">Willpower</legend>
+                                <input type="radio" id="will10" name="Willpower" value="10" />
+                                <label class="full" for="will10" title="10 Dots in Willpower "></label>
+                                <input type="radio" id="will09" name="Willpower" value="9" />
+                                <label class="full" for="will09" title="9 Dots in Willpower "></label>
+                                <input type="radio" id="will08" name="Willpower" value="8" />
+                                <label class="full" for="will08" title="8 Dots in Willpower "></label>
+                                <input type="radio" id="will07" name="Willpower" value="7" />
+                                <label class="full" for="will07" title="7 Dots in Willpower "></label>
+                                <input type="radio" id="will06" name="Willpower" value="6" />
+                                <label class="full" for="will06" title="6 Dots in Willpower "></label>
+                                <input type="radio" id="will05" name="Willpower" value="5" />
+                                <label class="full" for="will05" title="5 Dots in Willpower "></label>
+                                <input type="radio" id="will04" name="Willpower" value="4" />
+                                <label class="full" for="will04" title="4 Dots in Willpower "></label>
+                                <input type="radio" id="will03" name="Willpower" value="3" />
+                                <label class="full" for="will03" title="3 Dots in Willpower "></label>
+                                <input type="radio" id="will02" name="Willpower" value="2" />
+                                <label class="full" for="will02" title="2 Dots in Willpower "></label>
+                                <input type="radio" id="will01" name="Willpower" value="1" />
+                                <label class="full" for="will01" title="1 Dot in Willpower "></label>
+                            </fieldset>
+                        </div>
+
+                        <div class="row subhead">
+                            <h3 class="text-center col">Blood</h3>
+                        </div>
+
+                        <div class="row">
+                            <fieldset class="blood mx-auto">
+                                <legend class="d-none ">Blood</legend>
+                                <input type="checkbox" id="blood10" name="Blood" value="10" />
+                                <label class="blood-check" for="blood10" title="10 Dots in Blood"></label>
+                                <input type="checkbox" id="blood09" name="Blood" value="9" />
+                                <label class="blood-check" for="blood09" title="9 Dots in Blood"></label>
+                                <input type="checkbox" id="blood08" name="Blood" value="8" />
+                                <label class="blood-check" for="blood08" title="8 Dots in Blood"></label>
+                                <input type="checkbox" id="blood07" name="Blood" value="7" />
+                                <label class="blood-check" for="blood07" title="7 Dots in Blood"></label>
+                                <input type="checkbox" id="blood06" name="Blood" value="6" />
+                                <label class="blood-check" for="blood06" title="6 Dots in Blood"></label>
+                                <input type="checkbox" id="blood05" name="Blood" value="5" />
+                                <label class="blood-check" for="blood05" title="5 Dots in Blood"></label>
+                                <input type="checkbox" id="blood04" name="Blood" value="4" />
+                                <label class="blood-check" for="blood04" title="4 Dots in Blood"></label>
+                                <input type="checkbox" id="blood03" name="Blood" value="3" />
+                                <label class="blood-check" for="blood03" title="3 Dots in Blood"></label>
+                                <input type="checkbox" id="blood02" name="Blood" value="2" />
+                                <label class="blood-check" for="blood02" title="2 Dots in Blood"></label>
+                                <input type="checkbox" id="blood01" name="Blood" value="1" />
+                                <label class="blood-check" for="blood01" title="1 Dot in Blood"></label>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 damage">
+                        <div class="row subhead">
+                            <h3 class="text-center col">Damage</h3>
+                        </div>
+
+                        <div class="row mx-auto compressed">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Bruised</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center">&nbsp;</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-1" value="health-1">
+                                <label for="health-1" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed bg-light">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Hurt</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">-1</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-2" value="health-2">
+                                <label for="health-2" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Injured</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">-1</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-3" value="health-3">
+                                <label for="health-3" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed bg-light">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Wounded</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">-2</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-4" value="health-4">
+                                <label for="health-4" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed bg-light">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Mauled</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">-2</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-5" value="health-5">
+                                <label for="health-5" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Crippled</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">-5</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-6" value="health-6">
+                                <label for="health-6" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row mx-auto compressed bg-light">
+                            <div class="col my-auto pb-2">
+                                <p class="text-right mb-0">Incapacitated</p>
+                            </div>
+                            <div class="col my-auto pb-2">
+                                <p class="text-center mb-0">&nbsp;</p>
+                            </div>
+                            <div class="col">
+                                <input type="checkbox" id="health-7" value="health-7">
+                                <label for="health-7" class="damage-check"></label>
+                            </div>
+                        </div>
+
+                        <div class="row subhead">
+                            <h3 class="text-center col">Weakness</h3>
+                        </div>
+
+                        <div class="row px-2">
+                            <label class="inputLabel col-md-3 col-lg-12 text-center text-nowrap d-none" for="weakness">Weakness</label>
+                            <input class="form-control col-md-9 col-lg-12 mb-2" id="weakness" placeholder="Weakness" type="text">
+                        </div>
+
+                        <div class="row subhead">
+                            <h3 class="text-center col">Experience</h3>
+                        </div>
+
+                        <div class="row px-2">
+                            <label class="inputLabel col text-center text-nowrap" for="xp-gain">XP Gained</label>
+                            <label class="inputLabel col text-center text-nowrap" for="xp-spent">XP Spent</label>
+                        </div>
+                        <div class="row px-2">
+                            <input class="form-control col mb-2 mx-1" id="xp-gain" placeholder="0" type="text">
+                            <input class="form-control col mb-2 mx-1" id="xp-spent" placeholder="0" type="text" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="hidden ">
+            <script src="/js/jquery-3.3.1.min.js "></script>
+            <script src="/js/bootstrap.4.0.0.min.js "></script>
+        </div>
+</body>
+
+</html>

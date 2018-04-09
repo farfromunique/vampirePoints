@@ -1,192 +1,359 @@
 {
+    "game": "Vampire: the Masquerade",
+    "fluff": {
+        "1-universal": {
+            "0": {
+                "name": "character",
+                "id": "charName",
+                "full": "Character Name"
+            },
+            "1": {
+                "name": "player",
+                "id": "player",
+                "full": "Player Name"
+            },
+            "2": {
+                "name": "chronicle",
+                "id": "chronicle",
+                "full": "Chronicle"
+            }
+        },
+        "2-personality": {
+            "0": {
+                "name": "nature",
+                "id": "nature",
+                "full": "Nature"
+            },
+            "1": {
+                "name": "demeanor",
+                "id": "demeanor",
+                "full": "Demeanor"
+            },
+            "2": {
+                "name": "concept",
+                "id": "concept",
+                "full": "Concept"
+            }
+        },
+        "3-history": {
+            "0": {
+                "name": "clan",
+                "id": "clan",
+                "full": "Clan"
+            },
+            "1": {
+                "name": "generation",
+                "id": "generation",
+                "full": "Generation"
+            },
+            "2": {
+                "name": "sire",
+                "id": "sire",
+                "full": "Sire"
+            }
+        }
+    },
     "attributes": {
-        "Physical": {
-            "Dexterity": {
-                "checked": 1
+        "1-Physical": {
+            "0": {
+                "name": "Strength",
+                "checked": 1,
+                "clearable": false,
+                "short": "str"
             },
-            "Stamina": {
-                "checked": 1
+            "1": {
+                "name": "Dexterity",
+                "checked": 1,
+                "clearable": false,
+                "short": "dex"
             },
-            "Strength": {
-                "checked": 1
+            "2": {
+                "name": "Stamina",
+                "checked": 1,
+                "clearable": false,
+                "short": "sta"
             }
         },
-        "Mental": {
-            "Intelligence": {
-                "checked": 1
+        "2-Social": {
+            "0": {
+                "name": "Charisma",
+                "checked": 1,
+                "clearable": false,
+                "short": "cha"
             },
-            "Perception": {
-                "checked": 1
+            "1": {
+                "name": "Manipulation",
+                "checked": 1,
+                "clearable": false,
+                "short": "man"
             },
-            "Wits": {
-                "checked": 1
+            "2": {
+                "name": "Appearance",
+                "checked": 1,
+                "clearable": false,
+                "short": "app"
             }
         },
-        "Social": {
-            "Appearance": {
-                "checked": 1
+        "3-Mental": {
+            "0": {
+                "name": "Perception",
+                "checked": 1,
+                "clearable": false,
+                "short": "per"
             },
-            "Charisma": {
-                "checked": 1
+            "1": {
+                "name": "Intelligence",
+                "checked": 1,
+                "clearable": false,
+                "short": "int"
             },
-            "Manipulation": {
-                "checked": 1
+            "2": {
+                "name": "Wits",
+                "checked": 1,
+                "clearable": false,
+                "short": "wit"
             }
         }
     },
     "abilities": {
-        "Talents": {
-            "Alertness": {
-                "checked": 0
+        "1-Talents": {
+            "0": {
+                "name": "Alertness",
+                "checked": 0,
+                "short": "aler"
             },
-            "Athletics": {
-                "checked": 0
+            "1": {
+                "name": "Athletics",
+                "checked": 0,
+                "short": "athl"
             },
-            "Brawl": {
-                "checked": 0
+            "2": {
+                "name": "Brawl",
+                "checked": 0,
+                "short": "braw"
             },
-            "Dodge": {
-                "checked": 0
+            "3": {
+                "name": "Dodge",
+                "checked": 0,
+                "short": "dodg"
             },
-            "Empathy": {
-                "checked": 0
+            "4": {
+                "name": "Empathy",
+                "checked": 0,
+                "short": "empp"
             },
-            "Expression": {
-                "checked": 0
+            "5": {
+                "name": "Expression",
+                "checked": 0,
+                "short": "expp"
             },
-            "Intimidation": {
-                "checked": 0
+            "6": {
+                "name": "Intimidation",
+                "checked": 0,
+                "short": "inti"
             },
-            "Leadership": {
-                "checked": 0
+            "7": {
+                "name": "Leadership",
+                "checked": 0,
+                "short": "lead"
             },
-            "Streetwise": {
-                "checked": 0
+            "8": {
+                "name": "Streetwise",
+                "checked": 0,
+                "short": "stre"
             },
-            "Subterfuge": {
-                "checked": 0
+            "9": {
+                "name": "Subterfuge",
+                "checked": 0,
+                "short": "subt"
             }
         },
-        "Skills": {
-            "Animal Ken": {
-                "checked": 0
+        "2-Skills": {
+            "0": {
+                "name": "Animal Ken",
+                "checked": 0,
+                "short": "anim"
             },
-            "Crafts": {
-                "checked": 0
+            "1": {
+                "name": "Crafts",
+                "checked": 0,
+                "short": "craf"
             },
-            "Drive": {
-                "checked": 0
+            "2": {
+                "name": "Drive",
+                "checked": 0,
+                "short": "driv"
             },
-            "Etiquette": {
-                "checked": 0
+            "3": {
+                "name": "Etiquette",
+                "checked": 0,
+                "short": "etiq"
             },
-            "Firearms": {
-                "checked": 0
+            "4": {
+                "name": "Firearms",
+                "checked": 0,
+                "short": "fire"
             },
-            "Melee": {
-                "checked": 0
+            "5": {
+                "name": "Melee",
+                "checked": 0,
+                "short": "mele"
             },
-            "Performance": {
-                "checked": 0
+            "6": {
+                "name": "Performance",
+                "checked": 0,
+                "short": "perf"
             },
-            "Security": {
-                "checked": 0
+            "7": {
+                "name": "Security",
+                "checked": 0,
+                "short": "secu"
             },
-            "Stealth": {
-                "checked": 0
+            "8": {
+                "name": "Stealth",
+                "checked": 0,
+                "short": "stea"
             },
-            "Survival": {
-                "checked": 0
+            "9": {
+                "name": "Survival",
+                "checked": 0,
+                "short": "surv"
             }
         },
-        "Knowledges": {
-            "Academics": {
-                "checked": 0
+        "3-Knowledges": {
+            "0": {
+                "name": "Academics",
+                "checked": 0,
+                "short": "acad"
             },
-            "Computer": {
-                "checked": 0
+            "1": {
+                "name": "Computer",
+                "checked": 0,
+                "short": "comp"
             },
-            "Finance": {
-                "checked": 0
+            "2": {
+                "name": "Finance",
+                "checked": 0,
+                "short": "fina"
             },
-            "Investigation": {
-                "checked": 0
+            "3": {
+                "name": "Investigation",
+                "checked": 0,
+                "short": "inve"
             },
-            "Law": {
-                "checked": 0
+            "4": {
+                "name": "Law",
+                "checked": 0,
+                "short": "law"
             },
-            "Linguistics": {
-                "checked": 0
+            "5": {
+                "name": "Linguistics",
+                "checked": 0,
+                "short": "ling"
             },
-            "Medicine": {
-                "checked": 0
+            "6": {
+                "name": "Medicine",
+                "checked": 0,
+                "short": "medi"
             },
-            "Occult": {
-                "checked": 0
+            "7": {
+                "name": "Occult",
+                "checked": 0,
+                "short": "occu"
             },
-            "Politics": {
-                "checked": 0
+            "8": {
+                "name": "Politics",
+                "checked": 0,
+                "short": "poli"
             },
-            "Science": {
-                "checked": 0
+            "9": {
+                "name": "Science",
+                "checked": 0,
+                "short": "scie"
             }
         }
     },
     "advantages": {
-        "Disciplines": {
-            "In-Clan 1": {
+        "1-Disciplines": {
+            "0": {
+                "name": "In-Clan 1",
                 "checked": 0,
                 "in-clan": true
             },
-            "Out-of-Clan 1": {
+            "1": {
+                "name": "Out-of-Clan 1",
                 "checked": 0,
                 "in-clan": false
             }
         },
-        "Backgrounds": {
-            "Background 1": {
+        "2-Backgrounds": {
+            "0": {
+                "name": "Background 1",
                 "checked": 0
             }
         },
-        "Virtues": {
-            "Conscience": {
+        "3-Virtues": {
+            "0": {
+                "name": "Conscience",
                 "checked": 1
             },
-            "Courage": {
+            "1": {
+                "name": "Courage",
                 "checked": 1
             },
-            "Self Control": {
+            "2": {
+                "name": "Self Control",
                 "checked": 1
             }
         }
     },
     "misc": {
-        "blood": 10,
-        "fluff": {
-            "character": "",
-            "chronicle": "",
-            "clan": "",
-            "concept": "",
-            "demeanor": "",
-            "game": "Vampire: the Masquerade",
-            "generation": 13,
-            "nature": "",
-            "player": "",
-            "sire": "",
-            "title": ""
+        "0-Merits": {
+            "0": {
+                "type": "merit",
+                "selected": ""
+            }
         },
-        "path": {
-            "checked": 1,
-            "name": "Humanity"
+        "1": {
+            "0": {
+                "name": "Humanity",
+                "checked": 1,
+                "max": 10,
+                "type": "radio"
+            },
+            "1": {
+                "name": "Willpower",
+                "checked": 1,
+                "max": 10,
+                "type": "radio"
+            },
+            "2": {
+                "name": "Willpower",
+                "checked": 1,
+                "max": 10,
+                "type": "chekbox"
+            },
+            "3": {
+                "name": "Blood Pool",
+                "checked": 10,
+                "max": 20,
+                "type": "chekbox"
+            },
+            "4": {
+                "name": "Blood per Turn",
+                "value": "",
+                "type": "input"
+            }
         },
-        "willpower": {
-            "checked": 1
+        "meta": {
+            "xp_spent": 0,
+            "xp_earned": 0,
+            "damage_track": 0,
+            "other": {
+                "name": "Weakness",
+                "value": "",
+                "type": "input"
+            }
         }
-    },
-    "meta": {
-        "xp_spent": 0,
-        "xp_earned": 0,
-        "damage_track": 0,
-        "weakness": ""
     }
 }
